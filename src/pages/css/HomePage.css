@@ -1,0 +1,16 @@
+.news-banner {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.news-banner a img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.news-banner a:hover img {
+  opacity: 0.8;
+}
