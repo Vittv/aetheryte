@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import "./css/HomePage.css";
+import CurrentContent from "../components/home/CurrentContent";
+import NewsColumns from "../components/home/NewsColumns";
+import NewsSection from "../components/home/NewsSection";
+import ResetTimers from "../components/home/ResetTimers";
+import type { NewsItem } from "../types";
 
 const CATEGORIES = ["topics", "updates", "maintenance"] as const;
 type Category = (typeof CATEGORIES)[number];
-
-interface NewsItem {
-  id: string;
-  title: string;
-  url: string;
-  description: string;
-  time: string;
-}
 
 const HomePage = () => {
   const [news, setNews] = useState<Record<Category, NewsItem[]>>({
@@ -44,63 +41,10 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <h2 className="news-header">News</h2>
-      <section className="news-banner">
-        {news.topics.map((item) => (
-          <a
-            key={item.id}
-            href={item.url}
-            className="news-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="news-card-meta">
-              <span className="news-card-source">na.finalfantasyxiv.com</span>
-              <span className="news-card-time">
-                {new Date(item.time).toLocaleDateString()}
-              </span>
-            </div>
-            <h3 className="news-card-title">{item.title}</h3>
-            <p className="news-card-description">{item.description}</p>
-          </a>
-        ))}
-      </section>
-
-      <div className="news-columns">
-        <section className="news-column">
-          <h2>Updates</h2>
-          <div className="news-column-scroll">
-            {news.updates.map((item) => (
-              <a
-                key={item.id}
-                href={item.url}
-                className="news-text-item"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {item.title}
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section className="news-column">
-          <h2>Maintenance</h2>
-          <div className="news-column-scroll">
-            {news.maintenance.map((item) => (
-              <a
-                key={item.id}
-                href={item.url}
-                className="news-text-item"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {item.title}
-              </a>
-            ))}
-          </div>
-        </section>
-      </div>
+      <CurrentContent />
+      <NewsSection topics={news.topics} />
+      <NewsColumns updates={news.updates} maintenance={news.maintenance} />
+      <ResetTimers />
     </div>
   );
 };

@@ -11,7 +11,6 @@ const Navbar = () => {
         <div className="right-links">
           <a href="">duty</a>
           <a href="">resources</a>
-          <a href="">tools</a>
         </div>
       </div>
     </div>
