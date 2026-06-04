@@ -13,8 +13,16 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vittv
+            Source
           </a>
+        </p>
+        <p>
+          FINAL FANTASY is a registered trademark of Square Enix Holdings Co.,
+          Ltd. ©{" "}
+        </p>
+        <p>
+          SQUARE ENIX CO., LTD. All Rights Reserved | All content © their
+          respective authors
         </p>
       </div>
     </div>
