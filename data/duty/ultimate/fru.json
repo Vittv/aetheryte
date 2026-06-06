@@ -1,0 +1,93 @@
+{
+  "name": "Futures Rewritten (Ultimate)",
+  "slug": "fru",
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "fatebreaker",
+      "url": "https://tinyurl.com/lesbin-p1"
+    },
+    {
+      "phase": "p2",
+      "label": "diamond-dust-light-rampant",
+      "url": "https://tinyurl.com/lesbin-p2"
+    },
+    {
+      "phase": "p2",
+      "label": "ice-veil",
+      "url": "https://tinyurl.com/lesbin-intermission"
+    },
+    {
+      "phase": "p3",
+      "label": "ultimate-relativity",
+      "url": "https://tinyurl.com/lesbin-ur"
+    },
+    {
+      "phase": "p3",
+      "label": "sextuple-apoc",
+      "url": "https://raidplan.io/plan/gU44027CtpmKs-sC"
+    },
+    {
+      "phase": "p4",
+      "label": "darklit-dragonsong",
+      "url": "https://tinyurl.com/lesbin-darklit"
+    },
+    {
+      "phase": "p4",
+      "label": "crystallize-time",
+      "url": "https://tinyurl.com/lesbin-ct"
+    },
+    {
+      "phase": "p5",
+      "label": "ulti-project-p5-guide",
+      "url": "https://slides.com/ultiproject/frup5/scroll"
+    },
+    {
+      "phase": "p5",
+      "label": "advanced-exalines-theory",
+      "url": "https://docs.google.com/document/d/1tJ0ANAgAwSqM1Ytc1eyRaal-ewbkGcdHmrup6sO0078/edit?tab=t.0#heading=h.kyvt2kb6brld"
+    }
+  ],
+  "mitigation": [
+    { "label": "fru-mit-but-good", "url": "http://mit.lesb.in/" },
+    { "label": "naur-room-mits", "url": "https://tinyurl.com/NAUR-Room-Mits" },
+    { "label": "fru-mitty", "url": "https://tinyurl.com/frumitty" }
+  ],
+  "markers": [
+    {
+      "Name": "FRU PF - Inner Circle",
+      "MapID": 1006,
+      "A": { "X": 100.0, "Y": 0.0, "Z": 90.0, "ID": 0, "Active": true },
+      "B": { "X": 110.0, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+      "C": { "X": 100.0, "Y": 0.0, "Z": 110.0, "ID": 2, "Active": true },
+      "D": { "X": 90.0, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+      "One": { "X": 92.93, "Y": 0.0, "Z": 92.93, "ID": 4, "Active": true },
+      "Two": { "X": 107.07, "Y": 0.0, "Z": 92.93, "ID": 5, "Active": true },
+      "Three": { "X": 107.07, "Y": 0.0, "Z": 107.07, "ID": 6, "Active": true },
+      "Four": { "X": 92.93, "Y": 0.0, "Z": 107.07, "ID": 7, "Active": true }
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Futures_Rewritten(Ultimate)#Unlock_and_Requirements",
+  "videos": [
+    {
+      "label": "Tessan Twintails Guide",
+      "url": "https://www.youtube.com/watch?v=Sgz3nNpirCE&pp=ygUUdGVzc2FuIHR3aW50YWlscyBmcnU%3D"
+    }
+  ],
+  "sims": [
+    {
+      "label": "browser-fru-sim",
+      "url": "https://skyeraf.itch.io/solo-fru-simulator"
+    },
+    { "label": "app-fru-sim", "url": "https://github.com/WCGH/FRU-Sim" },
+    {
+      "label": "fulgent-blade-sim",
+      "url": "https://mathranger101.itch.io/fru-fulgent-blade-sim"
+    },
+    { "label": "fof-tethers-sim", "url": "https://cupnoodle.moe/fru/fof/" },
+    { "label": "xivsim", "url": "https://www.xivsim.com/fru/" }
+  ],
+  "additional-resources": [
+    { "label": "lesbin-pastebin", "url": "https://pastebin.com/ue7w9jJH" }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "name": "The Omega Protocol (Ultimate)",
+  "slug": "top",
+  "prepull": [
+    {
+      "Name": "prepull",
+      "MapID": 908,
+      "A": { "X": 87.312, "Y": 0.0, "Z": 113.202, "ID": 0, "Active": true },
+      "B": { "X": 96.787, "Y": 0.0, "Z": 113.539, "ID": 1, "Active": true },
+      "C": { "X": 99.77, "Y": 0.0, "Z": 113.439, "ID": 2, "Active": true },
+      "D": { "X": 105.309, "Y": 0.0, "Z": 113.231, "ID": 3, "Active": true },
+      "One": { "X": 90.583, "Y": 0.0, "Z": 113.06, "ID": 4, "Active": true },
+      "Two": { "X": 94.055, "Y": 0.0, "Z": 113.292, "ID": 5, "Active": true },
+      "Three": {
+        "X": 102.583,
+        "Y": 0.0,
+        "Z": 113.091,
+        "ID": 6,
+        "Active": true
+      },
+      "Four": { "X": 108.062, "Y": 0.0, "Z": 113.454, "ID": 7, "Active": true }
+    }
+  ],
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "omega",
+      "url": "https://docs.google.com/presentation/d/1eOViXZYLosAFmuOWAQwAK6KwnfoC3iTQUeM6nQyKL48/edit?usp=sharing"
+    },
+    {
+      "phase": "p2",
+      "label": "omega-m-and-f",
+      "url": "https://docs.google.com/presentation/d/1j-z91BI9i2LDOtp-qQzucqittpsvkecvmG3bXPV_9xs/edit?usp=sharing"
+    },
+    {
+      "phase": "p3",
+      "label": "final-omega",
+      "url": "https://docs.google.com/presentation/d/1ncZ3riDOf056wxkCAFto3aX-4TWOMVO4gFfrQkQNMdY/edit?usp=sharing"
+    },
+    {
+      "phase": "p4",
+      "label": "blue-screen",
+      "url": "https://docs.google.com/presentation/d/1wsYwsYXF9zIj2hXFJ3aTz_WLvIbaieKAApS6ExRdOsk/edit?usp=sharing"
+    },
+    {
+      "phase": "p5",
+      "label": "delta",
+      "url": "https://docs.google.com/presentation/d/1yjCvFiTwW19vQVdMSQ6CPYUFFgaGLCaiF0uxESCyUvo/edit?usp=sharing"
+    },
+    {
+      "phase": "p5",
+      "label": "sigma",
+      "url": "https://docs.google.com/presentation/d/1iLZQxsN1pN0YwGf1u0QtpASi2Q-PSxhJrnMZjw1246I/edit?usp=sharing"
+    },
+    {
+      "phase": "p5",
+      "label": "omega",
+      "url": "https://docs.google.com/presentation/d/1oxxFMaGJEEgQyEgj6ENC0Y23O5Mi10Ap72h2ctPu68A/edit?usp=sharing"
+    },
+    {
+      "phase": "p6",
+      "label": "alpha-omega",
+      "url": "https://docs.google.com/presentation/d/1NjFeRT-6ORKjR8ZZzDdktTOnJwuLNGyuUif1aNvKwU8/edit?usp=sharing"
+    }
+  ],
+  "mitigation": { "label": "mitsheet", "url": "https://bit.ly/topmit2" },
+  "markers": [
+    {
+      "Name": "3rdRing-NE",
+      "MapID": 908,
+      "A": { "X": 100.0, "Y": 0.0, "Z": 86.37, "ID": 0, "Active": true },
+      "B": { "X": 113.63, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+      "C": { "X": 100.0, "Y": 0.0, "Z": 113.63, "ID": 2, "Active": true },
+      "D": { "X": 86.37, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+      "One": { "X": 109.58, "Y": 0.0, "Z": 90.42, "ID": 4, "Active": true },
+      "Two": { "X": 109.58, "Y": 0.0, "Z": 109.58, "ID": 5, "Active": true },
+      "Three": { "X": 90.42, "Y": 0.0, "Z": 109.58, "ID": 6, "Active": true },
+      "Four": { "X": 90.42, "Y": 0.0, "Z": 90.42, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "diffuse-wave-cannon-spread",
+      "MapID": 908,
+      "A": { "X": 100.069, "Y": 0.0, "Z": 111.67, "ID": 0, "Active": true },
+      "B": { "X": 96.142, "Y": 0.0, "Z": 116.39, "ID": 1, "Active": true },
+      "C": { "X": 98.136, "Y": 0.0, "Z": 118.309, "ID": 2, "Active": true },
+      "D": { "X": 94.404, "Y": 0.0, "Z": 113.874, "ID": 3, "Active": true },
+      "One": { "X": 106.477, "Y": 0.0, "Z": 114.007, "ID": 4, "Active": true },
+      "Two": { "X": 104.546, "Y": 0.0, "Z": 116.883, "ID": 5, "Active": true },
+      "Three": {
+        "X": 101.981,
+        "Y": 0.0,
+        "Z": 118.388,
+        "ID": 6,
+        "Active": true
+      },
+      "Four": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 7, "Active": false }
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Omega_Protocol_(Ultimate)#Unlock_and_Requirements",
+  "videos": [
+    { "label": "Tessan Twintails Guide", "url": "https://youtu.be/qNdjZOgCU1I" }
+  ],
+  "sims": [
+    { "label": "xivsim", "url": "https://www.xivsim.com/top/" },
+    {
+      "label": "solosim",
+      "url": "https://palmmy.itch.io/the-omega-protocol-solo-sim"
+    },
+    {
+      "label": "exasquares",
+      "url": "https://foolishfire.itch.io/xiv-exasquares"
+    }
+  ],
+  "additional-resources": [
+    { "label": "pastebin", "url": "https://bit.ly/TOPRemastered" }
+  ]
+}

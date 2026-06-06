@@ -1,0 +1,112 @@
+{
+  "name": "The Unending Coil of Bahamut (Ultimate)",
+  "slug": "ucob",
+  "prepull": ["MT  OT", "H1  H2", "M1  M2", "R1  R2"],
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "twintania",
+      "url": "https://raidplan.io/plan/9WEG4AEGVdru3hyF"
+    },
+    {
+      "phase": "p1",
+      "label": "liquid-hell",
+      "url": "https://raidplan.io/plan/19yavfslOUU0l1Gp"
+    },
+    {
+      "phase": "p2",
+      "label": "nael",
+      "url": "https://raidplan.io/plan/vi2rSC6mwW_d_QJF"
+    },
+    {
+      "phase": "p2",
+      "label": "divebombs",
+      "url": "https://raidplan.io/plan/vi2rSC6mwW_d_QJF"
+    },
+    {
+      "phase": "p3",
+      "label": "QMT",
+      "url": "https://raidplan.io/plan/3zSKK0DXeJgCLadx"
+    },
+    {
+      "phase": "p3",
+      "label": "BFT",
+      "url": "https://raidplan.io/plan/BJPnHRQMEsmOyapB"
+    },
+    {
+      "phase": "p3",
+      "label": "FRT",
+      "url": "https://raidplan.io/plan/-83d6AilbZGqba3j"
+    },
+    {
+      "phase": "p3",
+      "label": "HFT",
+      "url": "https://raidplan.io/plan/NGpZ9S-3kiLsDzAY"
+    },
+    {
+      "phase": "p3",
+      "label": "TST",
+      "url": "https://raidplan.io/plan/2wu2LOy8wKhG29Tr"
+    },
+    {
+      "phase": "p3",
+      "label": "GO",
+      "url": "https://raidplan.io/plan/iunTUxGNwjAGF_7K"
+    },
+    {
+      "phase": "p4",
+      "label": "lahabrea",
+      "url": "https://raidplan.io/plan/AMEhnLbUmlTb7ij3"
+    },
+    {
+      "phase": "p5",
+      "label": "golden-bahamut",
+      "url": "https://raidplan.io/plan/Y4WRFLhdHSQ7oLN_"
+    }
+  ],
+  "mitigation": { "label": "mitsheet", "url": "https://tinyurl.com/ucobmitty" },
+  "markers": [
+    {
+      "Name": "good aether markers",
+      "MapID": 280,
+      "A": { "X": 20.986, "Y": 0.0, "Z": -11.02, "ID": 0, "Active": true },
+      "B": { "X": 9.315, "Y": 0.0, "Z": 21.971, "ID": 1, "Active": true },
+      "C": { "X": -19.999, "Y": 0.0, "Z": 11.772, "ID": 2, "Active": true },
+      "D": { "X": 0.0, "Y": 0.0, "Z": 9.0, "ID": 3, "Active": true },
+      "One": { "X": 0.0, "Y": 0.0, "Z": -8.0, "ID": 4, "Active": true },
+      "Two": { "X": -8.0, "Y": 0.0, "Z": 5.0, "ID": 5, "Active": true },
+      "Three": { "X": 8.0, "Y": 0.0, "Z": 5.0, "ID": 6, "Active": true },
+      "Four": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "aether pf",
+      "MapID": 280,
+      "A": { "X": 20.909, "Y": 0.0, "Z": -11.182, "ID": 0, "Active": true },
+      "B": { "X": 7.807, "Y": 0.0, "Z": 21.795, "ID": 1, "Active": true },
+      "C": { "X": -21.84, "Y": 0.0, "Z": 8.076, "ID": 2, "Active": true },
+      "D": { "X": 5.03, "Y": 0.0, "Z": -2.578, "ID": 3, "Active": true },
+      "One": { "X": 0.122, "Y": 0.0, "Z": -6.96, "ID": 4, "Active": true },
+      "Two": { "X": -7.505, "Y": 0.0, "Z": 5.109, "ID": 5, "Active": true },
+      "Three": { "X": 7.947, "Y": 0.0, "Z": 5.375, "ID": 6, "Active": true },
+      "Four": { "X": 0.21, "Y": 0.0, "Z": 8.838, "ID": 7, "Active": true }
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Unending_Coil_of_Bahamut_(Ultimate)#Unlock_and_Requirements",
+  "videos": [
+    {
+      "label": "Tessan Twintails Guide",
+      "url": "https://www.youtube.com/watch?v=EG9NxD6bxWs"
+    },
+    {
+      "label": "Hector Hectorson Guide",
+      "url": "https://www.youtube.com/playlist?list=PLojSzO6hHRKR4T4PziQzhTIf25XLGQDGw"
+    }
+  ],
+  "sims": [
+    {
+      "label": "heavensfall-solo-sim",
+      "url": "https://drive.google.com/file/d/1eNgGqA4VAPT0f3wwt37n2UHqrOF4kfuI/view"
+    }
+  ],
+  "additional-resources": []
+}

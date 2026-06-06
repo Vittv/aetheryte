@@ -1,0 +1,81 @@
+{
+  "name": "The Weapon's Refrain (Ultimate)",
+  "slug": "uwu",
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "garuda",
+      "url": "https://ff14.toolboxgaming.space/?id=584766219158561&preview=1"
+    },
+    {
+      "phase": "p2",
+      "label": "ifrit",
+      "url": "https://ff14.toolboxgaming.space/?id=110045202472361&preview=1"
+    },
+    {
+      "phase": "p3",
+      "label": "titan",
+      "url": "https://ff14.toolboxgaming.space/?id=210044492472361&preview=1"
+    },
+    {
+      "phase": "intermission",
+      "label": "lahabrea",
+      "url": "https://ff14.toolboxgaming.space/?id=430631425646261&preview=1"
+    },
+    {
+      "phase": "p4",
+      "label": "predation",
+      "url": "https://ff14.toolboxgaming.space/?id=530635345646261&preview=1"
+    },
+    {
+      "phase": "p4",
+      "label": "annihilation",
+      "url": "https://ff14.toolboxgaming.space/?id=930637786646261&preview=1"
+    },
+    {
+      "phase": "p4",
+      "label": "suppression",
+      "url": "https://ff14.toolboxgaming.space/?id=784760520258561&preview=1"
+    }
+  ],
+  "mitigation": {
+    "label": "mitsheet",
+    "url": "https://docs.google.com/spreadsheets/d/1Aebpp_26RpVMYL3vLzahu461BbrwXkMENNRVSoqbxYw/edit?usp=sharing"
+  },
+  "markers": [
+    {
+      "Name": "UWU",
+      "MapID": 539,
+      "A": { "X": 100.0, "Y": 0.0, "Z": 93.3, "ID": 0, "Active": true },
+      "B": { "X": 106.7, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+      "C": { "X": 100.0, "Y": 0.0, "Z": 106.7, "ID": 2, "Active": true },
+      "D": { "X": 93.3, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+      "One": { "X": 107.3, "Y": 0.0, "Z": 107.3, "ID": 4, "Active": true },
+      "Two": { "X": 100.0, "Y": 0.0, "Z": 81.0, "ID": 5, "Active": true },
+      "Three": { "X": 100.0, "Y": 0.0, "Z": 100.0, "ID": 6, "Active": true },
+      "Four": { "X": 87.0, "Y": 0.0, "Z": 87.0, "ID": 7, "Active": true }
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Weapon%27s_Refrain_(Ultimate)#Unlock_and_Requirements",
+  "videos": [
+    {
+      "label": "Tessan Twintails Guide",
+      "url": "https://www.youtube.com/watch?v=PwEVH50b-rg"
+    },
+    {
+      "label": "Zalera Praxis' Predation Guide",
+      "url": "https://youtu.be/Ktn5e0jVtmM"
+    },
+    {
+      "label": "Archon Ghoul's Suppression Guide",
+      "url": "https://www.youtube.com/watch?v=PSrbDnFtIJ0"
+    }
+  ],
+  "sims": [
+    {
+      "label": "pettanko-neko",
+      "url": "https://pettanko-neko.itch.io/just-like-the-simulations"
+    }
+  ],
+  "additional-resources": []
+}
