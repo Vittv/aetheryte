@@ -15,6 +15,10 @@ interface ResetTimes {
   verminionStatus: string;
   verminionLocal: string;
   verminionOpen: boolean;
+  housingCountdown: string;
+  housingStatus: string;
+  housingLocal: string;
+  housingInEntry: boolean;
   dailyLocal: string;
   weeklyLocal: string;
   timezone: string;
@@ -48,13 +52,10 @@ const getResetTimes = (): ResetTimes => {
 
   const fashionReset = new Date(now);
   fashionReset.setUTCHours(8, 0, 0, 0);
-
   if (fashionOpen) {
-    // open: count down to Tuesday close
     const daysUntilTue = currentDay <= 2 ? 2 - currentDay : 9 - currentDay;
     fashionReset.setUTCDate(now.getUTCDate() + daysUntilTue);
   } else {
-    // closed: count down to Friday open
     const daysUntilFri = currentDay < 5 ? 5 - currentDay : 12 - currentDay;
     fashionReset.setUTCDate(now.getUTCDate() + daysUntilFri);
   }
@@ -68,19 +69,16 @@ const getResetTimes = (): ResetTimes => {
     jumboReset.setUTCDate(jumboReset.getUTCDate() + 7);
   }
 
-  // ocean fishing: next even hour, after registration window (15min)
+  // ocean fishing
   const currentHour = now.getUTCHours();
   const currentMin = now.getUTCMinutes();
   const isEvenHour = currentHour % 2 === 0;
   const oceanOpen = isEvenHour && currentMin < 15;
 
   const oceanFishing = new Date(now);
-
   if (oceanOpen) {
-    // countdown to window close: current even hour + 15 min
     oceanFishing.setUTCHours(currentHour, 15, 0, 0);
   } else {
-    // countdown to next even hour
     const nextEvenHour = isEvenHour
       ? currentHour + 2
       : currentHour + (2 - (currentHour % 2));
@@ -94,19 +92,34 @@ const getResetTimes = (): ResetTimes => {
   const VERMINION_CYCLE = 8 * 24 * 60 * 60 * 1000;
   const VERMINION_DURATION = 3 * 24 * 60 * 60 * 1000;
 
-  const msIntoCurrentCycle =
+  const msIntoVerminionCycle =
     (now.getTime() - VERMINION_EPOCH) % VERMINION_CYCLE;
-  const verminionOpen = msIntoCurrentCycle < VERMINION_DURATION;
+  const verminionOpen = msIntoVerminionCycle < VERMINION_DURATION;
 
   const verminion = new Date(now);
   if (verminionOpen) {
-    // time until this tournament ends
-    const msUntilEnd = VERMINION_DURATION - msIntoCurrentCycle;
-    verminion.setTime(now.getTime() + msUntilEnd);
+    verminion.setTime(
+      now.getTime() + (VERMINION_DURATION - msIntoVerminionCycle),
+    );
   } else {
-    // time until next tournament starts
-    const msUntilNext = VERMINION_CYCLE - msIntoCurrentCycle;
-    verminion.setTime(now.getTime() + msUntilNext);
+    verminion.setTime(now.getTime() + (VERMINION_CYCLE - msIntoVerminionCycle));
+  }
+
+  // housing lottery: 9-day cycle (5-day entry → 4-day results), epoch 2024-06-29 15:00 UTC
+  const HOUSING_EPOCH = new Date("2024-06-29T15:00:00Z").getTime();
+  const HOUSING_CYCLE = 9 * 24 * 60 * 60 * 1000;
+  const HOUSING_ENTRY = 5 * 24 * 60 * 60 * 1000;
+
+  const msIntoHousingCycle =
+    (((now.getTime() - HOUSING_EPOCH) % HOUSING_CYCLE) + HOUSING_CYCLE) %
+    HOUSING_CYCLE;
+  const housingInEntry = msIntoHousingCycle < HOUSING_ENTRY;
+
+  const housing = new Date(now);
+  if (housingInEntry) {
+    housing.setTime(now.getTime() + (HOUSING_ENTRY - msIntoHousingCycle));
+  } else {
+    housing.setTime(now.getTime() + (HOUSING_CYCLE - msIntoHousingCycle));
   }
 
   // formatting
@@ -137,7 +150,7 @@ const getResetTimes = (): ResetTimes => {
     weeklyLocal: weeklyReset.toLocaleTimeString([], timeOpts),
     fashionCountdown: formatTime(fashionReset.getTime() - now.getTime()),
     fashionStatus: fashionOpen ? "✓" : "◉",
-    fashionOpen: fashionOpen,
+    fashionOpen,
     jumboCountdown: formatTime(jumboReset.getTime() - now.getTime()),
     jumboLocal:
       jumboReset.toLocaleDateString([], { weekday: "short" }) +
@@ -145,11 +158,18 @@ const getResetTimes = (): ResetTimes => {
       jumboReset.toLocaleTimeString([], timeOpts),
     oceanCountdown: formatTime(oceanFishing.getTime() - now.getTime()),
     oceanLocal: oceanFishing.toLocaleTimeString([], timeOpts),
-    oceanOpen: oceanOpen,
+    oceanOpen,
     verminionCountdown: formatTime(verminion.getTime() - now.getTime()),
     verminionStatus: verminionOpen ? "✓" : "◉",
     verminionLocal: verminion.toLocaleTimeString([], dateOpts),
-    verminionOpen: verminionOpen,
+    verminionOpen,
+    housingCountdown: formatTime(housing.getTime() - now.getTime()),
+    housingStatus: housingInEntry ? "✓" : "◉",
+    housingLocal:
+      housing.toLocaleDateString([], { weekday: "short" }) +
+      " " +
+      housing.toLocaleTimeString([], timeOpts),
+    housingInEntry,
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
   };
 };
@@ -221,6 +241,26 @@ const ResetTimers = () => {
               {resets.verminionCountdown}
             </td>
             <td>{resets.verminionOpen ? "Active" : resets.verminionLocal}</td>
+          </tr>
+          <tr>
+            <td>
+              Housing Lottery{" "}
+              <span
+                style={{ color: resets.housingInEntry ? "#7ec87e" : "#e0b85a" }}
+              >
+                {resets.housingStatus}
+              </span>
+            </td>
+            <td
+              style={{ color: resets.housingInEntry ? "#7ec87e" : "#e0b85a" }}
+            >
+              {resets.housingCountdown}
+            </td>
+            <td>
+              {resets.housingInEntry
+                ? `${resets.housingLocal}`
+                : `${resets.housingLocal}`}
+            </td>
           </tr>
           <tr>
             <td>

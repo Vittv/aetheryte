@@ -9,7 +9,7 @@ import type { NewsItem } from "../types";
 const CATEGORIES = ["topics", "updates", "maintenance"] as const;
 type Category = (typeof CATEGORIES)[number];
 
-const HomePage = () => {
+function HomePage() {
   const [news, setNews] = useState<Record<Category, NewsItem[]>>({
     topics: [],
     updates: [],
@@ -47,6 +47,6 @@ const HomePage = () => {
       <ResetTimers />
     </div>
   );
-};
+}
 
 export default HomePage;

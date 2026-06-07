@@ -1,0 +1,80 @@
+.content-main h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.05em;
+  margin: 0 0 1rem;
+}
+
+.content-main h2 {
+  font-size: 1.4rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.content-main h3 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.content-main h2,
+.content-main h3,
+.content-main h4 {
+  position: relative;
+  font-weight: 300;
+}
+
+.content-main h2 a,
+.content-main h3 a,
+.content-main h4 a {
+  text-decoration: none;
+}
+
+.content-main h2:hover,
+.content-main h3:hover,
+.content-main h4:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+  text-decoration: underline;
+}
+
+.content-main h2:hover::before,
+.content-main h3:hover::before {
+  content: "#";
+  position: absolute;
+  left: -1em;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.content-main p {
+  margin: 0 0 1rem;
+  line-height: 1.75;
+}
+
+.content-main img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+  border-radius: 4px;
+}
+
+.content-main blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  opacity: 0.8;
+}
+
+.content-date {
+  font-size: 0.8rem;
+}
+
+.content-main h1,
+.content-main h2,
+.content-main h3,
+.content-main p,
+.content-main img,
+.content-main blockquote,
+.content-main code {
+  text-align: left;
+  margin-left: 2rem;
+}

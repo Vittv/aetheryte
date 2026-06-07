@@ -1,4 +1,4 @@
-const CurrentContent = () => {
+function CurrentContent() {
   return (
     <>
       <h2 className="current-header">Current</h2>
@@ -23,6 +23,6 @@ const CurrentContent = () => {
       </section>
     </>
   );
-};
+}
 
 export default CurrentContent;

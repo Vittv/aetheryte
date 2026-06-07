@@ -4,7 +4,7 @@ interface NewsProps {
   topics: NewsItem[];
 }
 
-const NewsSection = ({ topics }: NewsProps) => {
+function NewsSection({ topics }: NewsProps) {
   return (
     <>
       <h2 className="news-header">News</h2>
@@ -30,6 +30,6 @@ const NewsSection = ({ topics }: NewsProps) => {
       </section>
     </>
   );
-};
+}
 
 export default NewsSection;

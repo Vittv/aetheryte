@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "cr1",
+    "name": "Another Sil'dihn Subterrane",
+    "type": "criterion",
+    "order": 1
+  },
+  {
+    "slug": "cr2",
+    "name": "Another Mount Rokkon",
+    "type": "criterion",
+    "order": 2
+  },
+  {
+    "slug": "cr3",
+    "name": "Another Aloalo Island",
+    "type": "criterion",
+    "order": 3
+  },
+  {
+    "slug": "cr4",
+    "name": "Another Merchant's Tale",
+    "type": "criterion",
+    "order": 4
+  },
+  {
+    "slug": "ageless-necropolis",
+    "name": "Ageless Necropolis (Extreme)",
+    "type": "extreme",
+    "order": 5
+  },
+  {
+    "slug": "everkeep",
+    "name": "Everkeep (Extreme)",
+    "type": "extreme",
+    "order": 2
+  },
+  {
+    "slug": "hell-on-rails",
+    "name": "Hell on Rails (Extreme)",
+    "type": "extreme",
+    "order": 7
+  },
+  {
+    "slug": "recollection",
+    "name": "Recollection (Extreme)",
+    "type": "extreme",
+    "order": 4
+  },
+  {
+    "slug": "sphenes-burden",
+    "name": "Sphene's Burden (Extreme)",
+    "type": "extreme",
+    "order": 3
+  },
+  {
+    "slug": "the-unmaking",
+    "name": "The Unmaking (Extreme)",
+    "type": "extreme",
+    "order": 8
+  },
+  {
+    "slug": "the-windward-wilds",
+    "name": "The Windward Wilds (Extreme)",
+    "type": "extreme",
+    "order": 6
+  },
+  {
+    "slug": "worqor-lar-dor",
+    "name": "Worqor Lar Dor (Extreme)",
+    "type": "extreme",
+    "order": 1
+  },
+  {
+    "slug": "m9s",
+    "name": "Vamp Fatale (Savage)",
+    "type": "savage",
+    "order": 1
+  },
+  {
+    "slug": "m10s",
+    "name": "Red Hot and Deep Blue (Savage)",
+    "type": "savage",
+    "order": 2
+  },
+  {
+    "slug": "m11s",
+    "name": "The Tyrant (Savage)",
+    "type": "savage",
+    "order": 3
+  },
+  {
+    "slug": "m12s",
+    "name": "The Lindwurm (Savage)",
+    "type": "savage",
+    "order": 4
+  },
+  {
+    "slug": "dsr",
+    "name": "Dragonsong's Reprise (Ultimate)",
+    "type": "ultimate",
+    "order": 4
+  },
+  {
+    "slug": "fru",
+    "name": "Futures Rewritten (Ultimate)",
+    "type": "ultimate",
+    "order": 6
+  },
+  {
+    "slug": "tea",
+    "name": "The Epic of Alexander (Ultimate)",
+    "type": "ultimate",
+    "order": 3
+  },
+  {
+    "slug": "top",
+    "name": "The Omega Protocol (Ultimate)",
+    "type": "ultimate",
+    "order": 5
+  },
+  {
+    "slug": "ucob",
+    "name": "The Unending Coil of Bahamut (Ultimate)",
+    "type": "ultimate",
+    "order": 1
+  },
+  {
+    "slug": "uwu",
+    "name": "The Weapon's Refrain (Ultimate)",
+    "type": "ultimate",
+    "order": 2
+  }
+]

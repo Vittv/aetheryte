@@ -5,7 +5,7 @@ interface NewsColumnsProps {
   maintenance: NewsItem[];
 }
 
-const NewsColumns = ({ updates, maintenance }: NewsColumnsProps) => {
+function NewsColumns({ updates, maintenance }: NewsColumnsProps) {
   return (
     <div className="updates-and-maintenance">
       <section className="news-column">
@@ -43,6 +43,6 @@ const NewsColumns = ({ updates, maintenance }: NewsColumnsProps) => {
       </section>
     </div>
   );
-};
+}
 
 export default NewsColumns;

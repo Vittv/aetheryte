@@ -2,7 +2,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./css/Footer.css";
 
-const Footer = () => {
+function Footer() {
   return (
     <div className="footer">
       <div className="footer-inner">
@@ -31,6 +31,6 @@ const Footer = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Footer;
