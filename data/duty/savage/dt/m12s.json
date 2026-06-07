@@ -1,6 +1,7 @@
 {
   "name": "M12S - The Lindwurm (Savage)",
   "slug": "m12s",
+  "current": true,
   "planners": [
     {
       "phase": "p1",

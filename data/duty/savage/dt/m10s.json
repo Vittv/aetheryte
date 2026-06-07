@@ -1,6 +1,7 @@
 {
   "name": "M10S - Red Hot & Deep Blue (Savage)",
   "slug": "m10s",
+  "current": true,
   "planners": [
     {
       "label": "toxic-friends-raidplan",

@@ -1,6 +1,7 @@
 {
   "name": "M11S - The Tyrant (Savage)",
   "slug": "m11s",
+  "current": true,
   "planners": [
     {
       "label": "toxic-friends-raidplan",

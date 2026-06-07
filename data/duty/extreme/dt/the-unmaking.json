@@ -1,0 +1,44 @@
+{
+  "name": "The Unmaking (Extreme)",
+  "slug": "dtex8",
+  "current": true,
+  "party-finder-summary": ["Hector | CW → CW", "Hector | CW → CCW"],
+  "planners": [
+    {
+      "label": "modified-enuo",
+      "url": "https://raidplan.io/plan/kgH6GJydOCbUs1L_#20"
+    }
+  ],
+  "markers": [
+    {
+      "Name": "Enuo EX",
+      "MapID": 1116,
+      "A": { "X": 100.0, "Y": 0.0, "Z": 87.0, "ID": 0, "Active": true },
+      "B": { "X": 113.0, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+      "C": { "X": 100.0, "Y": 0.0, "Z": 113.0, "ID": 2, "Active": true },
+      "D": { "X": 87.0, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+      "One": { "X": 90.808, "Y": 0.0, "Z": 90.808, "ID": 4, "Active": true },
+      "Two": { "X": 109.192, "Y": 0.0, "Z": 90.808, "ID": 5, "Active": true },
+      "Three": {
+        "X": 109.192,
+        "Y": 0.0,
+        "Z": 109.192,
+        "ID": 6,
+        "Active": true
+      },
+      "Four": { "X": 90.808, "Y": 0.0, "Z": 109.192, "ID": 7, "Active": true }
+    }
+  ],
+  "videos": [
+    {
+      "label": "Hector Hectorson Guide",
+      "url": "https://www.youtube.com/watch?v=cA_WHJyXzyE"
+    }
+  ],
+  "strategy-boards": [
+    { "label": "hector", "url": "https://board.wtfdig.info/b/3d1N5i44F7_LR" },
+    [
+      "[stgy:ap+y6ribeC371FpPrPoS7KtX4EMz5T30C1s0J9gX3UX6xWUTeR9ZM+zFOXF6-cg8yUgZR5ZTbG2SJ7r79vjMAMH6HcAftRYnqLnwUdcwLeGDFtzDbVbzM0ZtIIruHc8skXUykYgi6RMc9ujvQhIdyONMrPyVnFc82mWxBnOOnlkbzEAd-dlAbebYW7VRhicidlRJ60GpGNEQc8MZqz3ZbP3dGleIeHeUagQa1X7cEUp0rbePXmaS4JFh0pQP7pF5a2-bym+ujsOwiCYHlmR8w7W+kd7pQYnm37Xp+rx3XT1fReCmi56IlngH9hu84ZPzNlTAXBboZmQcidQeTpAg-EqqolA+ACfT]"
+    ]
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Ageless Necropolis (Extreme)",
+  "slug": "dtex5",
+  "current": true,
+  "party-finder-summary": "Hector/Sauce | Uptime MM2",
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "phase-1",
+      "url": "https://raidplan.io/plan/zqey3pp7kfp5ghc4"
+    },
+    {
+      "phase": "p2",
+      "label": "phase-2",
+      "url": "https://raidplan.io/plan/X091FI0fV1SLbOw1"
+    },
+    {
+      "phase": "p2",
+      "label": "uptime-mm2",
+      "url": "https://raidplan.io/plan/cywug7ph7ajb6qa8"
+    }
+  ],
+  "markers": [
+    {
+      "Name": "Inside Spots w/Cards",
+      "MapID": 1062,
+      "A": { "X": 100.223, "Y": 0.0, "Z": 91.205, "ID": 0, "Active": true },
+      "B": { "X": 109.339, "Y": 0.0, "Z": 100.354, "ID": 1, "Active": true },
+      "C": { "X": 100.361, "Y": 0.0, "Z": 108.846, "ID": 2, "Active": true },
+      "D": { "X": 90.658, "Y": 0.0, "Z": 100.427, "ID": 3, "Active": true },
+      "One": { "X": 95.25, "Y": 0.0, "Z": 85.873, "ID": 4, "Active": true },
+      "Two": { "X": 104.708, "Y": 0.0, "Z": 85.888, "ID": 5, "Active": true },
+      "Three": { "X": 98.017, "Y": 0.0, "Z": 91.251, "ID": 6, "Active": true },
+      "Four": { "X": 102.357, "Y": 0.0, "Z": 91.319, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "Pair/LPs",
+      "MapID": 1062,
+      "A": { "X": 87.708, "Y": 0.0, "Z": 96.159, "ID": 0, "Active": true },
+      "B": { "X": 112.328, "Y": 0.0, "Z": 95.946, "ID": 1, "Active": true },
+      "C": { "X": 92.646, "Y": 0.0, "Z": 98.082, "ID": 2, "Active": true },
+      "D": { "X": 107.323, "Y": 0.0, "Z": 98.002, "ID": 3, "Active": true },
+      "One": { "X": 95.25, "Y": 0.0, "Z": 85.873, "ID": 4, "Active": true },
+      "Two": { "X": 104.708, "Y": 0.0, "Z": 85.888, "ID": 5, "Active": true },
+      "Three": { "X": 98.017, "Y": 0.0, "Z": 91.251, "ID": 6, "Active": true },
+      "Four": { "X": 102.357, "Y": 0.0, "Z": 91.319, "ID": 7, "Active": true }
+    }
+  ],
+  "videos": [
+    {
+      "label": "Hector Hectorson Guide",
+      "url": "https://www.youtube.com/watch?v=2RsWkk8bxyk"
+    }
+  ],
+  "strategy-boards": [
+    { "label": "hector", "url": "https://board.wtfdig.info/b/3d1N5i44F7_LR" },
+    [
+      "[stgy:ap+y6ribeC371FpPrPoS7KtX4EMz5T30C1s0J9gX3UX6xWUTeR9ZM+zFOXF6-cg8yUgZR5ZTbG2SJ7r79vjMAMH6HcAftRYnqLnwUdcwLeGDFtzDbVbzM0ZtIIruHc8skXUykYgi6RMc9ujvQhIdyONMrPyVnFc82mWxBnOOnlkbzEAd-dlAbebYW7VRhicidlRJ60GpGNEQc8MZqz3ZbP3dGleIeHeUagQa1X7cEUp0rbePXmaS4JFh0pQP7pF5a2-bym+ujsOwiCYHlmR8w7W+kd7pQYnm37Xp+rx3XT1fReCmi56IlngH9hu84ZPzNlTAXBboZmQcidQeTpAg-EqqolA+ACfT]"
+    ]
+  ]
+}

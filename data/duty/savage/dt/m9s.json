@@ -1,6 +1,7 @@
 {
   "name": "M9S - Vamp Fatale (Savage)",
   "slug": "m9s",
+  "current": true,
   "planners": [
     {
       "label": "toxic-friends-raidplan",
