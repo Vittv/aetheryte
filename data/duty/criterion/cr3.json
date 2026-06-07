@@ -1,0 +1,87 @@
+{
+  "name": "Another Aloalo Island",
+  "slug": "cr3",
+  "prepull": [["TR N | HM S"]],
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "spring-crystals",
+      "url": "https://imgur.com/5ZfWlKk"
+    },
+    {
+      "phase": "p1",
+      "label": "blowing-bubbles",
+      "url": "https://raidplan.io/plan/Qd9wT5qbc3-l1QWc"
+    },
+    {
+      "phase": "p1",
+      "label": "blowing-bubbles2",
+      "url": "https://raidplan.io/plan/_7XudyTxVQWtT6wo"
+    },
+    {
+      "phase": "p1",
+      "label": "adds",
+      "url": "https://raidplan.io/plan/yRi1TnnhaV5Q9jsa"
+    },
+    {
+      "phase": "p2",
+      "label": "all-strats",
+      "url": "https://imgur.com/7PpcJvI"
+    },
+    {
+      "phase": "p2",
+      "label": "surge-uptime-melee-positioning",
+      "url": "https://imgur.com/a8EJ5if"
+    },
+    {
+      "phase": "p2",
+      "label": "individual-strat-pics1",
+      "url": "https://imgur.com/geDg6xe"
+    },
+    {
+      "phase": "p2",
+      "label": "individual-strat-pics2",
+      "url": "https://imgur.com/7kpIy8w"
+    },
+    {
+      "phase": "p2",
+      "label": "individual-strat-pics3",
+      "url": "https://imgur.com/GH3qmPN"
+    },
+    {
+      "phase": "p3",
+      "label": "dartboard-1",
+      "url": "https://imgur.com/hvGBUDU"
+    },
+
+    {
+      "phase": "p3",
+      "label": "present-box-1",
+      "url": "https://raidplan.io/plan/vXz0KvGFvnFGvYpT"
+    },
+    {
+      "phase": "p3",
+      "label": "dartboard-2",
+      "url": "https://raidplan.io/plan/gx09wvHZiBmCy616"
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Variant_and_Criterion_Dungeons#Unlock_2",
+  "videos": [
+    {
+      "label": "Boss 1 - Big Kobe Guide",
+      "url": "https://www.youtube.com/watch?v=D8MmjW1vyMU&pp=ygUbYW5vdGhlciBhbG9hbG8gaXNsYW5kIGd1aWRl"
+    },
+    {
+      "label": "Boss 2 - Big Kobe Guide",
+      "url": "https://www.youtube.com/watch?v=sRD05tVof98&pp=ygUbYW5vdGhlciBhbG9hbG8gaXNsYW5kIGd1aWRl"
+    },
+    {
+      "label": "Boss 3 - Big Kobe Guide",
+      "url": "https://www.youtube.com/watch?v=udfdLSYi7W8&pp=ygUbYW5vdGhlciBhbG9hbG8gaXNsYW5kIGd1aWRl"
+    },
+    {
+      "label": "yukizuri Guide",
+      "url": "https://www.youtube.com/watch?v=sAWiRntar7s&pp=ygUbYW5vdGhlciBhbG9hbG8gaXNsYW5kIGd1aWRl"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "name": "Another Merchant's Tale",
+  "slug": "cr4",
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "consolidated-plan",
+      "url": "https://raidplan.io/plan/zeg5k47uu8bxk486"
+    },
+    {
+      "phase": "p1",
+      "label": "familiar-call",
+      "url": "https://raidplan.io/plan/jrgsq822vvs73vc2"
+    },
+    {
+      "phase": "p1",
+      "label": "alluring-order-1",
+      "url": "https://raidplan.io/plan/7ff4pkvw8veky22a"
+    },
+    {
+      "phase": "p1",
+      "label": "ceaseless-current",
+      "url": "https://raidplan.io/plan/jjx93ew6uzge2hw6"
+    },
+    {
+      "phase": "p1",
+      "label": "alluring-order-2",
+      "url": "https://raidplan.io/plan/e2hcrtxrkwv643vc"
+    },
+    {
+      "phase": "p1",
+      "label": "aqua-spear",
+      "url": "https://raidplan.io/plan/78fdjt4xztkv68be"
+    },
+    {
+      "phase": "p2",
+      "label": "consolidated-plan",
+      "url": "https://raidplan.io/plan/XNg5_Yh8Ghs_qU6l"
+    },
+    {
+      "phase": "p2",
+      "label": "near-far-heaven",
+      "url": "https://raidplan.io/plan/g3ttwjdy49eh6r95"
+    },
+    {
+      "phase": "p2",
+      "label": "malefic-quartering-1",
+      "url": "https://raidplan.io/plan/dx2s9sf6qdj97pa4"
+    },
+    {
+      "phase": "p2",
+      "label": "silent-eight",
+      "url": "https://raidplan.io/plan/FNizRMHpgSHJfN3B"
+    },
+
+    {
+      "phase": "p2",
+      "label": "malefic-quartering-2",
+      "url": "https://raidplan.io/plan/35y6kk6ye6dqs97r"
+    },
+    {
+      "phase": "p2",
+      "label": "malefic-quartering-3",
+      "url": "https://raidplan.io/plan/23z7hfa5pkezdqq5"
+    },
+    {
+      "phase": "p2",
+      "label": "malefic-quartering-4",
+      "url": "https://raidplan.io/plan/TlMn--870HQTo2hR"
+    },
+    {
+      "phase": "p3",
+      "label": "consolidated-plan",
+      "url": "https://raidplan.io/plan/L7Qz194nJcJygtGV/"
+    },
+    {
+      "phase": "p3",
+      "label": "dashes-plus-clones",
+      "url": "https://raidplan.io/plan/lAz90NWAte78o7Av"
+    },
+    {
+      "phase": "p3",
+      "label": "fireflight",
+      "url": "https://raidplan.io/plan/hZ6LTV3ZPxW7zaBC"
+    },
+    {
+      "phase": "p3",
+      "label": "paris-curse",
+      "url": "https://raidplan.io/plan/hsqa98eee554u9zq"
+    },
+    {
+      "phase": "p3",
+      "label": "corner-puddles",
+      "url": "https://raidplan.io/plan/Ndljag9Q6yIl5sQM"
+    },
+    {
+      "phase": "p3",
+      "label": "braindead",
+      "url": "https://raidplan.io/plan/LAJ41XuXdZXDd3nR"
+    },
+    {
+      "phase": "p3",
+      "label": "doubling",
+      "url": "https://raidplan.io/plan/2QkldpZwMfyIF_HP"
+    }
+  ],
+  "markers": [
+    {
+      "Name": "Darya",
+      "MapID": 1079,
+      "A": { "X": 375.0, "Y": -29.5, "Z": 514.0, "ID": 0, "Active": true },
+      "B": { "X": 391.0, "Y": -29.5, "Z": 530.0, "ID": 1, "Active": true },
+      "C": { "X": 375.0, "Y": -29.5, "Z": 546.0, "ID": 2, "Active": true },
+      "D": { "X": 359.0, "Y": -29.5, "Z": 530.0, "ID": 3, "Active": true },
+      "One": { "X": 359.0, "Y": -29.5, "Z": 514.0, "ID": 4, "Active": true },
+      "Two": { "X": 391.0, "Y": -29.5, "Z": 514.0, "ID": 5, "Active": true },
+      "Three": { "X": 391.0, "Y": -29.5, "Z": 546.0, "ID": 6, "Active": true },
+      "Four": { "X": 359.0, "Y": -29.5, "Z": 546.0, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "Swordmaster",
+      "MapID": 1079,
+      "A": { "X": 170.0, "Y": -16.0, "Z": -822.0, "ID": 0, "Active": true },
+      "B": {
+        "X": 121.185,
+        "Y": -29.499,
+        "Z": -689.252,
+        "ID": 1,
+        "Active": true
+      },
+      "C": { "X": 170.0, "Y": -16.0, "Z": -811.0, "ID": 2, "Active": true },
+      "D": { "X": 170.0, "Y": -16.0, "Z": -815.0, "ID": 3, "Active": true },
+      "One": { "X": 163.0, "Y": -16.0, "Z": -830.0, "ID": 4, "Active": true },
+      "Two": { "X": 177.0, "Y": -16.0, "Z": -830.0, "ID": 5, "Active": true },
+      "Three": { "X": 177.0, "Y": -16.0, "Z": -798.0, "ID": 6, "Active": true },
+      "Four": { "X": 163.0, "Y": -16.0, "Z": -798.0, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "corner uptime",
+      "MapID": 1079,
+      "A": { "X": -760.0, "Y": -54.0, "Z": -815.0, "ID": 0, "Active": true },
+      "B": { "X": -750.0, "Y": -54.0, "Z": -805.0, "ID": 1, "Active": true },
+      "C": { "X": -760.0, "Y": -54.0, "Z": -795.0, "ID": 2, "Active": true },
+      "D": { "X": -770.0, "Y": -54.0, "Z": -805.0, "ID": 3, "Active": true },
+      "One": { "X": -769.0, "Y": -54.0, "Z": -824.0, "ID": 4, "Active": true },
+      "Two": { "X": -751.0, "Y": -54.0, "Z": -824.0, "ID": 5, "Active": true },
+      "Three": {
+        "X": -751.0,
+        "Y": -54.0,
+        "Z": -786.0,
+        "ID": 6,
+        "Active": true
+      },
+      "Four": { "X": -769.0, "Y": -54.0, "Z": -786.0, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "BD spurning",
+      "MapID": 1079,
+      "A": { "X": -760.0, "Y": -54.0, "Z": -820.0, "ID": 0, "Active": true },
+      "B": { "X": -745.0, "Y": -54.0, "Z": -805.0, "ID": 1, "Active": true },
+      "C": { "X": -760.0, "Y": -54.0, "Z": -790.0, "ID": 2, "Active": true },
+      "D": { "X": -775.0, "Y": -54.0, "Z": -805.0, "ID": 3, "Active": true },
+      "One": { "X": -745.0, "Y": -54.0, "Z": -820.0, "ID": 4, "Active": true },
+      "Two": { "X": -745.0, "Y": -54.0, "Z": -790.0, "ID": 5, "Active": true },
+      "Three": {
+        "X": -775.0,
+        "Y": -54.0,
+        "Z": -790.0,
+        "ID": 6,
+        "Active": true
+      },
+      "Four": { "X": -775.0, "Y": -54.0, "Z": -820.0, "ID": 7, "Active": true }
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Variant_and_Criterion_Dungeons#Unlock_2",
+  "videos": [
+    {
+      "label": "Kyou K day 1 guide",
+      "url": "https://www.youtube.com/watch?v=OYSoRii1rnQ&pp=ygUjYW5vdGhlciBtZXJjaGFudCdzIHRhbGUgZ3VpZGUgZmZ4aXY%3D"
+    }
+  ]
+}
