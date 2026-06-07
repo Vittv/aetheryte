@@ -1,0 +1,87 @@
+{
+  "name": "M12S - The Lindwurm (Savage)",
+  "slug": "m12s",
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "toxic-friends-not-mortal-slayer",
+      "url": "https://raidplan.io/plan/m1AMDbG_jxkgkPRc"
+    },
+    {
+      "phase": "p1",
+      "label": "roles-mortal-slayer",
+      "url": "https://raidplan.io/plan/KbxeCHoPkzWbt_HB"
+    },
+    {
+      "phase": "p1",
+      "label": "toxic-friends-mortal-slayer",
+      "url": "https://raidplan.io/plan/44JJjqZ6Mcgaxnnn"
+    },
+    {
+      "phase": "p2",
+      "label": "replication1",
+      "url": "https://raidplan.io/plan/9ncP6UIDURcWuRuO"
+    },
+    {
+      "phase": "p2",
+      "label": "replication2",
+      "url": "https://raidplan.io/plan/SFa6J6wDrU9PlCJ4"
+    },
+    {
+      "phase": "p2",
+      "label": "superchain-theory",
+      "url": "https://raidplan.io/plan/OnhUS061LkI3xlmg"
+    },
+    {
+      "phase": "p2",
+      "label": "idyllic-dream",
+      "url": "https://raidplan.io/plan/zoeminUT6l2gaOWp"
+    }
+  ],
+  "party-finder-summary": [
+    "(Toxic Friends | Roles Mortal Slayer)",
+    "(Modified Bin (3VJ0) | DN Replication | DN Idyllic | 3-1 Orb Soaks)"
+  ],
+  "markers": [
+    {
+      "Name": "Toxic Friends P1",
+      "MapID": 1075,
+      "A": { "X": 99.984, "Y": 0.0, "Z": 87.591, "ID": 0, "Active": true },
+      "B": { "X": 112.405, "Y": 0.0, "Z": 99.914, "ID": 1, "Active": true },
+      "C": { "X": 100.012, "Y": 0.0, "Z": 112.338, "ID": 2, "Active": true },
+      "D": { "X": 87.749, "Y": 0.0, "Z": 100.017, "ID": 3, "Active": true },
+      "One": { "X": 84.099, "Y": 0.0, "Z": 87.589, "ID": 4, "Active": true },
+      "Two": { "X": 115.843, "Y": 0.0, "Z": 87.544, "ID": 5, "Active": true },
+      "Three": { "X": 115.92, "Y": 0.0, "Z": 112.349, "ID": 6, "Active": true },
+      "Four": { "X": 84.079, "Y": 0.0, "Z": 112.366, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "M12 P2",
+      "MapID": 1075,
+      "A": { "X": 99.862, "Y": 0.0, "Z": 86.409, "ID": 0, "Active": true },
+      "B": { "X": 113.711, "Y": 0.0, "Z": 99.985, "ID": 1, "Active": true },
+      "C": { "X": 100.044, "Y": 0.0, "Z": 113.551, "ID": 2, "Active": true },
+      "D": { "X": 86.371, "Y": 0.0, "Z": 100.034, "ID": 3, "Active": true },
+      "One": { "X": 100.096, "Y": 0.0, "Z": 91.373, "ID": 4, "Active": true },
+      "Two": { "X": 108.282, "Y": 0.0, "Z": 100.024, "ID": 5, "Active": true },
+      "Three": {
+        "X": 100.003,
+        "Y": 0.0,
+        "Z": 108.251,
+        "ID": 6,
+        "Active": true
+      },
+      "Four": { "X": 91.779, "Y": 0.0, "Z": 100.053, "ID": 7, "Active": true }
+    }
+  ],
+  "videos": [
+    {
+      "label": "Hector Hectorson Guide P1",
+      "url": "https://www.youtube.com/watch?v=VTzndDkiXEk"
+    },
+    {
+      "label": "Hector Hectorson Guide P2",
+      "url": "https://www.youtube.com/watch?v=Ey--4oQS6KI"
+    }
+  ]
+}

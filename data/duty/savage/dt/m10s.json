@@ -1,0 +1,37 @@
+{
+  "name": "M10S - Red Hot & Deep Blue (Savage)",
+  "slug": "m10s",
+  "planners": [
+    {
+      "label": "toxic-friends-raidplan",
+      "url": "https://raidplan.io/plan/c2L5iJfuYIWXk1v7"
+    }
+  ],
+  "party-finder-summary": "Hector | (Toxic/Nomnom/ Parallel)",
+  "markers": [
+    {
+      "Name": "Toxic Friends",
+      "MapID": 1071,
+      "A": { "X": 100.021, "Y": 0.0, "Z": 85.803, "ID": 0, "Active": true },
+      "B": { "X": 114.839, "Y": 0.0, "Z": 99.922, "ID": 1, "Active": true },
+      "C": { "X": 99.996, "Y": 0.0, "Z": 114.401, "ID": 2, "Active": true },
+      "D": { "X": 85.014, "Y": 0.0, "Z": 99.9, "ID": 3, "Active": true },
+      "One": { "X": 88.168, "Y": 0.0, "Z": 88.265, "ID": 4, "Active": true },
+      "Two": { "X": 111.858, "Y": 0.0, "Z": 88.089, "ID": 5, "Active": true },
+      "Three": {
+        "X": 111.945,
+        "Y": 0.0,
+        "Z": 112.022,
+        "ID": 6,
+        "Active": true
+      },
+      "Four": { "X": 88.242, "Y": 0.0, "Z": 111.614, "ID": 7, "Active": true }
+    }
+  ],
+  "videos": [
+    {
+      "label": "Hector Hectorson Guide",
+      "url": "https://www.youtube.com/watch?v=17J1p4f2rIw"
+    }
+  ]
+}
