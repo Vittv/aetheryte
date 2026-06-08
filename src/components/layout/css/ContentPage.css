@@ -28,16 +28,17 @@
   text-decoration: none;
 }
 
-.content-main h2:hover,
-.content-main h3:hover,
-.content-main h4:hover {
+.content-main h2 a:hover,
+.content-main h3 a:hover,
+.content-main h4 a:hover {
   cursor: pointer;
   filter: brightness(1.2);
   text-decoration: underline;
 }
 
-.content-main h2:hover::before,
-.content-main h3:hover::before {
+.content-main h2 a:hover::before,
+.content-main h3 a:hover::before,
+.content-main h4 a:hover::before {
   content: "#";
   position: absolute;
   left: -1em;
@@ -50,11 +51,16 @@
   line-height: 1.75;
 }
 
+.content-main a {
+  display: inline;
+}
+
 .content-main img {
   max-width: 100%;
   display: block;
   height: auto;
-  border-radius: 4px;
+  margin: 0 2rem;
+  border-radius: 8px;
 }
 
 .content-main blockquote {

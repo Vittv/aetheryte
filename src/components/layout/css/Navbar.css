@@ -4,7 +4,7 @@
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 101;
   background: var(--bg);
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.2rem;
 }
 
 .right-links {
@@ -26,13 +26,145 @@
 .home {
   color: inherit;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
-a {
-  color: inherit;
+/* cmdk */
+.cmd-trigger {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+  gap: 0.4rem;
+  padding: 0.4rem;
 }
 
-a:hover {
-  color: var(--text-h);
+.cmd-trigger span {
+  font-size: 0.7rem;
+}
+
+.cmd-trigger:hover {
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+.cmd-trigger kbd {
+  font-family: monospace;
+  font-size: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding: 0.2rem;
+}
+
+@keyframes tray-slide-down {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 600px;
+    opacity: 1;
+  }
+}
+
+.cmd-tray {
+  position: absolute;
+  width: var(--content-width);
+  margin: 0 auto;
+  top: 100%;
+  z-index: 100;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg);
+  animation: tray-slide-down 0.2s ease-out;
+}
+
+.cmd-tray {
+  position: absolute;
+  width: var(--content-width);
+  margin: 0 auto;
+  top: 100%;
+  z-index: 100;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  animation: tray-slide-down 0.15s ease-out;
+}
+
+[cmdk-root] {
+  background: var(--bg-surface);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+[cmdk-input] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+  outline: none;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+[cmdk-list] {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+}
+
+[cmdk-group-heading] {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0.5rem 0 0.25rem;
+  text-align: left;
+}
+
+[cmdk-item] {
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[cmdk-item][aria-selected="true"] {
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+
+[cmdk-item][aria-selected="true"]::before {
+  content: "▸";
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+[cmdk-item]:not([aria-selected="true"])::before {
+  content: "▸";
+  font-size: 0.75rem;
+  visibility: hidden;
+}
+
+[cmdk-empty] {
+  padding: 1rem;
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }

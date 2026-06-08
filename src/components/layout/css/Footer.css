@@ -6,7 +6,7 @@
 .footer-inner {
   display: flex;
   justify-content: space-between;
-  width: 1126px;
+  width: var(--content-width);
   margin: 0 auto;
   text-align: left;
   font-size: 12px;
@@ -19,4 +19,10 @@
 
 .footer-right {
   margin-right: 1rem;
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --content-width: 100%;
+  }
 }

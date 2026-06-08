@@ -3,6 +3,7 @@ import { useOutletContext, useParams } from "react-router-dom";
 import HeadingScraper from "../utils/HeadingScraper";
 import "./css/ContentPage.css";
 import duties from "../../../data/duties.json";
+import { mdxComponents } from "../MDXComponents.tsx";
 
 interface OutletContext {
   setToc: (entries: { id: string; text: string; level: number }[]) => void;
@@ -41,7 +42,7 @@ export default function ContentPage({ source }: Props) {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <MDXContent fightData={entry} />
+      <MDXContent fightData={entry} components={mdxComponents} />
       <HeadingScraper onMount={scrape} />
     </Suspense>
   );

@@ -1,5 +1,7 @@
 .home-page {
-  width: 1126px;
+  display: flex;
+  flex-direction: column;
+  width: var(--content-width);
   margin: 0 auto;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
@@ -11,71 +13,33 @@
   margin-top: 1rem;
 }
 
-/* current */
-.current-header {
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.current-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  padding: 0 1rem 1rem 1rem;
-}
-
-.current-ultimate,
-.current-savage,
-.current-extreme {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.hero-search {
+  margin: 2rem 1rem 1rem;
   padding: 1rem;
+  background-color: transparent;
   border: 1px solid var(--border);
-  border-radius: 6px;
-}
-
-.current-ultimate h3,
-.current-savage h3,
-.current-extreme h3 {
-  font-size: 0.75rem;
-  font-family: var(--mono);
+  border-radius: 8px;
+  font-size: 0.9rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
+  color: var(--text-muted);
 }
 
-.current-ultimate h3 {
-  color: #e05a5a;
-}
-.current-savage h3 {
-  color: #5a9ee0;
-}
-.current-extreme h3 {
-  color: #e0b85a;
+.hero-mag-glass {
+  font-size: 0.7rem;
+  margin-right: 0.4rem;
 }
 
-.current-ultimate p,
-.current-savage p,
-.current-extreme p {
-  font-size: 1rem;
-  color: #e0e0ff;
-  margin: 0;
-}
-
-.current-ultimate button,
-.current-savage button,
-.current-extreme button {
-  margin-top: auto;
-  background: none;
-  border: none;
-  padding: 0;
+.hero-search:hover {
   cursor: pointer;
+}
+
+.hero-search kbd {
+  font-weight: 500;
   font-size: 0.8rem;
-  font-family: var(--mono);
-  text-align: left;
+  border: 1px solid var(--border);
+  padding: 0.4rem;
+  border-radius: 8px;
+  margin-left: 0.4rem;
 }
 
 /* news */
@@ -176,6 +140,7 @@
   border-bottom: none;
 }
 
+/* reset timers */
 .reset-timers {
   padding: 1rem;
   overflow: hidden;
@@ -187,6 +152,7 @@
   border-spacing: 0;
   font-family: var(--mono);
   font-size: 0.8rem;
+  font-weight: 500;
   border: 1px solid var(--border);
   border-radius: 6px;
 }

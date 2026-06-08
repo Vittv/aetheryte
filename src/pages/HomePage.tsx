@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useSearch } from "../context/SearchContext";
 import "./css/HomePage.css";
-import CurrentContent from "../components/home/CurrentContent";
 import NewsColumns from "../components/home/NewsColumns";
 import NewsSection from "../components/home/NewsSection";
 import ResetTimers from "../components/home/ResetTimers";
 import type { NewsItem } from "../types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const CATEGORIES = ["topics", "updates", "maintenance"] as const;
 type Category = (typeof CATEGORIES)[number];
@@ -15,6 +17,9 @@ function HomePage() {
     updates: [],
     maintenance: [],
   });
+
+  const isMac = navigator.platform.toUpperCase().includes("MAC");
+  const { setOpen } = useSearch();
 
   useEffect(() => {
     const fetchAllNews = async () => {
@@ -41,7 +46,15 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <CurrentContent />
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="hero-search"
+      >
+        <FontAwesomeIcon className="hero-mag-glass" icon={faMagnifyingGlass} />
+        <span>Search duty guides, resources... </span>
+        <kbd>{isMac ? "⌘ K" : "Ctrl K"}</kbd>
+      </button>
       <NewsSection topics={news.topics} />
       <NewsColumns updates={news.updates} maintenance={news.maintenance} />
       <ResetTimers />
