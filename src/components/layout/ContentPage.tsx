@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import HeadingScraper from "../utils/HeadingScraper";
-import "./css/ContentPage.css";
+import "./ContentPage.css";
 import duties from "../../../data/duties.json";
 import { mdxComponents } from "../MDXComponents.tsx";
 

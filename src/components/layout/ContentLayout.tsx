@@ -1,9 +1,7 @@
-// layouts/ContentLayout.tsx
-
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import TableOfContents from "./TableOfContents";
-import "./css/ContentLayout.css";
+import "./ContentLayout.css";
 
 interface TocEntry {
   id: string;

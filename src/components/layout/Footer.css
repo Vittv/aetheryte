@@ -11,18 +11,11 @@
   text-align: left;
   font-size: 12px;
   padding: 1rem 0;
+  gap: 0.4rem;
 }
 
-.footer-left {
-  margin-left: 1rem;
-}
-
-.footer-right {
-  margin-right: 1rem;
-}
-
-@media (max-width: 1000px) {
-  :root {
-    --content-width: 100%;
+@media (max-width: 760px) {
+  .footer-inner {
+    flex-direction: column;
   }
 }

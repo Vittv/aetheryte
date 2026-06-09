@@ -1,0 +1,44 @@
+/* reset timers */
+.reset-timers {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.reset-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--code-bg);
+}
+
+.reset-timers h2 {
+  margin: 1rem 0;
+}
+
+.reset-table th {
+  text-align: left;
+  font-weight: 400;
+  color: #666;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.reset-table td {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg);
+}
+
+.reset-table tr:last-child td {
+  border-bottom: none;
+}

@@ -186,7 +186,6 @@ const ResetTimers = () => {
 
   return (
     <div className="reset-timers">
-      <h2>Resets</h2>
       <table className="reset-table">
         <thead>
           <tr>
@@ -215,12 +214,22 @@ const ResetTimers = () => {
             <td>
               Fashion Report{" "}
               <span
-                style={{ color: resets.fashionOpen ? "#7ec87e" : "#e0b85a" }}
+                style={{
+                  color: resets.fashionOpen
+                    ? "var(--color-status-active)"
+                    : "var(--color-status-inactive)",
+                }}
               >
                 {resets.fashionStatus}
               </span>
             </td>
-            <td style={{ color: resets.fashionOpen ? "#7ec87e" : "#e0b85a" }}>
+            <td
+              style={{
+                color: resets.fashionOpen
+                  ? "var(--color-status-active)"
+                  : "var(--color-status-inactive)",
+              }}
+            >
               {resets.fashionCountdown}
             </td>
             <td>
@@ -232,12 +241,22 @@ const ResetTimers = () => {
             <td>
               Verminion Tournament{" "}
               <span
-                style={{ color: resets.verminionOpen ? "#7ec87e" : "#e0b85a" }}
+                style={{
+                  color: resets.verminionOpen
+                    ? "var(--color-status-active)"
+                    : "var(--color-status-inactive)",
+                }}
               >
                 {resets.verminionStatus}
               </span>
             </td>
-            <td style={{ color: resets.verminionOpen ? "#7ec87e" : "#e0b85a" }}>
+            <td
+              style={{
+                color: resets.verminionOpen
+                  ? "var(--color-status-active)"
+                  : "var(--color-status-inactive)",
+              }}
+            >
               {resets.verminionCountdown}
             </td>
             <td>{resets.verminionOpen ? "Active" : resets.verminionLocal}</td>
@@ -246,30 +265,50 @@ const ResetTimers = () => {
             <td>
               Housing Lottery{" "}
               <span
-                style={{ color: resets.housingInEntry ? "#7ec87e" : "#e0b85a" }}
+                style={{
+                  color: resets.housingInEntry
+                    ? "var(--color-status-active)"
+                    : "var(--color-status-inactive)",
+                }}
               >
                 {resets.housingStatus}
               </span>
             </td>
             <td
-              style={{ color: resets.housingInEntry ? "#7ec87e" : "#e0b85a" }}
+              style={{
+                color: resets.housingInEntry
+                  ? "var(--color-status-active)"
+                  : "var(--color-status-inactive)",
+              }}
             >
               {resets.housingCountdown}
             </td>
             <td>
               {resets.housingInEntry
-                ? `${resets.housingLocal}`
-                : `${resets.housingLocal}`}
+                ? resets.housingLocal
+                : resets.housingLocal}
             </td>
           </tr>
           <tr>
             <td>
               Ocean Fishing{" "}
-              <span style={{ color: resets.oceanOpen ? "#7ec87e" : "#e0b85a" }}>
+              <span
+                style={{
+                  color: resets.oceanOpen
+                    ? "var(--color-status-active)"
+                    : "var(--color-status-inactive)",
+                }}
+              >
                 {resets.oceanOpen ? "✓" : "◉"}
               </span>
             </td>
-            <td style={{ color: resets.oceanOpen ? "#7ec87e" : "#e0b85a" }}>
+            <td
+              style={{
+                color: resets.oceanOpen
+                  ? "var(--color-status-active)"
+                  : "var(--color-status-inactive)",
+              }}
+            >
               {resets.oceanCountdown}
             </td>
             <td>{resets.oceanLocal}</td>

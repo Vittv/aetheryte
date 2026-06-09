@@ -1,18 +1,26 @@
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Command } from "cmdk";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import duties from "../../../data/duties.json";
 import { useSearch } from "../../context/SearchContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import "./css/Navbar.css";
+import ThemeToggle from "./ThemeToggle";
+import "./Navbar.css";
 
 const TYPE_ORDER = ["ultimate", "savage", "extreme", "criterion"] as const;
 
 function Navbar() {
   const { open, setOpen } = useSearch();
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -53,13 +61,14 @@ function Navbar() {
   const isMac = navigator.platform.toUpperCase().includes("MAC");
 
   return (
-    <div className="navbar" ref={ref}>
+    <div className={`navbar${scrolled ? " navbar--scrolled" : ""}`} ref={ref}>
       <div className="navbar-inner">
         <div className="home">
           <Link to="/">aetheryte</Link>
         </div>
         <div className="right-links">
           <a href="">resources</a>
+          <ThemeToggle />
           <button
             className="cmd-trigger"
             type="button"

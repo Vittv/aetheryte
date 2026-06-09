@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useSearch } from "../context/SearchContext";
-import "./css/HomePage.css";
-import NewsColumns from "../components/home/NewsColumns";
-import NewsSection from "../components/home/NewsSection";
-import ResetTimers from "../components/home/ResetTimers";
-import type { NewsItem } from "../types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./HomePage.css";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import vittKiSprite from "../assets/images/vitt-ki-sprite.png";
+import type { NewsItem } from "../types";
+import NewsSection from "./home/NewsSection";
+import ResetTimers from "./home/ResetTimers";
 
 const CATEGORIES = ["topics", "updates", "maintenance"] as const;
 type Category = (typeof CATEGORIES)[number];
@@ -44,8 +44,15 @@ function HomePage() {
     fetchAllNews();
   }, []);
 
+  console.log(news.topics.map((t) => ({ title: t.title, time: t.time })));
   return (
     <div className="home-page">
+      <div className="hero">
+        <div className="hero-title">
+          <h1>aetheryte</h1>
+          <p>xiv resources</p>
+        </div>
+      </div>
       <button
         type="button"
         onClick={() => setOpen(true)}
@@ -54,9 +61,17 @@ function HomePage() {
         <FontAwesomeIcon className="hero-mag-glass" icon={faMagnifyingGlass} />
         <span>Search duty guides, resources... </span>
         <kbd>{isMac ? "⌘ K" : "Ctrl K"}</kbd>
+        <img
+          src={vittKiSprite}
+          alt="vitt-ki-sprite"
+          className="hero-search-image"
+        />
       </button>
-      <NewsSection topics={news.topics} />
-      <NewsColumns updates={news.updates} maintenance={news.maintenance} />
+      <NewsSection
+        topics={news.topics}
+        updates={news.updates}
+        maintenance={news.maintenance}
+      />
       <ResetTimers />
     </div>
   );

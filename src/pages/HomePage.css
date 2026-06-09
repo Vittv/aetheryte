@@ -1,0 +1,73 @@
+@import "./home/NewsSection.css";
+@import "./home/ResetTimers.css";
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  width: var(--content-width);
+  margin: 0 auto;
+  /* border-inline: 1px solid var(--border); */
+  min-height: 100svh;
+}
+
+.hero-title {
+  text-align: left;
+}
+
+.hero-title h1 {
+  font-size: 6rem;
+}
+
+.hero-title p {
+  margin-left: 1rem;
+  color: var(--accent);
+}
+
+.home-page h2 {
+  text-align: left;
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.hero-search {
+  margin: 4rem 0 0rem 0;
+  padding: 1rem;
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.hero-mag-glass {
+  font-size: 0.7rem;
+  margin-right: 0.4rem;
+}
+
+.hero-search:hover {
+  cursor: pointer;
+}
+
+.hero-search kbd {
+  font-weight: 500;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  padding: 0.4rem;
+  border-radius: 8px;
+  margin-left: 0.4rem;
+}
+
+.hero-search {
+  position: relative;
+  overflow: visible;
+}
+
+.hero-search-image {
+  position: absolute;
+  right: 1rem;
+  top: -100px;
+  height: 100px;
+  width: auto;
+  pointer-events: none;
+}

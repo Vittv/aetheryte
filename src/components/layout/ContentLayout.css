@@ -6,8 +6,6 @@
   width: var(--content-width);
   margin: 0 auto;
   padding: 2rem 0;
-  border-left: 1px solid var(--border);
-  border-right: 1px solid var(--border);
 }
 
 .content-layout {
