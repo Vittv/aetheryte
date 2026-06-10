@@ -166,6 +166,16 @@ code {
   background: var(--code-bg);
 }
 
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+}
+
+[data-theme="dark"] code[data-theme*=" "],
+[data-theme="dark"] code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+}
+
 a {
   color: inherit;
 }

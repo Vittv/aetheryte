@@ -42,6 +42,10 @@
   margin: 2.5rem 0 0.75rem;
 }
 
+.content-main h2 + h3 {
+  margin-top: 1rem;
+}
+
 .content-main h3 {
   font-size: 1.2rem;
   margin: 2rem 0 0.5rem;
@@ -82,6 +86,10 @@
 .content-main p {
   margin: 0 0 1rem;
   line-height: 1.75;
+}
+
+.content-main li p {
+  margin: 0;
 }
 
 .content-main img {
@@ -166,6 +174,66 @@
   border-color: var(--callout-caution-border);
   background: var(--callout-caution-bg);
   color: var(--callout-caution-border);
+}
+
+figure {
+  margin: 2rem 0;
+}
+
+.code-block {
+  border-radius: 8px;
+  /* border: 1px solid var(--border); */
+  overflow: hidden;
+  margin: 0;
+}
+
+.code-block pre code {
+  font-size: 13px;
+}
+
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--code-bg);
+}
+
+.code-block-header span {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+}
+
+.code-block-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  padding: 2px 4px;
+  border-radius: 4px;
+  line-height: 1;
+
+  &:hover {
+    color: var(--text-h);
+    background: var(--social-bg);
+  }
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: var(--code-bg);
+}
+
+.code-block code {
+  font-size: 14px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  display: block;
 }
 
 @media (max-width: 1200px) {

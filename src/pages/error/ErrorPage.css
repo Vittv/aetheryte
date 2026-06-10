@@ -1,0 +1,8 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  width: var(--content-width);
+  margin: 0 auto;
+  /* border-inline: 1px solid var(--border); */
+  min-height: 100svh;
+}

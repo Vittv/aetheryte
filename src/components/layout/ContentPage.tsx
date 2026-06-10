@@ -24,7 +24,7 @@ export default function ContentPage({ source }: Props) {
 
   const MDXContent = lazy(() => {
     if (source === "duty") {
-      return import(`../../pages/content/${entry.type}/${slug}.mdx`);
+      return import(`../../pages/content/duty/${entry.type}/${slug}.mdx`);
     }
     throw new Error(`Unknown source: ${source}`);
   });

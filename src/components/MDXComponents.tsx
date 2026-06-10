@@ -1,7 +1,7 @@
+import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import {
   faCheck,
   faCircleXmark,
-  faCopy,
   faInfoCircle,
   faLightbulb,
   faNoteSticky,
@@ -11,7 +11,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { MDXComponents } from "mdx/types";
 import type { ReactNode } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 // headings
 function createHeading(level: number) {
@@ -37,32 +37,36 @@ function createHeading(level: number) {
 }
 
 // codeblock
-export function CodeBlock({
-  children,
-  className,
+function CopyButton({
+  preRef,
 }: {
-  children: string;
-  className?: string;
+  preRef: React.RefObject<HTMLPreElement | null>;
 }) {
   const [copied, setCopied] = useState(false);
-  const language = className?.replace("language-", "") ?? "";
-
   const handleCopy = () => {
-    navigator.clipboard.writeText(children);
+    const text = preRef.current?.querySelector("code")?.innerText ?? "";
+    navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+  return (
+    <button type="button" onClick={handleCopy}>
+      <FontAwesomeIcon icon={copied ? faCheck : faCopy} />
+    </button>
+  );
+}
 
+function CodeBlock({ children, ...props }: React.ComponentProps<"pre">) {
+  const preRef = useRef<HTMLPreElement>(null);
+  const language = (props as any)["data-language"] ?? "";
   return (
     <div className="code-block">
       <div className="code-block-header">
         <span>{language}</span>
-        <button type="button" onClick={handleCopy}>
-          <FontAwesomeIcon icon={copied ? faCheck : faCopy} />
-        </button>
+        <CopyButton preRef={preRef} />
       </div>
-      <pre>
-        <code>{children}</code>
+      <pre ref={preRef} {...props}>
+        {children}
       </pre>
     </div>
   );
@@ -101,7 +105,7 @@ export function Blockquote({
   );
 }
 
-export function PlannerLink({
+export function BulletLink({
   href,
   children,
 }: {
@@ -122,10 +126,7 @@ export const mdxComponents: MDXComponents = {
   h3: createHeading(3),
   h4: createHeading(4),
   Blockquote,
-  PlannerLink,
+  BulletLink,
   blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
-  pre: ({ children }) => <>{children}</>,
-  code: ({ children, className }) => (
-    <CodeBlock className={className}>{children as string}</CodeBlock>
-  ),
+  pre: CodeBlock,
 };

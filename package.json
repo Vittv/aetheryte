@@ -24,9 +24,11 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-router-dom": "^7.16.0",
+    "rehype-pretty-code": "^0.14.3",
     "rehype-slug": "^6.0.0",
     "remark-frontmatter": "^5.0.0",
-    "remark-mdx-frontmatter": "^5.2.0"
+    "remark-mdx-frontmatter": "^5.2.0",
+    "shiki": "^4.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.13",

@@ -1,6 +1,7 @@
 import mdx from "@mdx-js/rollup";
 import babel from "@rolldown/plugin-babel";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
@@ -11,7 +12,18 @@ export default defineConfig({
     {
       enforce: "pre",
       ...mdx({
-        rehypePlugins: [rehypeSlug],
+        rehypePlugins: [
+          rehypeSlug,
+          [
+            rehypePrettyCode,
+            {
+              theme: {
+                dark: "catppuccin-mocha",
+                light: "catppuccin-latte",
+              },
+            },
+          ],
+        ],
         remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       }),
     },
