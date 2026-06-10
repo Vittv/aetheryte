@@ -20,7 +20,9 @@ function createHeading(level: number) {
     const id = children.toLowerCase().replace(/\s+/g, "-");
     return (
       <Tag id={id}>
-        <a href={`#${id}`}>{children}</a>
+        <a href={`#${id}`} className="heading-anchor">
+          {children}
+        </a>
       </Tag>
     );
   };
@@ -91,11 +93,28 @@ export function Blockquote({
   );
 }
 
+export function PlannerLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
+  return (
+    <p>
+      <a href={href} rel="noopener noreferrer" target="_blank">
+        {children}
+      </a>
+    </p>
+  );
+}
+
 export const mdxComponents: MDXComponents = {
   h2: createHeading(2),
   h3: createHeading(3),
   h4: createHeading(4),
   Blockquote,
+  PlannerLink,
   blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
   pre: ({ children }) => <>{children}</>,
   code: ({ children, className }) => (

@@ -15,6 +15,7 @@
   --accent: #41569b;
   --accent-bg: rgba(65, 86, 155, 0.1);
   --accent-border: rgba(65, 86, 155, 0.35);
+  --accent-visited: #6b5fa8;
   --social-bg: rgba(166, 160, 149, 0.2);
   --color-status-active: #4a9e4a;
   --color-status-inactive: #b8852a;
@@ -22,11 +23,23 @@
     rgba(75, 69, 58, 0.1) 0 10px 15px -3px,
     rgba(75, 69, 58, 0.06) 0 4px 6px -2px;
 
+  --callout-note-border: #41569b;
+  --callout-note-bg: rgba(65, 86, 155, 0.08);
+  --callout-tip-border: #4a9e4a;
+  --callout-tip-bg: rgba(74, 158, 74, 0.08);
+  --callout-important-border: #7b5ea7;
+  --callout-important-bg: rgba(123, 94, 167, 0.08);
+  --callout-warning-border: #b8852a;
+  --callout-warning-bg: rgba(184, 133, 42, 0.08);
+  --callout-caution-border: #c0392b;
+  --callout-caution-bg: rgba(192, 57, 43, 0.08);
+
   --sans: "Geist", system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: "Geist", system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
 
   --content-width: 1426px;
+  --navbar-height: 41px;
 
   font: 18px / 145% var(--sans);
   letter-spacing: 0.18px;
@@ -53,11 +66,23 @@
   --accent: #7b8fd4;
   --accent-bg: rgba(123, 143, 212, 0.12);
   --accent-border: rgba(123, 143, 212, 0.35);
+  --accent-visited: #9d8fd4;
   --social-bg: rgba(58, 55, 48, 0.5);
   --color-status-active: #7ec87e;
   --color-status-inactive: #e0b85a;
   --shadow:
     rgba(0, 0, 0, 0.35) 0 10px 15px -3px, rgba(0, 0, 0, 0.2) 0 4px 6px -2px;
+
+  --callout-note-border: #7b8fd4;
+  --callout-note-bg: rgba(123, 143, 212, 0.1);
+  --callout-tip-border: #7ec87e;
+  --callout-tip-bg: rgba(126, 200, 126, 0.1);
+  --callout-important-border: #b39ddb;
+  --callout-important-bg: rgba(179, 157, 219, 0.1);
+  --callout-warning-border: #e0b85a;
+  --callout-warning-bg: rgba(224, 184, 90, 0.1);
+  --callout-caution-border: #e57373;
+  --callout-caution-bg: rgba(229, 115, 115, 0.1);
 }
 
 #root {
@@ -149,12 +174,17 @@ a:hover {
   color: var(--text-h);
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
   :root {
     --content-width: 100%;
   }
 
   body {
+    padding-inline: 1rem;
+  }
+
+  .footer {
+    margin-inline: -1rem;
     padding-inline: 1rem;
   }
 }

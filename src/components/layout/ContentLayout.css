@@ -1,29 +1,25 @@
 /* main content */
+.content-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 280px;
+  justify-content: center;
+  width: var(--content-width);
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
 .content-main {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  width: var(--content-width);
-  margin: 0 auto;
   padding: 2rem 0;
-}
-
-.content-layout {
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 1126px) 1fr;
-  justify-content: center;
-  min-height: calc(100vh - 60px);
-  width: 100%;
-
-  /* align-items: stretch; */
 }
 
 /* sidebars */
 .sidebar-left,
 .sidebar-right {
-  flex-shrink: 0;
   position: sticky;
-  top: 0;
+  top: var(--navbar-height);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -35,43 +31,47 @@
 .sidebar-right h3 {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  opacity: 0.5;
   margin-bottom: 0.25rem;
   margin-top: 2rem;
 }
 
 .sidebar-left h3 {
   text-transform: capitalize;
-  margin-left: 1rem;
 }
 
 /* left sidebar */
 .sidebar-left a {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.4;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0rem;
   border-radius: 4px;
   text-decoration: none;
 }
 
 .sidebar-left a.active {
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent);
+  font-weight: 500;
+  border-radius: 6px;
 }
 
 /* right sidebar */
 .sidebar-right a {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.4;
-  padding: 0.2rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   text-decoration: none;
-  border-left: 2px solid transparent;
+  border-left: 2px solid var(--text);
+  transition: border-left-color 0.3s ease;
+  opacity: 0.8;
 }
 
 .sidebar-right a.active {
-  opacity: 1;
-  border-left-color: currentColor;
+  border-left-color: var(--accent);
+  background-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  color: var(--text-h);
+  font-weight: 500;
 }
 
 .sidebar-right a[data-level="3"] {
@@ -93,7 +93,7 @@
   position: sticky;
   height: calc(100vh - 60px);
   overflow-y: auto;
-  padding: 0rem 2rem;
+  padding: 0rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -117,7 +117,7 @@
     position: sticky;
     height: auto;
     overflow-y: visible;
-    padding: 1rem;
+    margin-right: 1rem;
   }
   .content-main {
     grid-column: 2;

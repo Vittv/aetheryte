@@ -1,12 +1,36 @@
+.content-main {
+  padding: 1.4rem;
+}
+
 .content-main a {
   display: inline;
 }
 
+.content-main a:not(.heading-anchor) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.content-main a:not(.heading-anchor):hover {
+  text-decoration: none;
+}
+
+.content-main a:not(.heading-anchor):visited {
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.content-main a:not(.heading-anchor):visited {
+  color: var(--accent-visited);
+}
+
 .content-main h1 {
   font-size: 2rem;
-  font-weight: 300;
   letter-spacing: -0.05em;
-  margin: 0 0 1rem;
+  margin-top: calc(2rem - 1.4rem);
+  margin-bottom: 1rem;
 }
 
 .content-main h2 {
@@ -23,7 +47,7 @@
 .content-main h3,
 .content-main h4 {
   position: relative;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .content-main h2 a,
@@ -45,7 +69,7 @@
 .content-main h4 a:hover::before {
   content: "#";
   position: absolute;
-  left: -1em;
+  left: -0.8em;
   color: var(--accent);
   cursor: pointer;
 }
@@ -59,7 +83,6 @@
   max-width: 100%;
   display: block;
   height: auto;
-  margin: 0 2rem;
   border-radius: 8px;
 }
 
@@ -82,5 +105,65 @@
 .content-main blockquote,
 .content-main code {
   text-align: left;
-  margin-left: 2rem;
+}
+
+.blockquote {
+  border-left: 2px solid;
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  margin: 1.25rem 0;
+  font-size: 0.9rem;
+}
+
+.blockquote-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.blockquote-icon {
+  font-size: 0.85rem;
+}
+
+.blockquote-body p {
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.blockquote--note {
+  border-color: var(--callout-note-border);
+  background: var(--callout-note-bg);
+  color: var(--callout-note-border);
+}
+
+.blockquote--tip {
+  border-color: var(--callout-tip-border);
+  background: var(--callout-tip-bg);
+  color: var(--callout-tip-border);
+}
+
+.blockquote--important {
+  border-color: var(--callout-important-border);
+  background: var(--callout-important-bg);
+  color: var(--callout-important-border);
+}
+
+.blockquote--warning {
+  border-color: var(--callout-warning-border);
+  background: var(--callout-warning-bg);
+  color: var(--callout-warning-border);
+}
+
+.blockquote--caution {
+  border-color: var(--callout-caution-border);
+  background: var(--callout-caution-bg);
+  color: var(--callout-caution-border);
+}
+
+@media (max-width: 1500px) {
+  .content-main {
+    padding: 0;
+  }
 }
