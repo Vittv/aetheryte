@@ -26,6 +26,10 @@
   color: var(--accent-visited);
 }
 
+.content-main ul {
+  margin: 0;
+}
+
 .content-main h1 {
   font-size: 2rem;
   letter-spacing: -0.05em;
@@ -48,6 +52,7 @@
 .content-main h4 {
   position: relative;
   font-weight: 500;
+  scroll-margin-top: calc(var(--navbar-height) + 1.5rem);
 }
 
 .content-main h2 a,
@@ -111,7 +116,8 @@
   border-left: 2px solid;
   border-radius: 0 6px 6px 0;
   padding: 0.75rem 1rem;
-  margin: 1.25rem 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   font-size: 0.9rem;
 }
 
@@ -162,7 +168,7 @@
   color: var(--callout-caution-border);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
   .content-main {
     padding: 0;
   }

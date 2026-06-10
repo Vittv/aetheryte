@@ -20,7 +20,15 @@ function createHeading(level: number) {
     const id = children.toLowerCase().replace(/\s+/g, "-");
     return (
       <Tag id={id}>
-        <a href={`#${id}`} className="heading-anchor">
+        <a
+          href={`#${id}`}
+          className="heading-anchor"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+            window.history.pushState(null, "", `#${id}`);
+          }}
+        >
           {children}
         </a>
       </Tag>

@@ -24,49 +24,49 @@
     "order": 4
   },
   {
-    "slug": "ageless-necropolis",
+    "slug": "necron",
     "name": "Ageless Necropolis (Extreme)",
     "type": "extreme",
     "order": 5
   },
   {
-    "slug": "everkeep",
+    "slug": "zoraal-ja",
     "name": "Everkeep (Extreme)",
     "type": "extreme",
     "order": 2
   },
   {
-    "slug": "hell-on-rails",
+    "slug": "doomtrain",
     "name": "Hell on Rails (Extreme)",
     "type": "extreme",
     "order": 7
   },
   {
-    "slug": "recollection",
+    "slug": "zelenia",
     "name": "Recollection (Extreme)",
     "type": "extreme",
     "order": 4
   },
   {
-    "slug": "sphenes-burden",
+    "slug": "sphenes",
     "name": "Sphene's Burden (Extreme)",
     "type": "extreme",
     "order": 3
   },
   {
-    "slug": "the-unmaking",
+    "slug": "enuo",
     "name": "The Unmaking (Extreme)",
     "type": "extreme",
     "order": 8
   },
   {
-    "slug": "the-windward-wilds",
+    "slug": "guardian-arkveld",
     "name": "The Windward Wilds (Extreme)",
     "type": "extreme",
     "order": 6
   },
   {
-    "slug": "worqor-lar-dor",
+    "slug": "valigarmanda",
     "name": "Worqor Lar Dor (Extreme)",
     "type": "extreme",
     "order": 1
