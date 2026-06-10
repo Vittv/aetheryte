@@ -53,3 +53,9 @@ body.page-home .navbar {
   align-items: center;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  body.page-home .navbar {
+    margin-top: 1rem;
+  }
+}

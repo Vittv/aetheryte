@@ -18,4 +18,8 @@
   .footer-inner {
     flex-direction: column;
   }
+
+  .footer-right {
+    text-align: right;
+  }
 }

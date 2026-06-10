@@ -42,3 +42,19 @@
 .reset-table tr:last-child td {
   border-bottom: none;
 }
+
+@media (max-width: 768px) {
+  .reset-table th:last-child,
+  .reset-table td:last-child {
+    display: none;
+  }
+
+  .reset-table {
+    font-size: 0.75rem;
+  }
+
+  .reset-table td,
+  .reset-table th {
+    padding: 0.5rem 0.75rem;
+  }
+}

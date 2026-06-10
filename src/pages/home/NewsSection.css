@@ -204,3 +204,10 @@
   line-height: 1.4;
   text-align: left;
 }
+
+@media (max-width: 760px) {
+  .news {
+    display: flex;
+    flex-direction: column;
+  }
+}

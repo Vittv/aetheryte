@@ -1,5 +1,6 @@
 @import "./home/NewsSection.css";
 @import "./home/ResetTimers.css";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap");
 
 .home-page {
   display: flex;
@@ -17,11 +18,12 @@
 
 .hero-title h1 {
   font-size: 6rem;
+  font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  font-weight: 700;
 }
 
 .hero-title p {
   margin-left: 1rem;
-  color: var(--accent);
 }
 
 .home-page h2 {
@@ -71,4 +73,11 @@
   height: 100px;
   width: auto;
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hero-title h1 {
+    font-size: 4.4rem;
+    line-height: 1;
+  }
 }
