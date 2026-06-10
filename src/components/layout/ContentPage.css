@@ -1,3 +1,7 @@
+.content-main a {
+  display: inline;
+}
+
 .content-main h1 {
   font-size: 2rem;
   font-weight: 300;
@@ -49,10 +53,6 @@
 .content-main p {
   margin: 0 0 1rem;
   line-height: 1.75;
-}
-
-.content-main a {
-  display: inline;
 }
 
 .content-main img {

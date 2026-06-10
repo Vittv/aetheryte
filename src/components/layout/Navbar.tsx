@@ -2,11 +2,14 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Command } from "cmdk";
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import duties from "../../../data/duties.json";
 import { useSearch } from "../../context/SearchContext";
 import ThemeToggle from "./ThemeToggle";
 import "./Navbar.css";
+import "./CommandPalette.css";
+import "./ThemeToggle.css";
 
 const TYPE_ORDER = ["ultimate", "savage", "extreme", "criterion"] as const;
 
@@ -15,6 +18,8 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -26,25 +31,39 @@ function Navbar() {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
-        setOpen((o) => !o);
+        setOpen(true);
       }
       if (e.key === "Escape") {
         setOpen(false);
       }
+      if (e.key === "j" && e.ctrlKey && open) {
+        e.preventDefault();
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", { key: "ArrowDown", bubbles: true }),
+        );
+      }
+      if (e.key === "k" && e.ctrlKey && open) {
+        e.preventDefault();
+        document.dispatchEvent(
+          new KeyboardEvent("keydown", { key: "ArrowUp", bubbles: true }),
+        );
+      }
     };
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [setOpen, open]);
 
+  // prevent page from scrolling when we scroll in the cmd
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
     };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
+  }, [open]);
 
   const grouped = TYPE_ORDER.map((type) => ({
     type,
@@ -61,13 +80,16 @@ function Navbar() {
   const isMac = navigator.platform.toUpperCase().includes("MAC");
 
   return (
-    <div className={`navbar${scrolled ? " navbar--scrolled" : ""}`} ref={ref}>
+    <div
+      className={`navbar${scrolled ? " navbar--scrolled" : ""}${isHome ? " navbar--home" : ""}${open ? " navbar--open" : ""}`}
+      ref={ref}
+    >
       <div className="navbar-inner">
         <div className="home">
           <Link to="/">aetheryte</Link>
         </div>
         <div className="right-links">
-          <a href="">resources</a>
+          <Link to="/resources">resources</Link>
           <ThemeToggle />
           <button
             className="cmd-trigger"
@@ -81,29 +103,53 @@ function Navbar() {
         </div>
       </div>
 
-      {open && (
-        <div className="cmd-tray">
-          <Command>
-            <Command.Input placeholder="Search..." autoFocus />
-            <Command.List>
-              <Command.Empty>No results found.</Command.Empty>
-              {grouped.map(({ type, entries }) => (
-                <Command.Group key={type} heading={type}>
-                  {entries.map((d) => (
-                    <Command.Item
-                      key={d.slug}
-                      value={`${d.name} ${d.slug} ${d.type}`}
-                      onSelect={() => handleSelect(d.slug)}
-                    >
-                      {d.name}
-                    </Command.Item>
+      {open &&
+        createPortal(
+          <>
+            <button
+              type="button"
+              className="cmd-overlay"
+              aria-label="Close search"
+              onClick={() => setOpen(false)}
+            />
+            onKeyDown=
+            {(e: React.KeyboardEvent) => e.key === "Escape" && setOpen(false)}
+            <div className="cmd-tray">
+              <Command>
+                <Command.Input placeholder="Search..." autoFocus />
+                <Command.List>
+                  <Command.Empty>No results found.</Command.Empty>
+                  {grouped.map(({ type, entries }) => (
+                    <Command.Group key={type} heading={type}>
+                      {entries.map((d) => (
+                        <Command.Item
+                          key={d.slug}
+                          value={`${d.name} ${d.slug} ${d.type}`}
+                          onSelect={() => handleSelect(d.slug)}
+                        >
+                          {d.name}
+                        </Command.Item>
+                      ))}
+                    </Command.Group>
                   ))}
-                </Command.Group>
-              ))}
-            </Command.List>
-          </Command>
-        </div>
-      )}
+                </Command.List>
+              </Command>
+              <div className="cmd-footer">
+                <span>
+                  <kbd>↓</kbd>
+                  <kbd>↑</kbd> navigate
+                </span>
+                <span>
+                  <kbd>↵</kbd> open
+                </span>
+                <span>
+                  <kbd>esc</kbd> close
+                </span>
+              </div>
+            </div>
+          </>,
+          document.body,
+        )}
     </div>
   );
 }

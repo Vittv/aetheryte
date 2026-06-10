@@ -71,9 +71,9 @@ function NewsSection({ topics, updates, maintenance }: NewsProps) {
             </a>
           ) : null}
           <div className="news-dots">
-            {featuredTopics.map((_, i) => (
+            {featuredTopics.map((topic, i) => (
               <button
-                key={i}
+                key={topic.id}
                 type="button"
                 className={`news-dot${featuredIndex === i ? " active" : ""}`}
                 onClick={() => setFeaturedIndex(i)}

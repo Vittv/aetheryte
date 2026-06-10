@@ -22,6 +22,11 @@ function HomePage() {
   const { setOpen } = useSearch();
 
   useEffect(() => {
+    document.body.classList.add("page-home");
+    return () => document.body.classList.remove("page-home");
+  }, []);
+
+  useEffect(() => {
     const fetchAllNews = async () => {
       const results = await Promise.all(
         CATEGORIES.map(async (category) => {
@@ -36,7 +41,6 @@ function HomePage() {
       const grouped = {} as Record<Category, NewsItem[]>;
       for (const { category, data } of results) {
         grouped[category] = data;
-        console.log(data);
       }
       setNews(grouped);
     };
@@ -44,7 +48,6 @@ function HomePage() {
     fetchAllNews();
   }, []);
 
-  console.log(news.topics.map((t) => ({ title: t.title, time: t.time })));
   return (
     <div className="home-page">
       <div className="hero">
