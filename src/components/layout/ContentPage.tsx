@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useMemo } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import HeadingScraper from "../utils/HeadingScraper";
 import "./ContentPage.css";
@@ -13,21 +13,24 @@ interface Props {
   source: "duty" | "guide";
 }
 
+const modules = import.meta.glob("../../pages/content/duty/**/*.mdx");
+
 export default function ContentPage({ source }: Props) {
   const { setToc } = useOutletContext<OutletContext>();
   const { slug } = useParams();
-
-  const entry =
-    source === "duty" ? duties.find((d) => d.slug === slug) : undefined;
-
+  const entry = source === "duty" ? duties.find((d) => d.slug === slug) : undefined;
   if (!entry) return <div>Not found</div>;
 
-  const MDXContent = lazy(() => {
-    if (source === "duty") {
-      return import(`../../pages/content/duty/${entry.type}/${slug}.mdx`);
-    }
-    throw new Error(`Unknown source: ${source}`);
-  });
+  const path = `../../pages/content/duty/${entry.type}/${slug}.mdx`;
+  const MDXContent = useMemo(
+    () =>
+      lazy(() => {
+        const importer = modules[path];
+        if (!importer) throw new Error(`No MDX found for ${path}`);
+        return importer() as Promise<{ default: React.ComponentType<any> }>;
+      }),
+    [path],
+  );
 
   const scrape = () => {
     const headings = Array.from(
