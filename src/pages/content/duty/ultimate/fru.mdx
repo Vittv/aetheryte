@@ -1,0 +1,110 @@
+---
+date: 2026-06-11
+---
+
+import contentImg from "../../../../assets/images/fru.webp"
+import data from "../../../../../data/duty/ultimate/fru.json"
+
+# Futures Rewritten (Ultimate)
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="FRU banner" />
+
+## P1: Fatebreaker
+
+- <BulletLink href={data.planners[0].url}>Fatebreaker Presentation</BulletLink> - Role + Fixed Tether OR Role ONLY Utopia, Conga FoF
+
+## P2: Usurper of Frost
+
+- <BulletLink href={data.planners[1].url}>Diamond Dust / Light Rampant Presentation</BulletLink> - Partner Swap DD4/4+EW Light Rampant
+- <BulletLink href={data.planners[2].url}>Ice Veil Intermission Presentation</BulletLink>
+
+## P3: Oracle of Darkness
+
+- <BulletLink href={data.planners[3].url}>Ultimate Relativity Presentation</BulletLink> - G1 Adjust Role Quadrant, Buddy Swaps
+- <BulletLink href={data.planners[4].url}>Sextuple Apoc Raidplan</BulletLink> - G1 Adjust Static Spreads, Multi-Swap | Safespot Color Apoc Version
+
+## P4: Gaia & Ryne
+
+- <BulletLink href={data.planners[5].url}>Darklit Dragonsong Presentation</BulletLink> - Role Quadrant Healer plant NW
+- <BulletLink href={data.planners[6].url}>Crystallize Time</BulletLink> - Early Pop
+
+## P5: Run: Pandora
+
+- <BulletLink href={data.planners[7].url}>UltiProject: FRU Phase 5 Guide</BulletLink>
+- <BulletLink href={data.planners[8].url}>Advanced Exalines Theory</BulletLink>
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "FRU PF - Inner Circle",
+  "MapID": 1006,
+  "A": { "X": 100.0, "Y": 0.0, "Z": 90.0, "ID": 0, "Active": true },
+  "B": { "X": 110.0, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+  "C": { "X": 100.0, "Y": 0.0, "Z": 110.0, "ID": 2, "Active": true },
+  "D": { "X": 90.0, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+  "One": { "X": 92.93, "Y": 0.0, "Z": 92.93, "ID": 4, "Active": true },
+  "Two": { "X": 107.07, "Y": 0.0, "Z": 92.93, "ID": 5, "Active": true },
+  "Three": { "X": 107.07, "Y": 0.0, "Z": 107.07, "ID": 6, "Active": true },
+  "Four": { "X": 92.93, "Y": 0.0, "Z": 107.07, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "3rdRing-NE",
+  "MapID": 908,
+  "A": { "X": 100.0, "Y": 0.0, "Z": 86.37, "ID": 0, "Active": true },
+  "B": { "X": 113.63, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+  "C": { "X": 100.0, "Y": 0.0, "Z": 113.63, "ID": 2, "Active": true },
+  "D": { "X": 86.37, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+  "One": { "X": 109.58, "Y": 0.0, "Z": 90.42, "ID": 4, "Active": true },
+  "Two": { "X": 109.58, "Y": 0.0, "Z": 109.58, "ID": 5, "Active": true },
+  "Three": { "X": 90.42, "Y": 0.0, "Z": 109.58, "ID": 6, "Active": true },
+  "Four": { "X": 90.42, "Y": 0.0, "Z": 90.42, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Mitigation
+
+<ul>
+  {data.mitigation.map((mit) => (
+    <li key={mit.url}>
+      <BulletLink href={mit.url}>{mit.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Simulations
+
+<ul>
+  {data.sims.map((sim) => (
+    <li key={sim.url}>
+      <BulletLink href={sim.url}>{sim.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}
+
+### Additional Resources
+
+<ul>
+  {data["additional-resources"].map((resource) => (
+    <li key={resource.url}>
+      <BulletLink href={resource.url}>{resource.label}</BulletLink>
+    </li>
+  ))}
+</ul>

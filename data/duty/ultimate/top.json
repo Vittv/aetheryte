@@ -63,7 +63,7 @@
       "url": "https://docs.google.com/presentation/d/1NjFeRT-6ORKjR8ZZzDdktTOnJwuLNGyuUif1aNvKwU8/edit?usp=sharing"
     }
   ],
-  "mitigation": { "label": "mitsheet", "url": "https://bit.ly/topmit2" },
+  "mitigation": [{ "label": "Mit sheet", "url": "https://bit.ly/topmit2" }],
   "markers": [
     {
       "Name": "3rdRing-NE",
@@ -103,11 +103,11 @@
   "sims": [
     { "label": "xivsim", "url": "https://www.xivsim.com/top/" },
     {
-      "label": "solosim",
+      "label": "Solo Sim",
       "url": "https://palmmy.itch.io/the-omega-protocol-solo-sim"
     },
     {
-      "label": "exasquares",
+      "label": "Exasquares Sim",
       "url": "https://foolishfire.itch.io/xiv-exasquares"
     }
   ],

@@ -49,9 +49,9 @@
     }
   ],
   "mitigation": [
-    { "label": "fru-mit-but-good", "url": "http://mit.lesb.in/" },
-    { "label": "naur-room-mits", "url": "https://tinyurl.com/NAUR-Room-Mits" },
-    { "label": "fru-mitty", "url": "https://tinyurl.com/frumitty" }
+    { "label": "FRU Mit but Good", "url": "http://mit.lesb.in/" },
+    { "label": "Naur Room Mits", "url": "https://tinyurl.com/NAUR-Room-Mits" },
+    { "label": "FRU Mitty", "url": "https://tinyurl.com/frumitty" }
   ],
   "markers": [
     {
@@ -76,15 +76,15 @@
   ],
   "sims": [
     {
-      "label": "browser-fru-sim",
+      "label": "Web FRU Sim",
       "url": "https://skyeraf.itch.io/solo-fru-simulator"
     },
-    { "label": "app-fru-sim", "url": "https://github.com/WCGH/FRU-Sim" },
+    { "label": "Native App FRU Sim", "url": "https://github.com/WCGH/FRU-Sim" },
     {
-      "label": "fulgent-blade-sim",
+      "label": "Fulgent Blade Sim",
       "url": "https://mathranger101.itch.io/fru-fulgent-blade-sim"
     },
-    { "label": "fof-tethers-sim", "url": "https://cupnoodle.moe/fru/fof/" },
+    { "label": "FOF Tethers Sim", "url": "https://cupnoodle.moe/fru/fof/" },
     { "label": "xivsim", "url": "https://www.xivsim.com/fru/" }
   ],
   "additional-resources": [

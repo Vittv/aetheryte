@@ -60,7 +60,7 @@
   display: block;
   font-size: 0.85rem;
   line-height: 1.4;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   border-left: 2px solid var(--text);
   transition: border-left-color 0.3s ease;
@@ -74,9 +74,12 @@
   font-weight: 500;
 }
 
-.sidebar-right a[data-level="3"],
+.sidebar-right a[data-level="3"] {
+  padding-left: 2.5rem;
+}
+
 .sidebar-right a[data-level="4"] {
-  padding-left: 1.5rem;
+  padding-left: 3.5rem;
 }
 
 .sidebar-left {

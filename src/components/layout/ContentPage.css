@@ -1,4 +1,5 @@
 @import "../MDXComponents.css";
+@import "@fontsource-variable/jetbrains-mono/index.css";
 
 .content-main {
   padding: 1.4rem;
@@ -118,8 +119,12 @@
   opacity: 0.8;
 }
 
-.content-date {
+.frontmatter {
   font-size: 0.8rem;
+}
+
+.frontmatter .content-date {
+  font-family: "JetBrains Mono Variable", monospace;
 }
 
 .content-main h1,
