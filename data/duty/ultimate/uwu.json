@@ -60,15 +60,15 @@
   "videos": [
     {
       "label": "Tessan Twintails Guide",
-      "url": "https://www.youtube.com/watch?v=PwEVH50b-rg"
+      "url": "https://www.youtube.com/embed/PwEVH50b-rg"
     },
     {
       "label": "Zalera Praxis' Predation Guide",
-      "url": "https://youtu.be/Ktn5e0jVtmM"
+      "url": "https://www.youtube.com/embed/Ktn5e0jVtmM"
     },
     {
       "label": "Archon Ghoul's Suppression Guide",
-      "url": "https://www.youtube.com/watch?v=PSrbDnFtIJ0"
+      "url": "https://www.youtube.com/embed/PSrbDnFtIJ0"
     }
   ],
   "sims": [

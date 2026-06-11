@@ -1,11 +1,13 @@
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import {
   faCheck,
+  faChevronDown,
   faCircleXmark,
   faInfoCircle,
   faLightbulb,
   faNoteSticky,
   faTriangleExclamation,
+  faVideo,
   type IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -56,9 +58,12 @@ function CopyButton({
   );
 }
 
-function CodeBlock({ children, ...props }: React.ComponentProps<"pre">) {
+function CodeBlock({
+  children,
+  "data-language": language = "",
+  ...props
+}: React.ComponentProps<"pre"> & { "data-language"?: string }) {
   const preRef = useRef<HTMLPreElement>(null);
-  const language = (props as any)["data-language"] ?? "";
   return (
     <div className="code-block">
       <div className="code-block-header">
@@ -121,12 +126,48 @@ export function BulletLink({
   );
 }
 
+export function VideoEmbed({
+  src,
+  title = "Video",
+}: {
+  src: string;
+  title?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`video-embed ${open ? "video-embed--open" : ""}`}>
+      <button
+        type="button"
+        className="video-embed-bar"
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span>
+          <FontAwesomeIcon icon={faVideo} />
+          {title}
+        </span>
+        <FontAwesomeIcon icon={faChevronDown} className="video-embed-chevron" />
+      </button>
+      {open && (
+        <div className="video-embed-body">
+          <iframe
+            src={src}
+            title={title}
+            allowFullScreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
 export const mdxComponents: MDXComponents = {
   h2: createHeading(2),
   h3: createHeading(3),
   h4: createHeading(4),
   Blockquote,
   BulletLink,
+  VideoEmbed,
   blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
   pre: CodeBlock,
 };
