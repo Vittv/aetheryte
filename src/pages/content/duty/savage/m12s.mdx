@@ -1,0 +1,90 @@
+---
+date: 2026-06-11
+---
+
+import contentImg from "../../../../assets/images/m12s.png"
+import data from "../../../../../data/duty/savage/m12s.json"
+
+# The Lindwurm (Savage)
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="m12s banner" />
+
+## Party Finder Description
+
+### Phase 1 Example Desc.
+
+```markdown
+(Toxic Friends | Roles Mortal Slayer)
+```
+
+### Phase 2 Example Desc.
+
+```markdown
+(Modified Bin (3VJ0) | DN Replication | DN Idyllic | 3-1 Orb Soaks)
+```
+
+### Legend
+- **Toxic Friends**: Raidplan for phase 1.
+- **Roles Mortal Slayer**: Specific Mortal Slayer Strategy with its own raidplan seperate of Toxic Friends
+- **Modified Bin**: Slightly modified bin for 12S Strategies, usually means they are using the entire pastebin. 3VJ0 are the last couple letters of the url.
+- **Uptime**: Refers to Uptime Idyllic.
+- **Banana Codex**: Specific Rep2 Strat not included in the main pastebins, "relative D north".
+
+## Phase 1
+
+- <BulletLink href={data.planners[0].url}>Toxic Friends (Minus Mortal Slayer)</BulletLink>
+- <BulletLink href={data.planners[1].url}>Roles Mortal Slayer</BulletLink>
+- <BulletLink href={data.planners[2].url}>Toxic Friends (w/ Mortal Slayer)</BulletLink>
+
+## Phase 2
+
+- <BulletLink href={data.planners[3].url}>Replication 1</BulletLink>
+- <BulletLink href={data.planners[4].url}>Replication 2</BulletLink>
+- <BulletLink href={data.planners[5].url}>Superchain Theory</BulletLink>
+- <BulletLink href={data.planners[6].url}>Idyllic Dream</BulletLink>
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "M12S P1 Toxic Friends",
+  "MapID": 1075,
+  "A": { "X": 99.984, "Y": 0.0, "Z": 87.591, "ID": 0, "Active": true },
+  "B": { "X": 112.405, "Y": 0.0, "Z": 99.914, "ID": 1, "Active": true },
+  "C": { "X": 100.012, "Y": 0.0, "Z": 112.338, "ID": 2, "Active": true },
+  "D": { "X": 87.749, "Y": 0.0, "Z": 100.017, "ID": 3, "Active": true },
+  "One": { "X": 84.099, "Y": 0.0, "Z": 87.589, "ID": 4, "Active": true },
+  "Two": { "X": 115.843, "Y": 0.0, "Z": 87.544, "ID": 5, "Active": true },
+  "Three": { "X": 115.92, "Y": 0.0, "Z": 112.349, "ID": 6, "Active": true },
+  "Four": { "X": 84.079, "Y": 0.0, "Z": 112.366, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "M12 P2",
+  "MapID": 1075,
+  "A": { "X": 99.862, "Y": 0.0, "Z": 86.409, "ID": 0, "Active": true },
+  "B": { "X": 113.711, "Y": 0.0, "Z": 99.985, "ID": 1, "Active": true },
+  "C": { "X": 100.044, "Y": 0.0, "Z": 113.551, "ID": 2, "Active": true },
+  "D": { "X": 86.371, "Y": 0.0, "Z": 100.034, "ID": 3, "Active": true },
+  "One": { "X": 100.096, "Y": 0.0, "Z": 91.373, "ID": 4, "Active": true },
+  "Two": { "X": 108.282, "Y": 0.0, "Z": 100.024, "ID": 5, "Active": true },
+  "Three": { "X": 100.003, "Y": 0.0, "Z": 108.251, "ID": 6, "Active": true },
+  "Four": { "X": 91.779, "Y": 0.0, "Z": 100.053, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}

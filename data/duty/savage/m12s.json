@@ -75,14 +75,15 @@
       "Four": { "X": 91.779, "Y": 0.0, "Z": 100.053, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/AAC_Heavyweight_M4_(Savage)",
   "videos": [
     {
       "label": "Hector Hectorson Guide P1",
-      "url": "https://www.youtube.com/watch?v=VTzndDkiXEk"
+      "url": "https://www.youtube.com/embed/VTzndDkiXEk"
     },
     {
       "label": "Hector Hectorson Guide P2",
-      "url": "https://www.youtube.com/watch?v=Ey--4oQS6KI"
+      "url": "https://www.youtube.com/embed/Ey--4oQS6KI"
     }
   ]
 }

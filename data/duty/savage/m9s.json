@@ -2,16 +2,11 @@
   "name": "M9S - Vamp Fatale (Savage)",
   "slug": "m9s",
   "current": true,
-  "planners": [
-    {
-      "label": "toxic-friends-raidplan",
-      "url": "https://raidplan.io/plan/c2L5iJfuYIWXk1v7"
-    }
-  ],
+  "planners": [],
   "party-finder-summary": "Hector | TF | Static Aetherletting",
   "markers": [
     {
-      "Name": "Imported",
+      "Name": "m9s",
       "MapID": 1069,
       "A": { "X": 100.0, "Y": 0.0, "Z": 90.0, "ID": 0, "Active": true },
       "B": { "X": 110.0, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
@@ -23,10 +18,17 @@
       "Four": { "X": 90.0, "Y": 0.0, "Z": 110.0, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/AAC_Heavyweight_M1_(Savage)",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=cR3wuG8VQ0o"
+      "url": "https://www.youtube.com/embed/cR3wuG8VQ0o"
+    }
+  ],
+  "additional-resources": [
+    {
+      "label": "Toxic Friends Raidplan",
+      "url": "https://raidplan.io/plan/c2L5iJfuYIWXk1v7"
     }
   ]
 }

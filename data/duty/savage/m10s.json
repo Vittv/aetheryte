@@ -29,10 +29,25 @@
       "Four": { "X": 88.242, "Y": 0.0, "Z": 111.614, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/AAC_Heavyweight_M2_(Savage)",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=17J1p4f2rIw"
+      "url": "https://www.youtube.com/embed/17J1p4f2rIw"
+    }
+  ],
+  "additional-resources": [
+    {
+      "label": "Toxic Friends Raidplan",
+      "url": "https://raidplan.io/plan/syjvfhacdxz7awet"
+    },
+    {
+      "label": "NomNom Snaking",
+      "url": "https://raidplan.io/plan/Cmo_RpCDbsUSMV5c"
+    },
+    {
+      "label": "Parallel",
+      "url": "https://raidplan.io/plan/qWue79_md0YHCrnW"
     }
   ]
 }

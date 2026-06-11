@@ -2,28 +2,7 @@
   "name": "M11S - The Tyrant (Savage)",
   "slug": "m11s",
   "current": true,
-  "planners": [
-    {
-      "label": "toxic-friends-raidplan",
-      "url": "https://raidplan.io/plan/HJAbE7fuWodELUSB#15"
-    },
-    {
-      "label": "toxic-friends-flatliner",
-      "url": "https://raidplan.io/plan/B82fx_zDqUMr5KFC#5"
-    },
-    {
-      "label": "kindred-flatliner",
-      "url": "https://raidplan.io/plan/hvbysrfwvrc55ahz#8"
-    },
-    {
-      "label": "uptime-ecliptic",
-      "url": "https://raidplan.io/plan/pz_pT6oL7EgrTIEH"
-    },
-    {
-      "label": "fixed-ecliptic",
-      "url": "https://raidplan.io/plan/KXVlSGwV3zqON3CJ"
-    }
-  ],
+  "planners": [],
   "party-finder-summary": "Hector | (Toxic No Buddies / Kindred No Buddies)  | (Fixed or Uptime) ES",
   "markers": [
     {
@@ -63,14 +42,37 @@
       "Four": { "X": 84.0, "Y": 0.0, "Z": 111.0, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/AAC_Heavyweight_M3_(Savage)",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=w1uuwzhyf5A"
+      "url": "https://www.youtube.com/embed/w1uuwzhyf5A"
     },
     {
       "label": "Hector Hectorson Fixed Stamped Guide",
-      "url": "https://www.youtube.com/watch?v=p8cL88OKEWE"
+      "url": "https://www.youtube.com/embed/p8cL88OKEWE"
+    }
+  ],
+  "additional-resources": [
+    {
+      "label": "Toxic Friends",
+      "url": "https://raidplan.io/plan/HJAbE7fuWodELUSB#15"
+    },
+    {
+      "label": "Toxic Friends Flatliner",
+      "url": "https://raidplan.io/plan/B82fx_zDqUMr5KFC#5"
+    },
+    {
+      "label": "Kindred Flatliner",
+      "url": "https://raidplan.io/plan/hvbysrfwvrc55ahz#8"
+    },
+    {
+      "label": "Uptime Ecliptic",
+      "url": "https://raidplan.io/plan/pz_pT6oL7EgrTIEH"
+    },
+    {
+      "label": "Fixed Ecliptic",
+      "url": "https://raidplan.io/plan/KXVlSGwV3zqON3CJ"
     }
   ]
 }
