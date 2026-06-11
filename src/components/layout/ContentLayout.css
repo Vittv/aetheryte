@@ -74,6 +74,11 @@
   font-weight: 500;
 }
 
+.sidebar-right a[data-level="3"],
+.sidebar-right a[data-level="4"] {
+  padding-left: 1.5rem;
+}
+
 .sidebar-left {
   grid-column: 1;
   position: sticky;

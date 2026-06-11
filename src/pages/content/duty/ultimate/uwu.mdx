@@ -23,7 +23,7 @@ import data from "../../../../../data/duty/ultimate/uwu.json"
 
 - <BulletLink href={data.planners[2].url}>Titan Toolbox</BulletLink>
 
-> Party Finder *expects* most people to either use or be aware of **AM** during **Titan**. You can learn more about what it is <a href="">here</a>.
+  > Party Finder *expects* most people to either use or be aware of **AM** (Automarkers) during **Titan**. While there are ToS-friendly ways to resolve this mechanic, the majority of players will resort to the usage of **AM**. <a rel="noopener noreferrer" target="_blank" href="https://pastebin.com/42br2VCq">Non-automark pastebin macro options</a>
 
 ## Intermission: Magitek Bits
 
@@ -56,20 +56,30 @@ import data from "../../../../../data/duty/ultimate/uwu.json"
 
 ### Unlock
 
-- <BulletLink href={data.unlock}>Wiki Link</BulletLink>
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
 
 ### Mitigation
 
-- <BulletLink href={data.mitigation.url}>Mit sheet</BulletLink>
+<ul>
+  {data.mitigation.map((mit) => (
+    <li key={mit.url}>
+      <BulletLink href={mit.url}>{mit.label}</BulletLink>
+    </li>
+  ))}
+</ul>
 
 ### Simulations
 
-- <BulletLink href={data.sims[0].url}>Pettanko Neko Sim</BulletLink>
+<ul>
+  {data.sims.map((sim) => (
+    <li key={sim.url}>
+      <BulletLink href={sim.url}>{sim.label}</BulletLink>
+    </li>
+  ))}
+</ul>
 
 ### Videos
 
-<VideoEmbed src={data.videos[0].url} title={data.videos[0].label} />
-
-<VideoEmbed src={data.videos[1].url} title={data.videos[1].label} />
-
-<VideoEmbed src={data.videos[2].url} title={data.videos[2].label} />
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}

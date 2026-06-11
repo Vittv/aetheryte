@@ -59,13 +59,13 @@
     }
   ],
   "mitigation": [
-    { "label": "naur-dsr-mit", "url": "https://tinyurl.com/naur-dsr-mit" },
+    { "label": "NAUR DSR Mit", "url": "https://tinyurl.com/naur-dsr-mit" },
     {
-      "label": "double-shield-mit",
+      "label": "Double Shield Mit",
       "url": "https://tinyurl.com/dsr-double-shield"
     },
     {
-      "label": "dsrmitty-filters",
+      "label": "DSR Mitty filters",
       "url": "https://tinyurl.com/dsrmitty-filters"
     }
   ],
@@ -99,17 +99,17 @@
   "videos": [
     {
       "label": "Tessan Twintails Guide",
-      "url": "https://www.youtube.com/watch?v=A-P1eXE18ko&t=2s"
+      "url": "https://www.youtube.com/embed/A-P1eXE18ko"
     }
   ],
   "sims": [
     { "label": "xivsim", "url": "https://www.xivsim.com/dsr/" },
     {
-      "label": "exaflare-helper",
+      "label": "Exaflare Helper",
       "url": "https://caffinate.itch.io/exaflares"
     },
     {
-      "label": "p3-solo-sim",
+      "label": "P3 Solo Sim",
       "url": "https://github.com/WCGH/Dragonsong-Sim/releases"
     }
   ],

@@ -33,10 +33,12 @@
       "url": "https://ff14.toolboxgaming.space/?id=170875560147661&preview=1"
     }
   ],
-  "mitigation": {
-    "label": "mitsheet",
-    "url": "https://docs.google.com/spreadsheets/d/1A58RflNeNq9mesuvSEcQzIvQ3MwOGyvPRi5khNACrc8/edit#gid=1511755464"
-  },
+  "mitigation": [
+    {
+      "label": "Mit sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1A58RflNeNq9mesuvSEcQzIvQ3MwOGyvPRi5khNACrc8/edit#gid=1511755464"
+    }
+  ],
   "markers": [
     {
       "Name": "PF Trines",
@@ -54,29 +56,29 @@
   "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Epic_Of_Alexander_(Ultimate)#Unlock_and_Requirements",
   "videos": [
     {
-      "label": "alninio-limit-cut-guide",
-      "url": "https://www.youtube.com/watch?v=r3PODekimO0"
+      "label": "Alninio Limit Cut Guide",
+      "url": "https://www.youtube.com/embed/r3PODekimO0"
     },
     {
-      "label": "alninio-wormhole-guide",
-      "url": "https://www.youtube.com/watch?v=yAstTj6LMdA"
+      "label": "Alninio Wormhole Guide",
+      "url": "https://www.youtube.com/embed/yAstTj6LMdA"
     },
     {
-      "label": "valith-perfect-alexander-guide",
-      "url": "https://www.youtube.com/watch?v=fiXZRgAOCHw"
+      "label": "Valith Perfect Alexander Guide",
+      "url": "https://www.youtube.com/embed/fiXZRgAOCHw"
     },
     {
       "label": "Tessan Twintails Guide",
-      "url": "https://www.youtube.com/watch?v=uVtZ8-XoOZ0&t=1087s&pp=ygUUdGVzc2FuIHR3aW50YWlscyBmcnU%3D"
+      "url": "https://www.youtube.com/embed/uVtZ8-XoOZ0"
     }
   ],
   "sims": [
     {
-      "label": "kr-en-wormhole-n-lc-unity-sim",
+      "label": "KR EN Wormhole and LC Sim",
       "url": "https://github.com/naurffxiv/assets/tree/main/Simulators"
     },
     {
-      "label": "browser-lc-temporal-incep-wormhole",
+      "label": "Web LC Temporal Incep. Wormhole Sim",
       "url": "https://dangermomentum.itch.io/1256-sim"
     }
   ],

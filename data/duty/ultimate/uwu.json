@@ -38,10 +38,12 @@
       "url": "https://ff14.toolboxgaming.space/?id=784760520258561&preview=1"
     }
   ],
-  "mitigation": {
-    "label": "mitsheet",
-    "url": "https://docs.google.com/spreadsheets/d/1Aebpp_26RpVMYL3vLzahu461BbrwXkMENNRVSoqbxYw/edit?usp=sharing"
-  },
+  "mitigation": [
+    {
+      "label": "Mit sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1Aebpp_26RpVMYL3vLzahu461BbrwXkMENNRVSoqbxYw/edit?usp=sharing"
+    }
+  ],
   "markers": [
     {
       "Name": "UWU",
@@ -59,21 +61,21 @@
   "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Weapon%27s_Refrain_(Ultimate)#Unlock_and_Requirements",
   "videos": [
     {
-      "label": "Tessan Twintails Guide",
-      "url": "https://www.youtube.com/embed/PwEVH50b-rg"
-    },
-    {
       "label": "Zalera Praxis' Predation Guide",
       "url": "https://www.youtube.com/embed/Ktn5e0jVtmM"
     },
     {
       "label": "Archon Ghoul's Suppression Guide",
       "url": "https://www.youtube.com/embed/PSrbDnFtIJ0"
+    },
+    {
+      "label": "Tessan Twintails Guide",
+      "url": "https://www.youtube.com/embed/PwEVH50b-rg"
     }
   ],
   "sims": [
     {
-      "label": "pettanko-neko",
+      "label": "Pettanko Neko Sim",
       "url": "https://pettanko-neko.itch.io/just-like-the-simulations"
     }
   ],

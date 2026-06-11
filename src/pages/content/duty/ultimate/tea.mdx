@@ -1,0 +1,85 @@
+---
+date: 2026-06-11
+---
+
+import contentImg from "../../../../assets/images/tea.webp"
+import data from "../../../../../data/duty/ultimate/tea.json"
+
+# The Epic of Alexander (Ultimate)
+
+<p className="content-date">Last updated: <span style={{ fontFamily: "'JetBrainsMono Variable'" }}>{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="TEA banner" />
+
+## P1: Living Liquid
+
+- <BulletLink href={data.planners[0].url}>Living Liquid Toolbox</BulletLink>
+
+## Intermission: Limit Cut
+
+- <BulletLink href={data.planners[1].url}>Limit Cut Toolbox</BulletLink>
+
+## P2: BJCC
+
+- <BulletLink href={data.planners[2].url}>BJCC Toolbox</BulletLink>
+
+## Intermission: Temporal Stasis
+
+- <BulletLink href={data.planners[3].url}>AP / Inception Toolbox</BulletLink>
+
+## P3: Alexander Prime
+
+- <BulletLink href={data.planners[4].url}>Alexander Prime Toolbox</BulletLink>
+
+## P4: Perfect Alexander
+
+- <BulletLink href={data.planners[5].url}>Perfect Alexander Toolbox</BulletLink>
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "PF Trines",
+  "MapID": 694,
+  "A": { "X": 100.0, "Y": 0.0, "Z": 86.25, "ID": 0, "Active": true },
+  "B": { "X": 113.75, "Y": 0.0, "Z": 91.75, "ID": 1, "Active": true },
+  "C": { "X": 100.0, "Y": 0.0, "Z": 113.75, "ID": 2, "Active": true },
+  "D": { "X": 86.25, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+  "One": { "X": 108.0, "Y": 0.0, "Z": 100.0, "ID": 4, "Active": true },
+  "Two": { "X": 113.75, "Y": 0.0, "Z": 100.0, "ID": 5, "Active": true },
+  "Three": { "X": 100.0, "Y": 0.0, "Z": 108.0, "ID": 6, "Active": true },
+  "Four": { "X": 108.0, "Y": 0.0, "Z": 108.0, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Mitigation
+
+<ul>
+  {data.mitigation.map((mit) => (
+    <li key={mit.url}>
+      <BulletLink href={mit.url}>{mit.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Simulations
+
+<ul>
+  {data.sims.map((sim) => (
+    <li key={sim.url}>
+      <BulletLink href={sim.url}>{sim.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}

@@ -1,0 +1,128 @@
+---
+date: 2026-06-11
+---
+
+import contentImg from "../../../../assets/images/ucob.webp"
+import data from "../../../../../data/duty/ultimate/ucob.json"
+
+# The Unending Coil of Bahamut (Ultimate)
+
+<p className="content-date">Last updated: <span style={{ fontFamily: "'JetBrainsMono Variable'" }}>{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="UCOB banner" />
+
+## P1: Twintania
+
+- <BulletLink href={data.planners[0].url}>Twintania Raidplan</BulletLink>
+
+- **Prepull Setup:**
+
+  ```markdown
+  T1 | T2
+  H1 | H2
+  M1 | M2
+  R1 | R2
+  ```
+
+- **Neurolink Placement:** Normal triangle: N, SW, SE (CCW, on 123 markers).
+- Both tanks and 1 healer stay out of the first stack for LB cheese. Discuss which healer stays out.
+-  <BulletLink href={data.planners[1].url}>Liquid Hells Raidplan</BulletLink> - Phys. Range always baits. Caster takes hatch if Phys. Range is first hatch.
+
+## P2: Nael
+
+- <BulletLink href={data.planners[2].url}>Nael Raidplan</BulletLink>
+- **Party Movement:** Rotate **CW** around the boss by default.
+- **Fire Order:** In > Out > In (2nd fire tether person out) > In.
+
+- <BulletLink href={data.planners[3].url}>Divebombs Raidplan</BulletLink>
+
+## P3: Bahamut
+
+- <BulletLink href={data.planners[4].url}>Quickmarch Raidplan</BulletLink> - Uptime.
+- <BulletLink href={data.planners[5].url}>Blackfire Raidplan</BulletLink> - DPS CCW, support CW.
+- <BulletLink href={data.planners[6].url}>Fellruin Raidplan</BulletLink> - Party neuro opposite of Bahamut.
+- <BulletLink href={data.planners[7].url}>Heavensfall Raidplan</BulletLink> - R1 tower under Nael.
+- <BulletLink href={data.planners[8].url}>Tenstrike Raidplan</BulletLink> - Jump to indicate you're convering hatch, 1 always safe for Earthshakers.
+- <BulletLink href={data.planners[9].url}>Grand Octet Raidplan</BulletLink> - Tank LB3, if no tank LB3 bait twin CCW (left) and stack CW of twin (right).
+
+## P4: Adds
+
+- <BulletLink href={data.planners[10].url}>Adds Raidplan</BulletLink>
+- Discuss which boss you're taking (Default: MT Twin, OT Nael).
+- Bosses between 1/3 markers, somewhat NE.
+- All stacks done in the center of the arena.
+
+## P5: Golden Bahamut
+
+- <BulletLink href={data.planners[11].url}>Golden Bahamut Raidplan</BulletLink>
+- **Akh Morn Order:** Share > MT invuln > OT invuln > Share.
+- **Shared Busters:** Kitchen sinked with all available mitigation.
+- **Mitigation Plan:**
+  - 60s/90s CDs: Morn Afahs 1/3/5 or 2/4.
+  - 2m CDs: Morn Afahs 1/4 or 2/5.
+- Discuss with co-tank/melee/caster which Morn Afahs to mitigate.
+- **Tank LBs:** No tank LBs in the default mitigation plan unless it's an emergency (e.g., < 8-person stack or invuln not up).
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "good aether markers",
+  "MapID": 280,
+  "A": { "X": 20.986, "Y": 0.0, "Z": -11.02, "ID": 0, "Active": true },
+  "B": { "X": 9.315, "Y": 0.0, "Z": 21.971, "ID": 1, "Active": true },
+  "C": { "X": -19.999, "Y": 0.0, "Z": 11.772, "ID": 2, "Active": true },
+  "D": { "X": 0.0, "Y": 0.0, "Z": 9.0, "ID": 3, "Active": true },
+  "One": { "X": 0.0, "Y": 0.0, "Z": -8.0, "ID": 4, "Active": true },
+  "Two": { "X": -8.0, "Y": 0.0, "Z": 5.0, "ID": 5, "Active": true },
+  "Three": { "X": 8.0, "Y": 0.0, "Z": 5.0, "ID": 6, "Active": true },
+  "Four": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 7, "Active": true }
+},
+```
+
+```json
+{
+  "Name": "aether pf",
+  "MapID": 280,
+  "A": { "X": 20.909, "Y": 0.0, "Z": -11.182, "ID": 0, "Active": true },
+  "B": { "X": 7.807, "Y": 0.0, "Z": 21.795, "ID": 1, "Active": true },
+  "C": { "X": -21.84, "Y": 0.0, "Z": 8.076, "ID": 2, "Active": true },
+  "D": { "X": 5.03, "Y": 0.0, "Z": -2.578, "ID": 3, "Active": true },
+  "One": { "X": 0.122, "Y": 0.0, "Z": -6.96, "ID": 4, "Active": true },
+  "Two": { "X": -7.505, "Y": 0.0, "Z": 5.109, "ID": 5, "Active": true },
+  "Three": { "X": 7.947, "Y": 0.0, "Z": 5.375, "ID": 6, "Active": true },
+  "Four": { "X": 0.21, "Y": 0.0, "Z": 8.838, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Mitigation
+
+<ul>
+  {data.mitigation.map((mit) => (
+    <li key={mit.url}>
+      <BulletLink href={mit.url}>{mit.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Simulations
+
+<ul>
+  {data.sims.map((sim) => (
+    <li key={sim.url}>
+      <BulletLink href={sim.url}>{sim.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}

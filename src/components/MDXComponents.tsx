@@ -118,11 +118,9 @@ export function BulletLink({
   children: ReactNode;
 }) {
   return (
-    <p>
-      <a href={href} rel="noopener noreferrer" target="_blank">
-        {children}
-      </a>
-    </p>
+    <a href={href} rel="noopener noreferrer" target="_blank">
+      {children}
+    </a>
   );
 }
 

@@ -55,7 +55,7 @@
     },
     {
       "phase": "p4",
-      "label": "lahabrea",
+      "label": "adds",
       "url": "https://raidplan.io/plan/AMEhnLbUmlTb7ij3"
     },
     {
@@ -64,7 +64,12 @@
       "url": "https://raidplan.io/plan/Y4WRFLhdHSQ7oLN_"
     }
   ],
-  "mitigation": { "label": "mitsheet", "url": "https://tinyurl.com/ucobmitty" },
+  "mitigation": [
+    {
+      "label": "UCOB Mitty",
+      "url": "https://tinyurl.com/ucobmitty"
+    }
+  ],
   "markers": [
     {
       "Name": "good aether markers",
@@ -95,16 +100,12 @@
   "videos": [
     {
       "label": "Tessan Twintails Guide",
-      "url": "https://www.youtube.com/watch?v=EG9NxD6bxWs"
-    },
-    {
-      "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/playlist?list=PLojSzO6hHRKR4T4PziQzhTIf25XLGQDGw"
+      "url": "https://www.youtube.com/embed/EG9NxD6bxWs"
     }
   ],
   "sims": [
     {
-      "label": "heavensfall-solo-sim",
+      "label": "Heavensfall Solo Sim",
       "url": "https://drive.google.com/file/d/1eNgGqA4VAPT0f3wwt37n2UHqrOF4kfuI/view"
     }
   ],

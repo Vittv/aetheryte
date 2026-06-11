@@ -2,7 +2,7 @@
   border-left: 2px solid;
   border-radius: 0 6px 6px 0;
   padding: 0.75rem 1rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
 }
@@ -46,7 +46,7 @@
   color: var(--callout-caution-border);
 }
 figure {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .code-block {
   border-radius: 8px;
