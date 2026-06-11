@@ -124,7 +124,7 @@ function Navbar() {
                       {entries.map((d) => (
                         <Command.Item
                           key={d.slug}
-                          value={`${d.name} ${d.slug} ${d.type}`}
+                          value={`${d.name} ${d.slug} ${d.type} ${d.aliases?.join(" ") ?? ""}`}
                           onSelect={() => handleSelect(d.slug)}
                         >
                           {d.name}

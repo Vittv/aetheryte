@@ -1,73 +1,81 @@
 [
   {
-    "slug": "cr1",
+    "slug": "another-sildhin-subterrane",
     "name": "Another Sil'dihn Subterrane",
     "type": "criterion",
     "order": 1
   },
   {
-    "slug": "cr2",
+    "slug": "another-mount-rokkon",
     "name": "Another Mount Rokkon",
     "type": "criterion",
     "order": 2
   },
   {
-    "slug": "cr3",
+    "slug": "another-aloalo-island",
     "name": "Another Aloalo Island",
     "type": "criterion",
     "order": 3
   },
   {
-    "slug": "cr4",
+    "slug": "another-merchants-tale",
     "name": "Another Merchant's Tale",
     "type": "criterion",
     "order": 4
   },
   {
-    "slug": "necron",
+    "slug": "ageless-necropolis",
     "name": "Ageless Necropolis (Extreme)",
+    "aliases": ["necron"],
     "type": "extreme",
     "order": 5
   },
   {
-    "slug": "zoraal-ja",
+    "slug": "everkeep",
     "name": "Everkeep (Extreme)",
+    "aliases": ["zoraal ja"],
     "type": "extreme",
     "order": 2
   },
   {
-    "slug": "doomtrain",
+    "slug": "hell-on-rails",
     "name": "Hell on Rails (Extreme)",
+    "aliases": ["doomtrain", "choochoo", "thomas"],
     "type": "extreme",
     "order": 7
   },
   {
-    "slug": "zelenia",
+    "slug": "recollection",
     "name": "Recollection (Extreme)",
+    "aliases": ["zelenia"],
     "type": "extreme",
     "order": 4
   },
   {
-    "slug": "sphenes",
+    "slug": "sphenes-burden",
     "name": "Sphene's Burden (Extreme)",
+    "aliases": ["sphene"],
     "type": "extreme",
     "order": 3
   },
   {
-    "slug": "enuo",
+    "slug": "the-unmaking",
     "name": "The Unmaking (Extreme)",
+    "aliases": ["enuo"],
     "type": "extreme",
     "order": 8
   },
   {
-    "slug": "guardian-arkveld",
+    "slug": "the-windward-wilds",
     "name": "The Windward Wilds (Extreme)",
+    "aliases": ["guardian-arkveld"],
     "type": "extreme",
     "order": 6
   },
   {
-    "slug": "valigarmanda",
+    "slug": "worqor-lar-dor",
     "name": "Worqor Lar Dor (Extreme)",
+    "aliases": ["valigarmanda"],
     "type": "extreme",
     "order": 1
   },

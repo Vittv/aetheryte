@@ -17,10 +17,11 @@
       "Four": { "X": 119.0, "Y": 0.0, "Z": 94.0, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Worqor_Lar_Dor_(Extreme)",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=8HV2dk3jvNo&pp=ugMICgJlbhABGAHKBRNoZWN0b3IgdmFsaWdhcm1hbmRh"
+      "url": "https://www.youtube.com/embed/8HV2dk3jvNo"
     }
   ]
 }

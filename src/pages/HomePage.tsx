@@ -3,7 +3,7 @@ import { useSearch } from "../context/SearchContext";
 import "./HomePage.css";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import vittKiSprite from "../assets/images/vitt-ki-sprite.png";
+import vittKiSprite from "../assets/sprites/vitt-ki-sprite.png";
 import type { NewsItem } from "../types";
 import NewsSection from "./home/NewsSection";
 import ResetTimers from "./home/ResetTimers";
@@ -62,7 +62,7 @@ function HomePage() {
         className="hero-search"
       >
         <FontAwesomeIcon className="hero-mag-glass" icon={faMagnifyingGlass} />
-        <span>Search duty guides, resources... </span>
+        <span>Search guides, resources... </span>
         <kbd>{isMac ? "⌘ K" : "Ctrl K"}</kbd>
         <img
           src={vittKiSprite}
