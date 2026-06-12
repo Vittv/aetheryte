@@ -144,8 +144,14 @@
   margin-top: 1rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
   .content-main {
-    padding: 0;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-main {
+    padding: 1rem 0;
   }
 }

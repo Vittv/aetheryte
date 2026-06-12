@@ -37,6 +37,7 @@
   --sans: "Geist", system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: "Geist", system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+  --toc: "Geist", system-ui, sans-serif;
 
   --content-width: 1426px;
   --navbar-height: 41px;

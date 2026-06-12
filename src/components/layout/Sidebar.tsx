@@ -33,7 +33,7 @@ export default function Sidebar({ source }: Props) {
                   to={`${basePath}/${d.slug}`}
                   className={({ isActive }) => (isActive ? "active" : "")}
                 >
-                  {d.name}
+                  {d.name.replace(/\s*\(.*?\)$/, "")}
                 </NavLink>
               ))}
             </nav>

@@ -39,12 +39,16 @@
   text-transform: capitalize;
 }
 
+.sidebar-right h3 {
+  font-size: 0.7rem;
+}
+
 /* left sidebar */
 .sidebar-left a {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   line-height: 1.4;
-  padding: 0.4rem 0rem;
+  padding: 0.4rem 1rem;
   border-radius: 4px;
   text-decoration: none;
 }
@@ -58,19 +62,20 @@
 /* right sidebar */
 .sidebar-right a {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   line-height: 1.4;
   padding: 0.4rem 0.6rem;
   text-decoration: none;
-  border-left: 2px solid var(--text);
   transition: border-left-color 0.3s ease;
-  opacity: 0.8;
+  font-family: var(--toc);
+  margin-left: 1rem;
+  border-radius: 6px;
 }
 
 .sidebar-right a.active {
   border-left-color: var(--accent);
-  background-color: color-mix(in srgb, var(--accent) 25%, transparent);
-  color: var(--text-h);
+  color: var(--accent);
+  background-color: var(--code-bg);
   font-weight: 500;
 }
 

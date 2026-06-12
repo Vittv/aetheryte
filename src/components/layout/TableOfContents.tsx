@@ -61,7 +61,7 @@ export default function TableOfContents({ entries }: { entries: TocEntry[] }) {
 
   return (
     <aside className="sidebar-right">
-      <h3>On this page</h3>
+      <h3>TABLE OF CONTENTS</h3>
       <nav>
         {entries.map(({ id, text, level }) => (
           <a
