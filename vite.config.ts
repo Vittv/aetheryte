@@ -18,8 +18,8 @@ export default defineConfig({
             rehypePrettyCode,
             {
               theme: {
-                dark: "catppuccin-mocha",
-                light: "catppuccin-latte",
+                dark: "dark-plus",
+                light: "light-plus",
               },
             },
           ],

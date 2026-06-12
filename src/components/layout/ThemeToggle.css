@@ -5,7 +5,7 @@
   height: 28px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: var(--code-bg);
+  background: var(--surface-bg);
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;

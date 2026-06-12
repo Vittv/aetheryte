@@ -35,7 +35,7 @@
 .hero-search {
   margin: 4rem 0 0rem 0;
   padding: 1rem;
-  background-color: var(--code-bg);
+  background-color: var(--surface-bg);
   border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 0.9rem;

@@ -75,7 +75,7 @@
 .sidebar-right a.active {
   border-left-color: var(--accent);
   color: var(--accent);
-  background-color: var(--code-bg);
+  background-color: var(--surface-bg);
   font-weight: 500;
 }
 

@@ -11,7 +11,8 @@
   --text-h: #4b453a;
   --bg: #e5e1da;
   --border: #a6a095;
-  --code-bg: #eeeae6;
+  --surface-bg: #eeeae6;
+  --code-bg: #e8e3dc;
   --accent: #41569b;
   --accent-bg: rgba(65, 86, 155, 0.1);
   --accent-border: rgba(65, 86, 155, 0.35);
@@ -63,7 +64,8 @@
   --text-h: #e8e3dc;
   --bg: #1e1c19;
   --border: #3a3730;
-  --code-bg: #28261f;
+  --surface-bg: #28261f;
+  --code-bg: #1b1916;
   --accent: #7b8fd4;
   --accent-bg: rgba(123, 143, 212, 0.12);
   --accent-border: rgba(123, 143, 212, 0.35);
