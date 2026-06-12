@@ -82,6 +82,15 @@ function Navbar() {
   return (
     <div
       className={`navbar${scrolled ? " navbar--scrolled" : ""}${isHome ? " navbar--home" : ""}${open ? " navbar--open" : ""}`}
+      style={
+        scrolled
+          ? {
+              background: `color-mix(in srgb, var(--bg) 70%, transparent)`,
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+            }
+          : undefined
+      }
       ref={ref}
     >
       <div className="navbar-inner">
@@ -111,6 +120,10 @@ function Navbar() {
               className="cmd-overlay"
               aria-label="Close search"
               onClick={() => setOpen(false)}
+              style={{
+                backdropFilter: "blur(6px)",
+                WebkitBackdropFilter: "blur(6px)",
+              }}
             />
             onKeyDown=
             {(e: React.KeyboardEvent) => e.key === "Escape" && setOpen(false)}

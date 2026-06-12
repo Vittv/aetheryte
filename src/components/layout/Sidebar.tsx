@@ -7,7 +7,6 @@ const SOURCES = {
     basePath: "/duty",
     getData: () => duties,
   },
-  // guide: { types: [...], basePath: "/guide", getData: () => guides },
 };
 
 interface Props {

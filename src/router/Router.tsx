@@ -14,9 +14,9 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: "duty/:slug",
+        path: "duty/",
         element: <ContentLayout sidebar={<Sidebar source="duty" />} />,
-        children: [{ index: true, element: <ContentPage source="duty" /> }],
+        children: [{ path: ":slug", element: <ContentPage source="duty" /> }],
       },
     ],
   },

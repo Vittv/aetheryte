@@ -40,8 +40,6 @@
   inset: 0;
   z-index: 99;
   background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
   animation: overlay-in 0.15s ease;
   appearance: none;
   border: none;
