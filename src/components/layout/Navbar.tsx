@@ -21,12 +21,14 @@ function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
+  // scroll listener
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // cmd keybinds
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -125,8 +127,6 @@ function Navbar() {
                 WebkitBackdropFilter: "blur(6px)",
               }}
             />
-            onKeyDown=
-            {(e: React.KeyboardEvent) => e.key === "Escape" && setOpen(false)}
             <div className="cmd-tray">
               <Command>
                 <Command.Input placeholder="Search..." autoFocus />

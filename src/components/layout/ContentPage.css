@@ -9,7 +9,8 @@
   display: inline;
 }
 
-.content-main li {
+.content-main li,
+.content-main p:not(.frontmatter) {
   font-size: 0.9rem;
 }
 

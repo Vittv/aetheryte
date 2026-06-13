@@ -13,6 +13,7 @@
   flex-direction: column;
   min-width: 0;
   padding: 2rem 0;
+  min-height: calc(100vh - var(--navbar-height));
 }
 
 /* sidebars */
@@ -49,14 +50,12 @@
   font-size: 0.85rem;
   line-height: 1.4;
   padding: 0.4rem 1rem;
-  border-radius: 4px;
   text-decoration: none;
 }
 
 .sidebar-left a.active {
   color: var(--accent);
   font-weight: 500;
-  border-radius: 6px;
 }
 
 /* right sidebar */
@@ -66,14 +65,12 @@
   line-height: 1.4;
   padding: 0.4rem 0.6rem;
   text-decoration: none;
-  transition: border-left-color 0.3s ease;
   font-family: var(--toc);
   margin-left: 1rem;
   border-radius: 6px;
 }
 
 .sidebar-right a.active {
-  border-left-color: var(--accent);
   color: var(--accent);
   background-color: var(--surface-bg);
   font-weight: 500;

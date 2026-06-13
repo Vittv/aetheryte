@@ -17,13 +17,12 @@ const mdxModules = import.meta.glob("/src/pages/content/duty/**/*.mdx");
 export default function ContentPage({ source }: Props) {
   const { setToc } = useOutletContext<OutletContext>();
   const { slug } = useParams();
-
   const entry =
     source === "duty" ? duties.find((d) => d.slug === slug) : undefined;
 
-  if (!entry) return <div>Not found</div>;
-
   const MDXContent = useMemo(() => {
+    if (!entry) return null;
+
     interface MDXProps {
       fightData: typeof entry;
       components: typeof mdxComponents;
@@ -41,9 +40,9 @@ export default function ContentPage({ source }: Props) {
         });
       }
 
-      return importer() as Promise<{ default: React.ComponentType<any> }>;
+      return importer() as Promise<{ default: React.ComponentType<MDXProps> }>;
     });
-  }, [entry.type, slug]);
+  }, [entry, slug]);
 
   useEffect(() => {
     let attempts = 0;
@@ -84,6 +83,9 @@ export default function ContentPage({ source }: Props) {
       clearTimeout(initialTimeout);
     };
   }, [slug, setToc]);
+
+  if (!entry) return <div>Not found</div>;
+  if (!MDXContent) return null;
 
   return (
     <div key={slug} style={{ width: "100%", height: "100%" }}>
