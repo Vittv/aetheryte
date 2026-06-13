@@ -100,7 +100,6 @@ function Navbar() {
           <Link to="/">aetheryte</Link>
         </div>
         <div className="right-links">
-          <Link to="/resources">resources</Link>
           <ThemeToggle />
           <button
             className="cmd-trigger"

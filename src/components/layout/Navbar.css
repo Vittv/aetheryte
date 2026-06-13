@@ -41,6 +41,7 @@ body.page-home .navbar {
 .home {
   font-size: 1rem;
   font-weight: 700;
+  font-family: var(--heading);
   color: inherit;
 }
 

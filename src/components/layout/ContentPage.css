@@ -145,6 +145,13 @@
   margin-top: 1rem;
 }
 
+.content-main h1,
+.content-main h2,
+.content-main h3,
+.content-main h4 {
+  font-family: var(--heading);
+}
+
 @media (max-width: 1500px) {
   .content-main {
     padding: 1rem;
