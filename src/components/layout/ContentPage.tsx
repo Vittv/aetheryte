@@ -89,7 +89,7 @@ export default function ContentPage({ source }: Props) {
 
   return (
     <div key={slug} style={{ width: "100%", height: "100%" }}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={null}>
         <MDXContent fightData={entry} components={mdxComponents} />
       </Suspense>
     </div>
