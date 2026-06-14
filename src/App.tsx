@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
+import NavigationProgress from "./components/NavigationProgress";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import { SearchProvider } from "./context/SearchContext";
-import NavigationProgress from "./components/NavigationProgress";
 
 function App() {
   return (

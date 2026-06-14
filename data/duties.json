@@ -3,24 +3,32 @@
     "slug": "another-sildhin-subterrane",
     "name": "Another Sil'dihn Subterrane",
     "type": "criterion",
+    "shape": "square",
+    "radius": 20,
     "order": 1
   },
   {
     "slug": "another-mount-rokkon",
     "name": "Another Mount Rokkon",
     "type": "criterion",
+    "shape": "square",
+    "radius": 20,
     "order": 2
   },
   {
     "slug": "another-aloalo-island",
     "name": "Another Aloalo Island",
     "type": "criterion",
+    "shape": "square",
+    "radius": 20,
     "order": 3
   },
   {
     "slug": "another-merchants-tale",
     "name": "Another Merchant's Tale",
     "type": "criterion",
+    "shape": "square",
+    "radius": 20,
     "order": 4
   },
   {
@@ -28,6 +36,8 @@
     "name": "Ageless Necropolis (Extreme)",
     "aliases": ["necron"],
     "type": "extreme",
+    "shape": "square",
+    "radius": 20,
     "order": 5
   },
   {
@@ -35,6 +45,8 @@
     "name": "Everkeep (Extreme)",
     "aliases": ["zoraal ja"],
     "type": "extreme",
+    "shape": "square",
+    "radius": 20,
     "order": 2
   },
   {
@@ -42,6 +54,8 @@
     "name": "Hell on Rails (Extreme)",
     "aliases": ["doomtrain", "choochoo", "thomas"],
     "type": "extreme",
+    "shape": "square",
+    "radius": 20,
     "order": 7
   },
   {
@@ -49,6 +63,8 @@
     "name": "Recollection (Extreme)",
     "aliases": ["zelenia"],
     "type": "extreme",
+    "shape": "circle",
+    "radius": 20,
     "order": 4
   },
   {
@@ -56,6 +72,8 @@
     "name": "Sphene's Burden (Extreme)",
     "aliases": ["sphene"],
     "type": "extreme",
+    "shape": "square",
+    "radius": 20,
     "order": 3
   },
   {
@@ -63,6 +81,8 @@
     "name": "The Unmaking (Extreme)",
     "aliases": ["enuo"],
     "type": "extreme",
+    "shape": "circle",
+    "radius": 20,
     "order": 8
   },
   {
@@ -70,6 +90,8 @@
     "name": "The Windward Wilds (Extreme)",
     "aliases": ["guardian-arkveld"],
     "type": "extreme",
+    "shape": "circle",
+    "radius": 20,
     "order": 6
   },
   {
@@ -77,66 +99,88 @@
     "name": "Worqor Lar Dor (Extreme)",
     "aliases": ["valigarmanda"],
     "type": "extreme",
+    "shape": "square",
+    "radius": 20,
     "order": 1
   },
   {
     "slug": "m9s",
     "name": "Vamp Fatale (Savage)",
     "type": "savage",
+    "shape": "square",
+    "radius": 20,
     "order": 1
   },
   {
     "slug": "m10s",
     "name": "Red Hot and Deep Blue (Savage)",
     "type": "savage",
+    "shape": "square",
+    "radius": 20,
     "order": 2
   },
   {
     "slug": "m11s",
     "name": "The Tyrant (Savage)",
     "type": "savage",
+    "shape": "square",
+    "radius": 20,
     "order": 3
   },
   {
     "slug": "m12s",
     "name": "The Lindwurm (Savage)",
     "type": "savage",
+    "shape": "square",
+    "radius": 20,
     "order": 4
   },
   {
     "slug": "dsr",
     "name": "Dragonsong's Reprise (Ultimate)",
     "type": "ultimate",
+    "shape": "circle",
+    "radius": 22,
     "order": 4
   },
   {
     "slug": "fru",
     "name": "Futures Rewritten (Ultimate)",
     "type": "ultimate",
+    "shape": "circle",
+    "radius": 20,
     "order": 6
   },
   {
     "slug": "tea",
     "name": "The Epic of Alexander (Ultimate)",
     "type": "ultimate",
+    "shape": "circle",
+    "radius": 20,
     "order": 3
   },
   {
     "slug": "top",
     "name": "The Omega Protocol (Ultimate)",
     "type": "ultimate",
+    "shape": "circle",
+    "radius": 20,
     "order": 5
   },
   {
     "slug": "ucob",
     "name": "The Unending Coil of Bahamut (Ultimate)",
     "type": "ultimate",
+    "shape": "circle",
+    "radius": 24,
     "order": 1
   },
   {
     "slug": "uwu",
     "name": "The Weapon's Refrain (Ultimate)",
     "type": "ultimate",
+    "shape": "circle",
+    "radius": 20,
     "order": 2
   }
 ]

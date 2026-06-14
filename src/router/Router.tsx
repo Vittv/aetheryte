@@ -5,6 +5,8 @@ import ContentPage from "../components/layout/ContentPage";
 import Sidebar from "../components/layout/Sidebar";
 import ErrorPage from "../pages/error/ErrorPage";
 import HomePage from "../pages/HomePage";
+import ToolsLayout from "../pages/tools/ToolsLayout";
+import WaymarkBuilder from "../pages/tools/WaymarkBuilder";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,11 @@ const router = createBrowserRouter([
         path: "duty/",
         element: <ContentLayout sidebar={<Sidebar source="duty" />} />,
         children: [{ path: ":slug", element: <ContentPage source="duty" /> }],
+      },
+      {
+        path: "tools/",
+        element: <ToolsLayout />,
+        children: [{ path: "waymarks", element: <WaymarkBuilder /> }],
       },
     ],
   },
