@@ -1,398 +1,51 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dutiesIndex from "../../../data/duties.json";
+import {
+  MARKER_META,
+  TYPE_LABELS,
+  TYPE_ORDER,
+  WAYMARK_KEYS,
+} from "./WaymarkBuilder/constants";
+import { drawArena } from "./WaymarkBuilder/draw";
+import {
+  canvasToGame,
+  clampToArena,
+  gameToCanvas,
+  getArenaGeometry,
+  snapVal,
+} from "./WaymarkBuilder/geometry";
+import {
+  findDutyByPreset,
+  makeDefault,
+  makeDefaultPreset,
+  parsePreset,
+  presetToJson,
+} from "./WaymarkBuilder/preset";
+import type {
+  ArenaGeometry,
+  DutyEntry,
+  Preset,
+  WaymarkKey,
+} from "./WaymarkBuilder/types";
 import { s } from "./WaymarkBuilder.styles";
 
-// types
-type WaymarkKey = "A" | "B" | "C" | "D" | "One" | "Two" | "Three" | "Four";
+const DEFAULT_SLUG = "ucob";
 
-interface WaymarkData {
-  X: number;
-  Y: number;
-  Z: number;
-  ID: number;
-  Active: boolean;
+async function loadDuty(slug: string) {
+  const duty = (dutiesIndex as DutyEntry[]).find((d) => d.slug === slug);
+  if (!duty) throw new Error("duty not found");
+  const res = await fetch(`/data/duty/${duty.type}/${duty.slug}.json`);
+  if (!res.ok) throw new Error("not found");
+  const data = await res.json();
+  const presetsList: Preset[] = Array.isArray(data.markers)
+    ? data.markers
+    : data.Name
+      ? [data]
+      : [];
+  if (presetsList.length === 0) throw new Error("no markers");
+  return { duty, presetsList };
 }
 
-interface Preset {
-  Name: string;
-  MapID: number;
-  A: WaymarkData;
-  B: WaymarkData;
-  C: WaymarkData;
-  D: WaymarkData;
-  One: WaymarkData;
-  Two: WaymarkData;
-  Three: WaymarkData;
-  Four: WaymarkData;
-}
-
-interface DutyEntry {
-  slug: string;
-  name: string;
-  type: string;
-  radius: number;
-  order: number;
-  shape?: "circle" | "square";
-}
-
-interface ArenaGeometry {
-  center: { x: number; z: number };
-  radius: number;
-}
-
-// constants
-const SNAP_GRID = 0.5;
-const SNAP_PULL = 0.35;
-const DEFAULT_RADIUS = 24; // fallback radius if no explicit duty is active or loaded
-
-const MARKER_META: Record<
-  WaymarkKey,
-  { id: number; label: string; color: string; shape: "circle" | "square" }
-> = {
-  A: { id: 0, label: "A", color: "#e05555", shape: "circle" },
-  B: { id: 1, label: "B", color: "#d4a82a", shape: "circle" },
-  C: { id: 2, label: "C", color: "#4a8fd4", shape: "circle" },
-  D: { id: 3, label: "D", color: "#9b59b6", shape: "circle" },
-  One: { id: 4, label: "1", color: "#e05555", shape: "square" },
-  Two: { id: 5, label: "2", color: "#d4a82a", shape: "square" },
-  Three: { id: 6, label: "3", color: "#4a8fd4", shape: "square" },
-  Four: { id: 7, label: "4", color: "#9b59b6", shape: "square" },
-};
-
-const WAYMARK_KEYS: WaymarkKey[] = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "One",
-  "Two",
-  "Three",
-  "Four",
-];
-
-const TYPE_LABELS: Record<string, string> = {
-  ultimate: "Ultimate",
-  savage: "Savage",
-  extreme: "Extreme",
-  criterion: "Criterion",
-};
-
-const TYPE_ORDER = ["ultimate", "savage", "extreme", "criterion"];
-
-// helpers
-function makeDefault(key: WaymarkKey): WaymarkData {
-  return { X: 100, Y: 0, Z: 100, ID: MARKER_META[key].id, Active: false };
-}
-
-function makeDefaultPreset(): Preset {
-  return {
-    Name: "New Preset",
-    MapID: 0,
-    A: makeDefault("A"),
-    B: makeDefault("B"),
-    C: makeDefault("C"),
-    D: makeDefault("D"),
-    One: makeDefault("One"),
-    Two: makeDefault("Two"),
-    Three: makeDefault("Three"),
-    Four: makeDefault("Four"),
-  };
-}
-
-function parsePreset(text: string): Preset | null {
-  try {
-    const obj = JSON.parse(text);
-    if (typeof obj !== "object" || obj === null) return null;
-    if (typeof obj.MapID !== "number") return null;
-    for (const key of WAYMARK_KEYS) {
-      if (!obj[key] || typeof obj[key].X !== "number") return null;
-    }
-    return obj as Preset;
-  } catch {
-    return null;
-  }
-}
-
-function presetToJson(preset: Preset): string {
-  return JSON.stringify(preset, null, 2);
-}
-
-/**
- * Pure math engine: Tracks map center coordinates and sets static geometry 
- * based on the selected duty's precise design boundaries.
- */
-function getArenaGeometry(
-  preset: Preset | null,
-  selectedSlug: string | null,
-): ArenaGeometry {
-  const defaultGeo = { center: { x: 100, z: 100 }, radius: DEFAULT_RADIUS };
-  if (!preset) return defaultGeo;
-
-  // Pull explicit architectural radius mapped directly inside duties.json
-  const activeDuty = (dutiesIndex as DutyEntry[]).find((d) => d.slug === selectedSlug);
-  const targetRadius = activeDuty ? activeDuty.radius : DEFAULT_RADIUS;
-
-  const active = WAYMARK_KEYS.map((k) => preset[k]).filter((d) => d.Active);
-
-  // detect if the fight is centered at (0,0) or (100,100)
-  let center = { x: 100, z: 100 };
-  if (active.length > 0) {
-    const sumX = active.reduce((acc, d) => acc + d.X, 0);
-    const avgX = sumX / active.length;
-    if (Math.abs(avgX) < 30) center = { x: 0, z: 0 };
-  }
-
-  return {
-    center,
-    radius: targetRadius,
-  };
-}
-
-function snapVal(val: number): number {
-  const snapped = Math.round(val / SNAP_GRID) * SNAP_GRID;
-  return Math.abs(val - snapped) < SNAP_PULL ? snapped : val;
-}
-
-// coordinate helpers
-function gameToCanvas(
-  gx: number,
-  gz: number,
-  canvasSize: number,
-  geo: ArenaGeometry,
-) {
-  const r = canvasSize / 2 - 18;
-  const scale = r / geo.radius;
-
-  return {
-    cx: (gx - geo.center.x) * scale + canvasSize / 2,
-    cy: (gz - geo.center.z) * scale + canvasSize / 2,
-  };
-}
-
-function canvasToGame(
-  cx: number,
-  cy: number,
-  canvasSize: number,
-  geo: ArenaGeometry,
-) {
-  const r = canvasSize / 2 - 18;
-  const scale = r / geo.radius;
-
-  return {
-    gx: (cx - canvasSize / 2) / scale + geo.center.x,
-    gz: (cy - canvasSize / 2) / scale + geo.center.z,
-  };
-}
-
-function clampToArena(
-  gx: number,
-  gz: number,
-  geo: ArenaGeometry,
-  square: boolean,
-  canvasSize: number,
-) {
-  const dx = gx - geo.center.x;
-  const dz = gz - geo.center.z;
-
-  const visualRadiusPx = canvasSize / 2 - 18;
-  const totalRadiusPx = canvasSize / 2;
-  const usableScale = visualRadiusPx / totalRadiusPx;
-  const maxGameRadius = geo.radius * usableScale;
-
-  if (square) {
-    return {
-      gx: geo.center.x + Math.max(-maxGameRadius, Math.min(maxGameRadius, dx)),
-      gz: geo.center.z + Math.max(-maxGameRadius, Math.min(maxGameRadius, dz)),
-    };
-  }
-
-  const dist = Math.sqrt(dx * dx + dz * dz);
-  if (dist <= maxGameRadius) return { gx, gz };
-  return {
-    gx: geo.center.x + (dx / dist) * maxGameRadius,
-    gz: geo.center.z + (dz / dist) * maxGameRadius,
-  };
-}
-
-// canvas draw engine
-interface DrawOptions {
-  size: number;
-  preset: Preset;
-  dragging: WaymarkKey | null;
-  square: boolean;
-  geo: ArenaGeometry;
-  ghost: { gx: number; gz: number; key: WaymarkKey } | null;
-}
-
-function drawMarker(
-  ctx: CanvasRenderingContext2D,
-  mx: number,
-  my: number,
-  key: WaymarkKey,
-  size: number,
-  alpha: number = 1,
-  glow: boolean = false,
-) {
-  const meta = MARKER_META[key];
-  const markerRadius = Math.max(14, Math.round(size * 0.034));
-
-  ctx.save();
-  ctx.globalAlpha = alpha;
-  ctx.shadowColor = meta.color;
-  ctx.shadowBlur = glow ? 20 : 10;
-
-  if (meta.shape === "circle") {
-    ctx.beginPath();
-    ctx.arc(mx, my, markerRadius, 0, Math.PI * 2);
-    ctx.fillStyle = meta.color + "cc";
-    ctx.fill();
-    ctx.strokeStyle = "rgba(255,255,255,0.8)";
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-  } else {
-    const sSize = markerRadius * 1.75;
-    ctx.fillStyle = meta.color + "cc";
-    ctx.fillRect(mx - sSize / 2, my - sSize / 2, sSize, sSize);
-    ctx.strokeStyle = "rgba(255,255,255,0.8)";
-    ctx.lineWidth = 1.5;
-    ctx.strokeRect(mx - sSize / 2, my - sSize / 2, sSize, sSize);
-  }
-
-  ctx.shadowBlur = 0;
-  ctx.fillStyle = "#fff";
-  ctx.font = `bold ${Math.round(size * 0.03)}px monospace`;
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(meta.label, mx, my);
-  ctx.restore();
-}
-
-function drawArena(opts: DrawOptions) {
-  const { size, preset, dragging, square, geo, ghost } = opts;
-
-  return (ctx: CanvasRenderingContext2D) => {
-    ctx.clearRect(0, 0, size, size);
-
-    const cx = size / 2;
-    const cy = size / 2;
-    const r = size / 2 - 18;
-
-    // floor
-    ctx.save();
-    ctx.beginPath();
-    if (square) ctx.rect(cx - r, cy - r, r * 2, r * 2);
-    else ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    const floor = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-    floor.addColorStop(0, "#252220");
-    floor.addColorStop(1, "#181513");
-    ctx.fillStyle = floor;
-    ctx.fill();
-    ctx.restore();
-
-    // clip grid bounds
-    ctx.save();
-    ctx.beginPath();
-    if (square) ctx.rect(cx - r, cy - r, r * 2, r * 2);
-    else ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.clip();
-
-    // ── High-Visibility Grid Lines ──
-    ctx.strokeStyle = "rgba(180,160,130,0.22)";
-    ctx.lineWidth = 1;
-
-    if (square) {
-      // clean intersecting cross-grid matrix for squares
-      for (let i = -5; i <= 5; i++) {
-        if (i === 0) continue;
-        const offset = (r * i) / 6;
-
-        ctx.beginPath();
-        ctx.moveTo(cx + offset, cy - r);
-        ctx.lineTo(cx + offset, cy + r);
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.moveTo(cx - r, cy + offset);
-        ctx.lineTo(cx + r, cy + offset);
-        ctx.stroke();
-      }
-    } else {
-      // classic radial layout for circles
-      for (let angle = 0; angle < 360; angle += 22.5) {
-        if (angle % 90 === 0) continue;
-        const rad = (angle * Math.PI) / 180;
-        ctx.beginPath();
-        ctx.moveTo(cx, cy);
-        ctx.lineTo(cx + Math.cos(rad) * r, cy + Math.sin(rad) * r);
-        ctx.stroke();
-      }
-
-      for (let ring = 1; ring <= 5; ring++) {
-        const rr = (r * ring) / 6;
-        ctx.beginPath();
-        ctx.arc(cx, cy, rr, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-    }
-
-    // bolder central crosshair
-    ctx.strokeStyle = "rgba(180,160,130,0.45)";
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.moveTo(cx - r, cy);
-    ctx.lineTo(cx + r, cy);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(cx, cy - r);
-    ctx.lineTo(cx, cy + r);
-    ctx.stroke();
-    ctx.restore();
-
-    // high contrast boundary ring
-    ctx.beginPath();
-    if (square) ctx.rect(cx - r, cy - r, r * 2, r * 2);
-    else ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.strokeStyle = "rgba(200,80,60,0.8)";
-    ctx.lineWidth = 2.5;
-    ctx.stroke();
-
-    // cardinal orientations
-    const cardinals = [
-      { label: "N", angle: -Math.PI / 2 },
-      { label: "S", angle: Math.PI / 2 },
-      { label: "E", angle: 0 },
-      { label: "W", angle: Math.PI },
-    ];
-    ctx.font = `bold ${Math.round(size * 0.026)}px monospace`;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    for (const c of cardinals) {
-      ctx.fillStyle = "rgba(180,160,130,0.55)";
-      ctx.fillText(
-        c.label,
-        cx + Math.cos(c.angle) * (r - 12),
-        cy + Math.sin(c.angle) * (r - 12),
-      );
-    }
-
-    // ghost tool replacement reference
-    if (ghost) {
-      const { cx: gx, cy: gy } = gameToCanvas(ghost.gx, ghost.gz, size, geo);
-      drawMarker(ctx, gx, gy, ghost.key, size, 0.45, false);
-    }
-
-    // active rendering layer
-    for (const key of WAYMARK_KEYS) {
-      const data = preset[key];
-      if (!data.Active) continue;
-      const { cx: mx, cy: my } = gameToCanvas(data.X, data.Z, size, geo);
-      const isDragging = dragging === key;
-      drawMarker(ctx, mx, my, key, size, isDragging ? 0.75 : 1, isDragging);
-    }
-  };
-}
-
-// component
 export default function WaymarkBuilder() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sizeRef = useRef(560);
@@ -405,26 +58,21 @@ export default function WaymarkBuilder() {
   const [square, setSquare] = useState(false);
   const [dragging, setDragging] = useState<WaymarkKey | null>(null);
   const [activeTool, setActiveTool] = useState<WaymarkKey | null>(null);
-
-  // track the currently selected duty configuration profile slug
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
-
-  const [availablePresets, setAvailablePresets] = useState<any[]>([]);
+  const [selectedSlug, setSelectedSlug] = useState<string>(DEFAULT_SLUG);
+  const [availablePresets, setAvailablePresets] = useState<Preset[]>([]);
   const [activePresetIdx, setActivePresetIdx] = useState<number>(0);
+  const [copied, setCopied] = useState(false);
+  const [loadingFight, setLoadingFight] = useState(false);
 
   const ghostRef = useRef<{ gx: number; gz: number; key: WaymarkKey } | null>(
     null,
   );
-
-  const [copied, setCopied] = useState(false);
-  const [loadingFight, setLoadingFight] = useState(false);
 
   const preset = useMemo<Preset | null>(
     () => parsePreset(jsonText),
     [jsonText],
   );
 
-  // math engine handles canvas scale and center translations using the explicit duty slug context
   const geo = useMemo<ArenaGeometry>(
     () => getArenaGeometry(preset, selectedSlug),
     [preset, selectedSlug],
@@ -441,6 +89,36 @@ export default function WaymarkBuilder() {
     }
     return groups;
   }, []);
+
+  const applyDutyLoad = useCallback(
+    (slug: string, duty: DutyEntry, presetsList: Preset[]) => {
+      setSelectedSlug(slug);
+      setSquare(duty.shape === "square");
+      setAvailablePresets(presetsList);
+      setActivePresetIdx(0);
+      setJsonText(
+        presetToJson({
+          ...presetsList[0],
+          Name: presetsList[0].Name || "Preset 1",
+        }),
+      );
+      setJsonError(false);
+      setActiveTool(null);
+      ghostRef.current = null;
+    },
+    [],
+  );
+
+  // load UCOB on mount
+  useEffect(() => {
+    setLoadingFight(true);
+    loadDuty(DEFAULT_SLUG)
+      .then(({ duty, presetsList }) =>
+        applyDutyLoad(DEFAULT_SLUG, duty, presetsList),
+      )
+      .catch(() => {})
+      .finally(() => setLoadingFight(false));
+  }, [applyDutyLoad]);
 
   const redraw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -464,12 +142,10 @@ export default function WaymarkBuilder() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || !canvas.parentElement) return;
-
     const ro = new ResizeObserver((entries) => {
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
         const targetSize = Math.floor(Math.min(width, height));
-
         if (sizeRef.current !== targetSize && targetSize > 0) {
           sizeRef.current = targetSize;
           canvas.width = targetSize;
@@ -478,7 +154,6 @@ export default function WaymarkBuilder() {
         }
       }
     });
-
     ro.observe(canvas.parentElement);
     return () => ro.disconnect();
   }, [redraw]);
@@ -507,28 +182,30 @@ export default function WaymarkBuilder() {
     [preset, geo],
   );
 
-  const getCanvasPos = (e: React.PointerEvent) => {
-    const rect = canvasRef.current!.getBoundingClientRect();
-    const scaleX = canvasRef.current!.width / rect.width;
-    const scaleY = canvasRef.current!.height / rect.height;
+  const getCanvasPos = (
+    e: React.PointerEvent,
+  ): { cx: number; cy: number } | null => {
+    const canvas = canvasRef.current;
+    if (!canvas) return null;
+    const rect = canvas.getBoundingClientRect();
     return {
-      cx: (e.clientX - rect.left) * scaleX,
-      cy: (e.clientY - rect.top) * scaleY,
+      cx: (e.clientX - rect.left) * (canvas.width / rect.width),
+      cy: (e.clientY - rect.top) * (canvas.height / rect.height),
     };
   };
 
   const handlePointerDown = (e: React.PointerEvent) => {
     if (!preset) return;
-    const { cx, cy } = getCanvasPos(e);
+    const pos = getCanvasPos(e);
+    if (!pos) return;
+    const { cx, cy } = pos;
     const hit = hitTest(cx, cy);
-
     if (hit) {
       setDragging(hit);
       ghostRef.current = null;
-      canvasRef.current!.setPointerCapture(e.pointerId);
+      canvasRef.current?.setPointerCapture(e.pointerId);
       return;
     }
-
     if (activeTool) {
       const { gx, gz } = canvasToGame(cx, cy, sizeRef.current, geo);
       const clamped = clampToArena(
@@ -553,8 +230,9 @@ export default function WaymarkBuilder() {
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
-    const { cx, cy } = getCanvasPos(e);
-
+    const pos = getCanvasPos(e);
+    if (!pos) return;
+    const { cx, cy } = pos;
     if (dragging && preset) {
       const { gx, gz } = canvasToGame(cx, cy, sizeRef.current, geo);
       const clamped = clampToArena(
@@ -574,7 +252,6 @@ export default function WaymarkBuilder() {
       }));
       return;
     }
-
     if (activeTool) {
       const { gx, gz } = canvasToGame(cx, cy, sizeRef.current, geo);
       const clamped = clampToArena(
@@ -590,6 +267,7 @@ export default function WaymarkBuilder() {
   };
 
   const handlePointerUp = () => setDragging(null);
+
   const handlePointerLeave = () => {
     if (!dragging && ghostRef.current) {
       ghostRef.current = null;
@@ -604,42 +282,13 @@ export default function WaymarkBuilder() {
     }));
 
   const handleFightPick = async (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value;
-    if (!value) return;
-
-    const duty = (dutiesIndex as DutyEntry[]).find((d) => d.slug === value);
-    if (!duty) return;
-
+    const slug = e.target.value;
+    if (!slug) return;
     setLoadingFight(true);
     try {
-      const res = await fetch(`/data/duty/${duty.type}/${duty.slug}.json`);
-      if (!res.ok) throw new Error("not found");
-      const data = await res.json();
-
-      const presetsList = Array.isArray(data.markers)
-        ? data.markers
-        : data.Name
-          ? [data]
-          : [];
-
-      if (presetsList.length === 0) throw new Error("no markers");
-
-      setSelectedSlug(duty.slug);
-      setSquare(duty.shape === "square");
-      setAvailablePresets(presetsList);
-      setActivePresetIdx(0);
-
-      setJsonText(
-        presetToJson({
-          ...presetsList[0],
-          Name: presetsList[0].Name || "Preset 1",
-        }),
-      );
-      setJsonError(false);
-      setActiveTool(null);
-      ghostRef.current = null;
+      const { duty, presetsList } = await loadDuty(slug);
+      applyDutyLoad(slug, duty, presetsList);
     } catch {
-      // block errors safely
     } finally {
       setLoadingFight(false);
     }
@@ -648,28 +297,16 @@ export default function WaymarkBuilder() {
   const handleJsonChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const val = e.target.value;
     setJsonText(val);
-
     const parsed = parsePreset(val);
     if (parsed === null) {
       setJsonError(true);
       return;
     }
-
     setJsonError(false);
-
-    const matchedDuty = (dutiesIndex as DutyEntry[]).find(
-      (d) =>
-        d.slug.includes(String(parsed.MapID)) ||
-        d.slug === parsed.Name.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-    );
-
-    if (matchedDuty) {
-      setSelectedSlug(matchedDuty.slug);
-      if (matchedDuty.shape) {
-        setSquare(matchedDuty.shape === "square");
-      }
-    } else {
-      setSelectedSlug(null);
+    const matched = findDutyByPreset(parsed);
+    if (matched) {
+      setSelectedSlug(matched.slug);
+      if (matched.shape) setSquare(matched.shape === "square");
     }
   };
 
@@ -679,21 +316,41 @@ export default function WaymarkBuilder() {
     setTimeout(() => setCopied(false), 1800);
   };
 
+  const activateEditing = () => setIsEditing(true);
+  const handleEditKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") setIsEditing(true);
+  };
+
   return (
     <div style={s.root}>
       <aside style={s.sidebar}>
         <p style={s.sidebarTitle}>Waymark Builder</p>
 
-        <label style={s.fieldLabel}>Load fight</label>
+        <label htmlFor="wb-preset-name" style={s.fieldLabel}>
+          Preset name
+        </label>
+        <input
+          id="wb-preset-name"
+          style={s.input}
+          type="text"
+          value={preset?.Name ?? ""}
+          disabled={!preset}
+          onChange={(e) =>
+            updatePreset((p) => ({ ...p, Name: e.target.value }))
+          }
+          spellCheck={false}
+        />
+
+        <label htmlFor="wb-fight" style={s.fieldLabel}>
+          Fight
+        </label>
         <select
+          id="wb-fight"
           style={s.select}
-          value={selectedSlug ?? ""}
+          value={selectedSlug}
           onChange={handleFightPick}
           disabled={loadingFight}
         >
-          <option value="" disabled>
-            {loadingFight ? "Loading..." : "Select a duty..."}
-          </option>
           {TYPE_ORDER.filter((t) => groupedDuties[t]).map((type) => (
             <optgroup key={type} label={TYPE_LABELS[type] ?? type}>
               {groupedDuties[type].map((d) => (
@@ -707,8 +364,11 @@ export default function WaymarkBuilder() {
 
         {availablePresets.length > 1 && (
           <>
-            <label style={s.fieldLabel}>Select Preset Layout</label>
+            <label htmlFor="wb-preset-layout" style={s.fieldLabel}>
+              Preset layout
+            </label>
             <select
+              id="wb-preset-layout"
               style={s.select}
               value={activePresetIdx}
               onChange={(e) => {
@@ -730,25 +390,27 @@ export default function WaymarkBuilder() {
             >
               {availablePresets.map((p, index) => (
                 <option key={index} value={index}>
-                  {p.Name || `Layout Variation ${index + 1}`}
+                  {p.Name || `Layout ${index + 1}`}
                 </option>
               ))}
             </select>
           </>
         )}
 
-        <label style={s.fieldLabel}>Map ID</label>
+        <span style={s.fieldLabel}>Map ID</span>
         <div style={s.mapId}>{preset?.MapID ?? "—"}</div>
 
-        <label style={s.fieldLabel}>Arena shape</label>
+        <span style={s.fieldLabel}>Arena shape</span>
         <div style={s.shapeToggle}>
           <button
+            type="button"
             style={{ ...s.shapeBtn, ...(square ? {} : s.shapeBtnActive) }}
             onClick={() => setSquare(false)}
           >
             Circle
           </button>
           <button
+            type="button"
             style={{ ...s.shapeBtn, ...(square ? s.shapeBtnActive : {}) }}
             onClick={() => setSquare(true)}
           >
@@ -766,10 +428,10 @@ export default function WaymarkBuilder() {
             const data = preset?.[key];
             const isActive = data?.Active ?? false;
             const isTool = activeTool === key;
-
             return (
               <div key={key} style={s.markerRow}>
                 <button
+                  type="button"
                   title={`Select ${key} tool`}
                   onClick={() => {
                     setActiveTool(isTool ? null : key);
@@ -778,22 +440,21 @@ export default function WaymarkBuilder() {
                   }}
                   style={{
                     ...s.badge,
-                    background: isTool ? meta.color : meta.color + "33",
-                    border: `2px solid ${isTool ? "#fff" : meta.color + "88"}`,
+                    background: isTool ? meta.color : `${meta.color}33`,
+                    border: `2px solid ${isTool ? "#fff" : `${meta.color}88`}`,
                     borderRadius: meta.shape === "circle" ? "50%" : "3px",
                     color: isTool ? "#fff" : meta.color,
                   }}
                 >
                   {meta.label}
                 </button>
-
                 <span style={{ ...s.coords, opacity: isActive ? 1 : 0.28 }}>
                   {isActive && data
                     ? `${data.X.toFixed(1)}, ${data.Z.toFixed(1)}`
                     : "—"}
                 </span>
-
                 <button
+                  type="button"
                   onClick={() => toggleActive(key)}
                   disabled={!preset}
                   style={{
@@ -810,14 +471,12 @@ export default function WaymarkBuilder() {
         </div>
 
         <button
+          type="button"
           style={s.resetBtn}
           onClick={() => {
-            const currentMapId = preset?.MapID ?? 0;
-            const currentName = preset?.Name ?? "New Preset";
-
             const clearedPreset: Preset = {
-              Name: currentName,
-              MapID: currentMapId,
+              Name: preset?.Name ?? "New Preset",
+              MapID: preset?.MapID ?? 0,
               A: makeDefault("A"),
               B: makeDefault("B"),
               C: makeDefault("C"),
@@ -827,12 +486,10 @@ export default function WaymarkBuilder() {
               Three: makeDefault("Three"),
               Four: makeDefault("Four"),
             };
-
             setJsonText(presetToJson(clearedPreset));
             setJsonError(false);
             setActiveTool(null);
             ghostRef.current = null;
-
             setActivePresetIdx(0);
             redraw();
           }}
@@ -864,17 +521,17 @@ export default function WaymarkBuilder() {
               <span style={s.jsonLabel}>json</span>
               {jsonError && <span style={s.errorBadge}>invalid JSON</span>}
             </div>
-            <button style={s.copyBtn} onClick={copyJson}>
+            <button style={s.copyBtn} onClick={copyJson} type="button">
               {copied ? "copied" : "copy"}
             </button>
           </div>
-
           {isEditing ? (
             <textarea
               style={s.jsonTextarea}
               value={jsonText}
               onChange={handleJsonChange}
               onBlur={() => setIsEditing(false)}
+              // biome-ignore lint/a11y/noAutofocus: intentional — user clicked to edit
               autoFocus
               spellCheck={false}
             />
@@ -884,7 +541,11 @@ export default function WaymarkBuilder() {
                 ...s.jsonPre,
                 borderColor: jsonError ? "rgba(200,80,60,0.4)" : "transparent",
               }}
-              onClick={() => setIsEditing(true)}
+              onClick={activateEditing}
+              onKeyDown={handleEditKeyDown}
+              // biome-ignore lint/a11y/useSemanticElements: <pre> is intentional for monospace JSON display
+              role="button"
+              tabIndex={0}
               title="Click to edit"
             >
               <code style={s.jsonCode}>{jsonText}</code>

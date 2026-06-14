@@ -3,6 +3,8 @@ import type { CSSProperties } from "react";
 export const s: Record<string, CSSProperties> = {
   root: {
     display: "flex",
+    width: "var(--content-width)",
+    margin: "0 auto",
     height: "100vh",
     background: "var(--bg, #0f0d0c)",
     color: "var(--text, #c8b89a)",
@@ -11,11 +13,10 @@ export const s: Record<string, CSSProperties> = {
     overflow: "hidden",
   },
   sidebar: {
-    width: "210px",
-    minWidth: "210px",
-    background: "var(--sidebar-bg, #161210)",
-    borderRight: "1px solid var(--border, #2e2a27)",
-    padding: "20px 16px",
+    width: "280px",
+    minWidth: "180px",
+    background: "var(--bg)",
+    padding: "1rem 0",
     display: "flex",
     flexDirection: "column",
     gap: "6px",
@@ -170,7 +171,7 @@ export const s: Record<string, CSSProperties> = {
   },
   jsonPane: {
     flexShrink: 0,
-    height: "220px",
+    height: "240px",
     borderTop: "1px solid var(--border, #2e2a27)",
     background: "var(--code-bg, #111009)",
     display: "flex",
