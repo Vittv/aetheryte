@@ -11,6 +11,47 @@ export interface DrawOptions {
   ghost: { gx: number; gz: number; key: WaymarkKey } | null;
 }
 
+interface ArenaTheme {
+  floorInner: string;
+  floorOuter: string;
+  grid: string;
+  crosshair: string;
+  boundary: string;
+  cardinals: string;
+}
+
+function resolveTheme(): ArenaTheme {
+  const style = getComputedStyle(document.documentElement);
+  const get = (v: string) => style.getPropertyValue(v).trim();
+
+  return {
+    floorInner: get("--surface-bg"),
+    floorOuter: get("--bg"),
+    grid: hexWithAlpha(get("--text"), 0.55),
+    crosshair: hexWithAlpha(get("--text-h"), 0.9),
+    boundary: hexWithAlpha(get("--accent"), 0.7),
+    cardinals: hexWithAlpha(get("--callout-warning-border"), 0.9),
+  };
+}
+
+// converts a 3 or 6-char hex color + alpha to rgba().
+// falls back gracefully if the value is already rgba or a named color.
+function hexWithAlpha(hex: string, alpha: number): string {
+  const clean = hex.replace("#", "");
+  if (clean.length === 3) {
+    const [r, g, b] = clean.split("").map((c) => parseInt(c + c, 16));
+    return `rgba(${r},${g},${b},${alpha})`;
+  }
+  if (clean.length === 6) {
+    const r = parseInt(clean.slice(0, 2), 16);
+    const g = parseInt(clean.slice(2, 4), 16);
+    const b = parseInt(clean.slice(4, 6), 16);
+    return `rgba(${r},${g},${b},${alpha})`;
+  }
+  // already rgba / named color — return as-is and ignore alpha
+  return hex;
+}
+
 export function drawMarker(
   ctx: CanvasRenderingContext2D,
   mx: number,
@@ -60,6 +101,8 @@ export function drawArena(
   const { size, preset, dragging, square, geo, ghost } = opts;
 
   return (ctx: CanvasRenderingContext2D) => {
+    const theme = resolveTheme();
+
     ctx.clearRect(0, 0, size, size);
 
     const cx = size / 2;
@@ -72,8 +115,8 @@ export function drawArena(
     if (square) ctx.rect(cx - r, cy - r, r * 2, r * 2);
     else ctx.arc(cx, cy, r, 0, Math.PI * 2);
     const floor = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-    floor.addColorStop(0, "#252220");
-    floor.addColorStop(1, "#181513");
+    floor.addColorStop(0, theme.floorInner);
+    floor.addColorStop(1, theme.floorOuter);
     ctx.fillStyle = floor;
     ctx.fill();
     ctx.restore();
@@ -85,7 +128,7 @@ export function drawArena(
     else ctx.arc(cx, cy, r, 0, Math.PI * 2);
     ctx.clip();
 
-    ctx.strokeStyle = "rgba(180,160,130,0.22)";
+    ctx.strokeStyle = theme.grid;
     ctx.lineWidth = 1;
 
     if (square) {
@@ -118,7 +161,7 @@ export function drawArena(
     }
 
     // crosshair
-    ctx.strokeStyle = "rgba(180,160,130,0.45)";
+    ctx.strokeStyle = theme.crosshair;
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.moveTo(cx - r, cy);
@@ -130,15 +173,13 @@ export function drawArena(
     ctx.stroke();
     ctx.restore();
 
-    // dotted pink boundary ring
+    // boundary ring
     ctx.save();
     ctx.beginPath();
     if (square) ctx.rect(cx - r, cy - r, r * 2, r * 2);
     else ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    
-    // [dash length, gap length] -> 4px dots separated by 4px gaps
-    ctx.setLineDash([4, 4]); 
-    ctx.strokeStyle = "#ff79c6";
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = theme.boundary;
     ctx.lineWidth = 2.5;
     ctx.stroke();
     ctx.restore();
@@ -153,7 +194,7 @@ export function drawArena(
     ctx.font = `bold ${Math.round(size * 0.026)}px monospace`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.fillStyle = "rgba(180,160,130,0.55)";
+    ctx.fillStyle = theme.cardinals;
     for (const c of cardinals) {
       ctx.fillText(
         c.label,

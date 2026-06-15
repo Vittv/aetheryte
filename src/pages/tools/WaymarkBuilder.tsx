@@ -12,7 +12,6 @@ import {
   clampToArena,
   gameToCanvas,
   getArenaGeometry,
-  snapVal,
 } from "./WaymarkBuilder/geometry";
 import {
   findDutyByPreset,
@@ -27,7 +26,7 @@ import type {
   Preset,
   WaymarkKey,
 } from "./WaymarkBuilder/types";
-import { s } from "./WaymarkBuilder.styles";
+import "./WaymarkBuilder.css";
 
 const DEFAULT_SLUG = "ucob";
 
@@ -166,6 +165,15 @@ export default function WaymarkBuilder() {
     });
   }, []);
 
+  useEffect(() => {
+    const observer = new MutationObserver(() => redraw());
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+    return () => observer.disconnect();
+  }, [redraw]);
+
   const hitTest = useCallback(
     (cx: number, cy: number): WaymarkKey | null => {
       if (!preset) return null;
@@ -208,13 +216,7 @@ export default function WaymarkBuilder() {
     }
     if (activeTool) {
       const { gx, gz } = canvasToGame(cx, cy, sizeRef.current, geo);
-      const clamped = clampToArena(
-        snapVal(gx),
-        snapVal(gz),
-        geo,
-        square,
-        sizeRef.current,
-      );
+      const clamped = clampToArena(gx, gz, geo, square, sizeRef.current);
       updatePreset((p) => ({
         ...p,
         [activeTool]: {
@@ -235,13 +237,7 @@ export default function WaymarkBuilder() {
     const { cx, cy } = pos;
     if (dragging && preset) {
       const { gx, gz } = canvasToGame(cx, cy, sizeRef.current, geo);
-      const clamped = clampToArena(
-        snapVal(gx),
-        snapVal(gz),
-        geo,
-        square,
-        sizeRef.current,
-      );
+      const clamped = clampToArena(gx, gz, geo, square, sizeRef.current);
       updatePreset((p) => ({
         ...p,
         [dragging]: {
@@ -254,13 +250,7 @@ export default function WaymarkBuilder() {
     }
     if (activeTool) {
       const { gx, gz } = canvasToGame(cx, cy, sizeRef.current, geo);
-      const clamped = clampToArena(
-        snapVal(gx),
-        snapVal(gz),
-        geo,
-        square,
-        sizeRef.current,
-      );
+      const clamped = clampToArena(gx, gz, geo, square, sizeRef.current);
       ghostRef.current = { gx: clamped.gx, gz: clamped.gz, key: activeTool };
       redraw();
     }
@@ -322,31 +312,14 @@ export default function WaymarkBuilder() {
   };
 
   return (
-    <div style={s.root}>
-      <aside style={s.sidebar}>
-        <p style={s.sidebarTitle}>Waymark Builder</p>
-
-        <label htmlFor="wb-preset-name" style={s.fieldLabel}>
-          Preset name
-        </label>
-        <input
-          id="wb-preset-name"
-          style={s.input}
-          type="text"
-          value={preset?.Name ?? ""}
-          disabled={!preset}
-          onChange={(e) =>
-            updatePreset((p) => ({ ...p, Name: e.target.value }))
-          }
-          spellCheck={false}
-        />
-
-        <label htmlFor="wb-fight" style={s.fieldLabel}>
-          Fight
+    <div className="wb-root">
+      <aside className="wb-sidebar">
+        <label htmlFor="wb-fight" className="wb-field-label">
+          Duty
         </label>
         <select
           id="wb-fight"
-          style={s.select}
+          className="wb-select"
           value={selectedSlug}
           onChange={handleFightPick}
           disabled={loadingFight}
@@ -362,14 +335,29 @@ export default function WaymarkBuilder() {
           ))}
         </select>
 
+        <label htmlFor="wb-preset-name" className="wb-field-label">
+          Name
+        </label>
+        <input
+          id="wb-preset-name"
+          className="wb-input"
+          type="text"
+          value={preset?.Name ?? ""}
+          disabled={!preset}
+          onChange={(e) =>
+            updatePreset((p) => ({ ...p, Name: e.target.value }))
+          }
+          spellCheck={false}
+        />
+
         {availablePresets.length > 1 && (
           <>
-            <label htmlFor="wb-preset-layout" style={s.fieldLabel}>
+            <label htmlFor="wb-preset-layout" className="wb-field-label">
               Preset layout
             </label>
             <select
               id="wb-preset-layout"
-              style={s.select}
+              className="wb-select"
               value={activePresetIdx}
               onChange={(e) => {
                 const idx = Number(e.target.value);
@@ -397,39 +385,39 @@ export default function WaymarkBuilder() {
           </>
         )}
 
-        <span style={s.fieldLabel}>Map ID</span>
-        <div style={s.mapId}>{preset?.MapID ?? "—"}</div>
+        <span className="wb-field-label">Map ID</span>
+        <div className="wb-map-id">{preset?.MapID ?? "—"}</div>
 
-        <span style={s.fieldLabel}>Arena shape</span>
-        <div style={s.shapeToggle}>
+        <span className="wb-field-label">Arena shape</span>
+        <div className="wb-shape-toggle">
           <button
             type="button"
-            style={{ ...s.shapeBtn, ...(square ? {} : s.shapeBtnActive) }}
+            className={`wb-shape-btn${square ? "" : " active"}`}
             onClick={() => setSquare(false)}
           >
             Circle
           </button>
           <button
             type="button"
-            style={{ ...s.shapeBtn, ...(square ? s.shapeBtnActive : {}) }}
+            className={`wb-shape-btn${square ? " active" : ""}`}
             onClick={() => setSquare(true)}
           >
             Square
           </button>
         </div>
 
-        <p style={s.sectionLabel}>
+        <p className="wb-section-label">
           Click a marker to select it, then click the arena to place it
         </p>
 
-        <div style={s.markerGrid}>
+        <div className="wb-marker-grid">
           {WAYMARK_KEYS.map((key) => {
             const meta = MARKER_META[key];
             const data = preset?.[key];
             const isActive = data?.Active ?? false;
             const isTool = activeTool === key;
             return (
-              <div key={key} style={s.markerRow}>
+              <div key={key} className="wb-marker-row">
                 <button
                   type="button"
                   title={`Select ${key} tool`}
@@ -438,8 +426,8 @@ export default function WaymarkBuilder() {
                     ghostRef.current = null;
                     redraw();
                   }}
+                  className="wb-badge"
                   style={{
-                    ...s.badge,
                     background: isTool ? meta.color : `${meta.color}33`,
                     border: `2px solid ${isTool ? "#fff" : `${meta.color}88`}`,
                     borderRadius: meta.shape === "circle" ? "50%" : "3px",
@@ -448,7 +436,10 @@ export default function WaymarkBuilder() {
                 >
                   {meta.label}
                 </button>
-                <span style={{ ...s.coords, opacity: isActive ? 1 : 0.28 }}>
+                <span
+                  className="wb-coords"
+                  style={{ opacity: isActive ? 1 : 0.28 }}
+                >
                   {isActive && data
                     ? `${data.X.toFixed(1)}, ${data.Z.toFixed(1)}`
                     : "—"}
@@ -457,10 +448,9 @@ export default function WaymarkBuilder() {
                   type="button"
                   onClick={() => toggleActive(key)}
                   disabled={!preset}
+                  className="wb-toggle-btn"
                   style={{
-                    ...s.toggleBtn,
-                    background: isActive ? "#2e2b28" : "transparent",
-                    color: isActive ? meta.color : "#444",
+                    color: isActive ? meta.color : "var(--text-d)",
                   }}
                 >
                   {isActive ? "on" : "off"}
@@ -472,7 +462,7 @@ export default function WaymarkBuilder() {
 
         <button
           type="button"
-          style={s.resetBtn}
+          className="wb-reset-btn"
           onClick={() => {
             const clearedPreset: Preset = {
               Name: preset?.Name ?? "New Preset",
@@ -496,38 +486,23 @@ export default function WaymarkBuilder() {
         >
           Reset all
         </button>
-      </aside>
 
-      <div style={s.main}>
-        <div style={s.arenaWrap}>
-          <canvas
-            ref={canvasRef}
-            style={{
-              ...s.canvas,
-              borderRadius: square ? "6px" : "50%",
-              cursor: dragging ? "grabbing" : activeTool ? "none" : "default",
-              opacity: preset ? 1 : 0.4,
-            }}
-            onPointerDown={handlePointerDown}
-            onPointerMove={handlePointerMove}
-            onPointerUp={handlePointerUp}
-            onPointerLeave={handlePointerLeave}
-          />
-        </div>
+        <button type="button" className="wb-reset-btn" onClick={copyJson}>
+          {copied ? "copied" : "copy json"}
+        </button>
 
-        <div style={s.jsonPane}>
-          <div style={s.jsonHeader}>
-            <div style={s.jsonHeaderLeft}>
-              <span style={s.jsonLabel}>json</span>
-              {jsonError && <span style={s.errorBadge}>invalid JSON</span>}
+        <div className="wb-json-pane">
+          <div className="wb-json-header">
+            <div className="wb-json-header-left">
+              <span className="wb-json-label">json</span>
+              {jsonError && (
+                <span className="wb-error-badge">invalid JSON</span>
+              )}
             </div>
-            <button style={s.copyBtn} onClick={copyJson} type="button">
-              {copied ? "copied" : "copy"}
-            </button>
           </div>
           {isEditing ? (
             <textarea
-              style={s.jsonTextarea}
+              className="wb-json-textarea"
               value={jsonText}
               onChange={handleJsonChange}
               onBlur={() => setIsEditing(false)}
@@ -537,9 +512,11 @@ export default function WaymarkBuilder() {
             />
           ) : (
             <pre
+              className="wb-json-pre"
               style={{
-                ...s.jsonPre,
-                borderColor: jsonError ? "rgba(200,80,60,0.4)" : "transparent",
+                borderColor: jsonError
+                  ? "var(--callout-caution-border)"
+                  : "transparent",
               }}
               onClick={activateEditing}
               onKeyDown={handleEditKeyDown}
@@ -548,9 +525,26 @@ export default function WaymarkBuilder() {
               tabIndex={0}
               title="Click to edit"
             >
-              <code style={s.jsonCode}>{jsonText}</code>
+              <code className="wb-json-code">{jsonText}</code>
             </pre>
           )}
+        </div>
+      </aside>
+
+      <div className="wb-main">
+        <div className="wb-arena-wrap">
+          <canvas
+            ref={canvasRef}
+            className="wb-canvas"
+            style={{
+              cursor: dragging ? "grabbing" : activeTool ? "none" : "default",
+              opacity: preset ? 1 : 0.4,
+            }}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerLeave={handlePointerLeave}
+          />
         </div>
       </div>
     </div>
