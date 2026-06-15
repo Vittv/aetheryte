@@ -4,7 +4,7 @@
   padding: 0.75rem 1rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 .blockquote-header {
   display: flex;
@@ -16,9 +16,14 @@
 .blockquote-icon {
   font-size: 0.85rem;
 }
+.blockquote-body {
+  font-size: 0.85rem;
+}
 .blockquote-body p {
-  color: var(--text);
   line-height: 1.6;
+}
+.content-main .blockquote-body p {
+  font-size: 0.85rem;
 }
 .blockquote--note {
   border-color: var(--callout-note-border);

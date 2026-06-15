@@ -91,6 +91,10 @@ const CALLOUT_CONFIG: Record<
   caution: { icon: faCircleXmark, label: "Caution" },
 };
 
+export function InlineNote({ children }: { children: ReactNode }) {
+  return <div className="inline-note">{children}</div>;
+}
+
 export function Blockquote({
   type = "note",
   children,
@@ -166,6 +170,6 @@ export const mdxComponents: MDXComponents = {
   Blockquote,
   BulletLink,
   VideoEmbed,
-  blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+  blockquote: ({ children }) => <InlineNote>{children}</InlineNote>,
   pre: CodeBlock,
 };

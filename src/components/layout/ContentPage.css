@@ -152,6 +152,34 @@
   font-family: var(--heading);
 }
 
+.content-main li code {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--callout-warning-border);
+}
+
+.content-main .inline-note p {
+  color: var(--text);
+  background: var(--code-bg);
+  border-radius: 6px;
+  border-left: var(--text);
+  padding: 0.6rem;
+  font-size: 0.75rem; 
+  font-style: italic;
+  margin: 0.4rem 0;
+}
+
+.content-main .blockquote-body p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.content-main .inline-note p::before {
+  content: "›";
+  margin-right: 0.4rem;
+  opacity: 0.9;
+}
+
 @media (max-width: 1500px) {
   .content-main {
     padding: 1rem;
