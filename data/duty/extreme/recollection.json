@@ -23,14 +23,15 @@
       "Four": { "X": 94.729, "Y": 0.0, "Z": 104.545, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Recollection_(Extreme)",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=AFaiOZK78tM"
+      "url": "https://www.youtube.com/embed/AFaiOZK78tM"
     },
     {
       "label": "Hector Braindead EF2 Guide",
-      "url": "https://www.youtube.com/watch?v=NxzneQ2Pcp8"
+      "url": "https://www.youtube.com/embed/NxzneQ2Pcp8"
     }
   ]
 }

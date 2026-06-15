@@ -20,14 +20,15 @@
       "Four": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 7, "Active": false }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Hell_on_Rails_(Extreme)",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=fGGI8MM-wKM"
+      "url": "https://www.youtube.com/embed/fGGI8MM-wKM"
     },
     {
       "label": "Hector Static Intermission Guide",
-      "url": "https://www.youtube.com/watch?v=OEIEcWIpJ00"
+      "url": "https://www.youtube.com/embed/OEIEcWIpJ00"
     }
   ],
   "strategy-boards": [

@@ -5,8 +5,28 @@
   "party-finder-summary": "L Meteors | CW Coronation | Support South DPS North | Mit Authority | Fixed Ice | MTTT",
   "planners": [
     {
-      "label": "projection-of-turmoil",
-      "url": "https://raidplan.io/plan/kOzWlEJdezZxbmL9"
+      "label": "virtual-shift-1",
+      "url": "https://raidplan.io/plan/es9Sz9bMLdlSBqn2"
+    },
+    {
+      "label": "divide-and-conquer",
+      "url": "https://raidplan.io/plan/xAmG1bTbTj6OgVe9"
+    },
+    {
+      "label": "l-meteors",
+      "url": "https://raidplan.io/plan/Duucffh6KeJDf1dY"
+    },
+    {
+      "label": "alternative meteors",
+      "url": "https://x.com/EIT8_JUEGO/status/1856383362421993949"
+    },
+    {
+      "label": "coronation",
+      "url": "https://raidplan.io/plan/1GMDTOg77gWKiDRp"
+    },
+    {
+      "label": "ice tethers",
+      "url": "https://raidplan.io/plan/iWxVlLTBWz88vB5M"
     }
   ],
   "markers": [
@@ -59,10 +79,15 @@
       "Four": { "X": 111.841, "Y": 0.0, "Z": 101.852, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Minstrel's_Ballad:_Sphene's_Burden",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=yfvfhuEEMCY&t=2s&pp=ygUNaGVjdG9yIHNwaGVuZQ%3D%3D"
+      "url": "https://www.youtube.com/embed/yfvfhuEEMCY"
+    },
+    {
+      "label": "Mrhappy Guide",
+      "url": "https://www.youtube.com/embed/izwlbAd7xQU"
     }
   ]
 }

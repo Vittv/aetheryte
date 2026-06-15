@@ -29,16 +29,11 @@
       "Four": { "X": 90.808, "Y": 0.0, "Z": 109.192, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Unmaking_(Extreme)",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=cA_WHJyXzyE"
+      "url": "https://www.youtube.com/embed/cA_WHJyXzyE"
     }
-  ],
-  "strategy-boards": [
-    { "label": "hector", "url": "https://board.wtfdig.info/b/3d1N5i44F7_LR" },
-    [
-      "[stgy:ap+y6ribeC371FpPrPoS7KtX4EMz5T30C1s0J9gX3UX6xWUTeR9ZM+zFOXF6-cg8yUgZR5ZTbG2SJ7r79vjMAMH6HcAftRYnqLnwUdcwLeGDFtzDbVbzM0ZtIIruHc8skXUykYgi6RMc9ujvQhIdyONMrPyVnFc82mWxBnOOnlkbzEAd-dlAbebYW7VRhicidlRJ60GpGNEQc8MZqz3ZbP3dGleIeHeUagQa1X7cEUp0rbePXmaS4JFh0pQP7pF5a2-bym+ujsOwiCYHlmR8w7W+kd7pQYnm37Xp+rx3XT1fReCmi56IlngH9hu84ZPzNlTAXBboZmQcidQeTpAg-EqqolA+ACfT]"
-    ]
   ]
 }

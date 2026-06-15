@@ -46,10 +46,11 @@
       "Four": { "X": 102.357, "Y": 0.0, "Z": 91.319, "ID": 7, "Active": true }
     }
   ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/The_Minstrel's_Ballad:_Necron's_Embrace",
   "videos": [
     {
       "label": "Hector Hectorson Guide",
-      "url": "https://www.youtube.com/watch?v=2RsWkk8bxyk"
+      "url": "https://www.youtube.com/embed/2RsWkk8bxyk"
     }
   ],
   "strategy-boards": [
