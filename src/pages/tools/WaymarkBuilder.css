@@ -124,13 +124,6 @@
   color: var(--text);
 }
 
-.wb-section-label {
-  margin: 4px 0;
-  font-size: 11px;
-  color: var(--text-d);
-  line-height: 1.5;
-}
-
 .wb-marker-grid {
   display: flex;
   flex-direction: column;
