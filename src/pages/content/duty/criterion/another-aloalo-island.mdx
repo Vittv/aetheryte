@@ -1,0 +1,120 @@
+---
+date: 2026-06-15
+---
+
+import contentImg from "../../../../assets/images/another-aloalo-island.png"
+import data from "../../../../../data/duty/criterion/another-aloalo-island.json"
+
+# Another Aloalo Island
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="another aloalo island banner" />
+
+## Ketuduke
+### Spring Crystals
+
+> TR North / HM South
+
+1. Bubbles start on their side in 2s; roots start in `2` for spread and `1` for stack.
+2. Start on your side N/S (bubble gets pushed to the opposite side).
+- To identify safe spots, find the crystal in the middle and make an H using it while looking at the long side. The 4 ends of the H are your safe squares.
+- <BulletLink href={data.planners[0].url}>SC Image</BulletLink>
+
+### Blowing Bubbles
+- TR North / HM South; stay within your half of the room for the entire mech.
+- **Stack > Spread**: Start middle, dodge to safe corner for stack; ragned stays for spread; melees run far.
+- **Spread > Stack**: Start in the two safe squares on your half of the room, pre-position in the quadrant you want.
+- <BulletLink href={data.planners[1].url}>BB movement Raidplan</BulletLink>
+- <BulletLink href={data.planners[2].url}>BB in depth Raidplan</BulletLink>
+
+### Adds
+- Snake prio and color match add to a safe spot.
+- TR N CW | HM W CCW, TM swapif duplicate bubble / root in pair.
+- <BulletLink href={data.planners[3].url}>Adds Raidplan</BulletLink>
+
+### Angry Seas
+- HM W | TR E;
+- Support north for spreads.
+- Ranged take bubble across.
+- Melee take middle tower if stack first.
+
+  > You can use kb resist for melee uptime.
+
+## Lala
+- <BulletLink href={data.planners[4].url}>All strats</BulletLink>
+- <BulletLink href={data.planners[5].url}>Surge Uptime melee positioning</BulletLink>
+
+- **Individual strat pics**:
+  - <BulletLink href={data.planners[6].url}>Planar Tactics</BulletLink>
+  - <BulletLink href={data.planners[7].url}>Spacial Tactics</BulletLink>
+  - <BulletLink href={data.planners[8].url}>Symmetric Surge</BulletLink>
+
+## Statice
+- <BulletLink href={data.planners[9].url}>Dartboard 1</BulletLink> - H green; T blue; DPS red - Melee flex
+- <BulletLink href={data.planners[10].url}>Present Box 1</BulletLink> - (downtime mech)
+- <BulletLink href={data.planners[11].url}>Dartboard 2</BulletLink>
+- **Present Box 2**: If stacked second, stack middle if safe or center of the largest safe spot.
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "boss 1",
+  "MapID": 979,
+  "A": { "X": -0.075, "Y": 0.0, "Z": -10.006, "ID": 0, "Active": true },
+  "B": { "X": 9.988, "Y": 0.0, "Z": -0.065, "ID": 1, "Active": true },
+  "C": { "X": 0.003, "Y": 0.0, "Z": 9.987, "ID": 2, "Active": true },
+  "D": { "X": -10.16, "Y": 0.0, "Z": -0.524, "ID": 3, "Active": true },
+  "One": { "X": -10.003, "Y": 0.0, "Z": -10.068, "ID": 4, "Active": true },
+  "Two": { "X": 9.998, "Y": 0.0, "Z": -9.849, "ID": 5, "Active": true },
+  "Three": { "X": 10.043, "Y": 0.0, "Z": 9.942, "ID": 6, "Active": true },
+  "Four": { "X": -9.999, "Y": 0.0, "Z": 9.958, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "boss 2",
+  "MapID": 979,
+  "A": { "X": 200.0, "Y": -300.0, "Z": -8.0, "ID": 0, "Active": true },
+  "B": { "X": 208.0, "Y": -300.0, "Z": 0.0, "ID": 1, "Active": true },
+  "C": { "X": 200.0, "Y": -300.0, "Z": 8.0, "ID": 2, "Active": true },
+  "D": { "X": 192.0, "Y": -300.0, "Z": 0.0, "ID": 3, "Active": true },
+  "One": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 4, "Active": false },
+  "Two": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 5, "Active": false },
+  "Three": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 6, "Active": false },
+  "Four": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 7, "Active": false }
+}
+```
+
+```json
+{
+  "Name": "boss 3",
+  "MapID": 979,
+  "A": { "X": -200.0, "Y": -200.0, "Z": -10.0, "ID": 0, "Active": true },
+  "B": { "X": -190.0, "Y": -200.0, "Z": 0.0, "ID": 1, "Active": true },
+  "C": { "X": -200.0, "Y": -200.0, "Z": 10.0, "ID": 2, "Active": true },
+  "D": { "X": -210.0, "Y": -200.0, "Z": 0.0, "ID": 3, "Active": true },
+  "One": { "X": -207.5, "Y": -200.0, "Z": -7.5, "ID": 4, "Active": true },
+  "Two": { "X": -192.5, "Y": -200.0, "Z": -7.5, "ID": 5, "Active": true },
+  "Three": { "X": -192.5, "Y": -200.0, "Z": 7.5, "ID": 6, "Active": true },
+  "Four": { "X": -207.5, "Y": -200.0, "Z": 7.5, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}
+
+### Additional Resources
+
+- <BulletLink href={data["additional-resources"][0].url}>Talgbin</BulletLink>

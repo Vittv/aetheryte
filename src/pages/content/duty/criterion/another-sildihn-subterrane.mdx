@@ -1,0 +1,74 @@
+---
+date: 2026-06-15
+---
+
+import contentImg from "../../../../assets/images/another-sildihn-subterrane.png"
+import data from "../../../../../data/duty/criterion/another-sildihn-subterrane.json"
+
+# Another Sil'dihn Subterrane
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="another sildihn subterrane banner" />
+
+## Prepull
+```text
+Silkie card spreads
+
+  T
+D   D
+  H
+```
+
+```text
+Glad / Zel intercard quads
+
+TM N | HR S
+```
+
+## Silkie
+- <BulletLink href={data.planners[0].url}>Tethers 1 Image</BulletLink> - (red squares show safe spot for blue tails, double arrow means it can go either way)
+- <BulletLink href={data.planners[1].url}>Tethers 2 Video</BulletLink>
+
+## Gladiator
+- **No Stack**: Stay in your assigned quadrant for curse of the fallen; healer and tank throw shields / mits on the stack while they solo stack.
+
+## Zeless
+- <BulletLink href={data.planners[2].url}>JP Banishment</BulletLink>
+- <BulletLink href={data.planners[3].url}>2nd Fire Mirrors / 4 tiles</BulletLink> - Same quadrants as 2nd boss.
+- **Corners**:
+  - For wires 2 (cryptic flames), tank centers the boss and everyone spreads in their quadrant.
+  - Burn the boss down before your debuffs expire and ignore the wires completely.
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "Shadowcaster",
+  "MapID": 878,
+  "A": { "X": 289.168, "Y": 533.0, "Z": -122.490, "ID": 0, "Active": true },
+  "B": { "X": 282.396, "Y": 533.0, "Z": -112.132, "ID": 1, "Active": true },
+  "C": { "X": 295.594, "Y": 533.0, "Z":  -97.353, "ID": 2, "Active": true },
+  "D": { "X": 288.661, "Y": 533.0, "Z":  -87.319, "ID": 3, "Active": true },
+  "One": { "X": 271.883, "Y": 533.0, "Z": -120.380, "ID": 4, "Active": true },
+  "Two": { "X": 271.756, "Y": 533.0, "Z": -110.438, "ID": 5, "Active": true },
+  "Three": { "X": 271.847, "Y": 533.0, "Z":  -99.925, "ID": 6, "Active": true },
+  "Four": { "X": 271.296, "Y": 533.0, "Z":  -89.866, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}
+
+### Additional Resources
+
+- <BulletLink href={data["additional-resources"][0].url}>Talgbin</BulletLink>

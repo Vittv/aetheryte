@@ -1,0 +1,125 @@
+---
+date: 2026-06-15
+---
+
+import contentImg from "../../../../assets/images/another-merchants-tale.png"
+import data from "../../../../../data/duty/criterion/another-merchants-tale.json"
+
+# Another Merchant's Tale
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="another merchant's tale banner" />
+
+## Darya
+
+- <BulletLink href={data.planners[0].url}>Consolidated Raidplan</BulletLink>
+- **In depth mechanics**:
+  - <BulletLink href={data.planners[1].url}>Familiar Call</BulletLink>
+  - <BulletLink href={data.planners[2].url}>Alluring Order 1</BulletLink>
+  - <BulletLink href={data.planners[3].url}>Ceaseless Current</BulletLink>
+  - <BulletLink href={data.planners[4].url}>Alluring Order 2</BulletLink>
+  - <BulletLink href={data.planners[5].url}>Aqua Spear</BulletLink>
+
+## Lone Swordmaster
+  
+- <BulletLink href={data.planners[6].url}>Consolidated Raidplan</BulletLink>
+- **In depth mechanics**:
+  
+  - <BulletLink href={data.planners[7].url}>Near / Far Heaven</BulletLink>
+  - <BulletLink href={data.planners[8].url}>Malefic Quartering 1</BulletLink>
+  - **Echoing Eight/Orbital**: Stack mid to bait puddles; dodge puddles then eight = star shape, orbital = donut
+  - **Waiting Wounds**: `3` to `1` dodge (can do 2:1 but it's fast).
+  - <BulletLink href={data.planners[9].url}>Silent Eight (Upline)</BulletLink>
+  - **Maw of the Wolf**: Half room cleave, dodge behind boss.
+  - <BulletLink href={data.planners[10].url}>Malefic Quartering 2</BulletLink>
+  - <BulletLink href={data.planners[11].url}>Malefic Quartering 3</BulletLink>
+  - <BulletLink href={data.planners[12].url}>Malefic Quartering 4 (Anchor Chain)</BulletLink>
+
+## Pari
+
+- <BulletLink href={data.planners[13].url}>Consolidated Raidplan</BulletLink>
+- **In depth mechanics**:
+  - <BulletLink href={data.planners[14].url}>Familiar Call</BulletLink>
+  - <BulletLink href={data.planners[15].url}>Alluring Order 1</BulletLink>
+  - <BulletLink href={data.planners[16].url}>Ceaseless Current</BulletLink>
+  - **Spurning Flames**: Two Strats floating in NA, please note what strat you are using via PF description. (example: bd spurning = bd)
+    - <BulletLink href={data.planners[17].url}>Corner Puddles (full party uptime)</BulletLink>
+    - <BulletLink href={data.planners[18].url}>Braindead</BulletLink>
+  - <BulletLink href={data.planners[19].url}>Doubling</BulletLink>
+  - **Kindled Flame**: Same tile - Supp left, Dps right looking in, TM adjust (2 pair stacks and 3 fire crystals, there will be one square by the boss that is safe that you can share with both stacks)
+  - **Charmed Flight**: Another 4 rotating halfroom cleaves, this time with pairs of fire crystals. Remember rotation order and dodge cleaves and crystals in middle 2 columns (boss cleave will always be 2 swaps and 1 stay, fire crystals can be 3 swaps or swap stay swap)
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "Darya",
+  "MapID": 1079,
+  "A": { "X": 375.0, "Y": -29.5, "Z": 514.0, "ID": 0, "Active": true },
+  "B": { "X": 391.0, "Y": -29.5, "Z": 530.0, "ID": 1, "Active": true },
+  "C": { "X": 375.0, "Y": -29.5, "Z": 546.0, "ID": 2, "Active": true },
+  "D": { "X": 359.0, "Y": -29.5, "Z": 530.0, "ID": 3, "Active": true },
+  "One": { "X": 359.0, "Y": -29.5, "Z": 514.0, "ID": 4, "Active": true },
+  "Two": { "X": 391.0, "Y": -29.5, "Z": 514.0, "ID": 5, "Active": true },
+  "Three": { "X": 391.0, "Y": -29.5, "Z": 546.0, "ID": 6, "Active": true },
+  "Four": { "X": 359.0, "Y": -29.5, "Z": 546.0, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "Swordmaster",
+  "MapID": 1079,
+  "A": { "X": 170.0, "Y": -16.0, "Z": -822.0, "ID": 0, "Active": true },
+  "B": { "X": 121.185, "Y": -29.499, "Z": -689.252, "ID": 1, "Active": true },
+  "C": { "X": 170.0, "Y": -16.0, "Z": -811.0, "ID": 2, "Active": true },
+  "D": { "X": 170.0, "Y": -16.0, "Z": -815.0, "ID": 3, "Active": true },
+  "One": { "X": 163.0, "Y": -16.0, "Z": -830.0, "ID": 4, "Active": true },
+  "Two": { "X": 177.0, "Y": -16.0, "Z": -830.0, "ID": 5, "Active": true },
+  "Three": { "X": 177.0, "Y": -16.0, "Z": -798.0, "ID": 6, "Active": true },
+  "Four": { "X": 163.0, "Y": -16.0, "Z": -798.0, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "Corner Uptime",
+  "MapID": 1079,
+  "A": { "X": -760.0, "Y": -54.0, "Z": -815.0, "ID": 0, "Active": true },
+  "B": { "X": -750.0, "Y": -54.0, "Z": -805.0, "ID": 1, "Active": true },
+  "C": { "X": -760.0, "Y": -54.0, "Z": -795.0, "ID": 2, "Active": true },
+  "D": { "X": -770.0, "Y": -54.0, "Z": -805.0, "ID": 3, "Active": true },
+  "One": { "X": -769.0, "Y": -54.0, "Z": -824.0, "ID": 4, "Active": true },
+  "Two": { "X": -751.0, "Y": -54.0, "Z": -824.0, "ID": 5, "Active": true },
+  "Three": { "X": -751.0, "Y": -54.0, "Z": -786.0, "ID": 6, "Active": true },
+  "Four": { "X": -769.0, "Y": -54.0, "Z": -786.0, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "BD spurning",
+  "MapID": 1079,
+  "A": { "X": -760.0, "Y": -54.0, "Z": -820.0, "ID": 0, "Active": true },
+  "B": { "X": -745.0, "Y": -54.0, "Z": -805.0, "ID": 1, "Active": true },
+  "C": { "X": -760.0, "Y": -54.0, "Z": -790.0, "ID": 2, "Active": true },
+  "D": { "X": -775.0, "Y": -54.0, "Z": -805.0, "ID": 3, "Active": true },
+  "One": { "X": -745.0, "Y": -54.0, "Z": -820.0, "ID": 4, "Active": true },
+  "Two": { "X": -745.0, "Y": -54.0, "Z": -790.0, "ID": 5, "Active": true },
+  "Three": { "X": -775.0, "Y": -54.0, "Z": -790.0, "ID": 6, "Active": true },
+  "Four": { "X": -775.0, "Y": -54.0, "Z": -820.0, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}
