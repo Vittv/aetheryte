@@ -29,17 +29,20 @@ import type {
 import "./WaymarkBuilder.css";
 
 const DEFAULT_SLUG = "ucob";
+const dutyModules = import.meta.glob("../../../data/duty/**/*.json");
 
 async function loadDuty(slug: string) {
   const duty = (dutiesIndex as DutyEntry[]).find((d) => d.slug === slug);
   if (!duty) throw new Error("duty not found");
-  const res = await fetch(`/data/duty/${duty.type}/${duty.slug}.json`);
-  if (!res.ok) throw new Error("not found");
-  const data = await res.json();
-  const presetsList: Preset[] = Array.isArray(data.markers)
-    ? data.markers
-    : data.Name
-      ? [data]
+  const key = `../../../data/duty/${duty.type}/${duty.slug}.json`;
+  const importer = dutyModules[key];
+  if (!importer) throw new Error("not found");
+  const module = await importer() as { default: unknown };
+  const data = module.default;
+  const presetsList: Preset[] = Array.isArray((data as any).markers)
+    ? (data as any).markers
+    : (data as any).Name
+      ? [data as Preset]
       : [];
   if (presetsList.length === 0) throw new Error("no markers");
   return { duty, presetsList };
@@ -405,10 +408,6 @@ export default function WaymarkBuilder() {
             Square
           </button>
         </div>
-
-        <p className="wb-section-label">
-          Click a marker to select it, then click the arena to place it
-        </p>
 
         <div className="wb-marker-grid">
           {WAYMARK_KEYS.map((key) => {
