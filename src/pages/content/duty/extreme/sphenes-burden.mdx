@@ -1,0 +1,138 @@
+---
+date: 2026-06-12
+---
+
+import contentImg from "../../../../assets/images/the-minstrels-ballad-sphene.png"
+import data from "../../../../../data/duty/extreme/sphenes-burden.json"
+
+# The Minstrel's Ballad: Sphene's Burden
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="sphene banner" />
+
+## Party Finder Description
+
+```markdown
+DPS N SUPP S | box meteors | CW coronation | braindead flares
+```
+
+```markdown
+DPS N SUPP S | L meteors | CW coronation | braindead flares
+```
+
+  - **L Meteors**: For the placement of Meteors during the "Earth" phase.
+  - **CW Coronation**: During the Coronation Mechanic, the direction you take your tether from the triangle spawn location.
+  - **Support South DPS North**: During the Hourglass platform with chains, Supports run South, DPS run North to break.
+  - **Mit Authority**: Instead of dividing the party, heavy shields and mitigation are used for the stack and flare.
+  - **Fixed Ice**: During the Ice phase with tethers. Players move in a fixed pattern according to which icicle they are tethered to.
+  - **MTTT**: The order in which the tethers during "Ice" phase are taken.
+
+## Phase 1
+
+### Aethertithe
+
+- Light Parties | G1 West | G2 East | Dodge cones x3
+
+### Virtual Shift 1
+
+- G1 NW & G2 SE | Stack Mid | DPS NE | Sup SW
+- <BulletLink href={data.planners[0].url}>Virtual Shift 1 Raidplan</BulletLink>
+
+### Divide and Conquer
+
+- Spread on hitbox | RMTH HTMR
+- <BulletLink href={data.planners[1].url}>Divide and Conquer Raidplan</BulletLink>
+
+### Virtual Shift 2
+
+- Melee N Towers | Range S Towers | L Meteors
+
+#### Meteors
+
+- <BulletLink href={data.planners[2].url}>L Meteors Raidplan</BulletLink>
+- <BulletLink href={data.planners[3].url}>Alternative Meteors</BulletLink>
+
+  ```markdown
+  Box Meteors
+
+  M1 T1   T2 M2
+  R1 H1   H2 R2
+  ```
+
+  <Blockquote type="tip">
+  Some parties like to do box meteors, there still isn't a standard for this resolution. Box meteors is often more consistent and easier to pull off though.
+  </Blockquote>
+
+### Coronation
+
+- (CW)
+- Follow your tether and get to your coronation.
+- If it's attached to the left of it, stand on the cardinal.
+- If attached to the right of it, stand on teh intercardinal beside it.
+- <BulletLink href={data.planners[4].url}>Coronation Raidplan</BulletLink>
+
+### Absolute Authority
+
+- Braindead Authority | Party starts NW then moves East
+
+### Virtual Shift 3
+
+- EZ Ice | Raining cats prio MTTT
+- <BulletLink href={data.planners[5].url}>Ice Tethers Raidplan</BulletLink>
+
+### Raining Cats
+
+1. Melee grabs tank tethers and go East and West.
+2. Then they come back through the south towers, which will automatically pass the tethers to the tanks.
+3. Tanks then just deal with the rest of the explosions East and West (mitigate).
+
+## Phase 2
+
+### Radical Shift
+
+Since we're using the AFK markers, just stand on your marker, as center as possible, while not clipping your teammates and trying to stay inside as many glowy lines on the ground as possible. In theory, if everyone behaves and don't freak out, you should be able to not move at all until it resolves. **For the remainder of the phase, you can use your eyes and dodge and mit accordingly**.
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "Clockwise Coronation Spots",
+  "MapID": 1017,
+  "A": { "X": 100.0, "Y": 0.0, "Z": 81.643036, "ID": 0, "Active": true },
+  "B": { "X": 119.0, "Y": 0.0, "Z": 100.29, "ID": 1, "Active": true },
+  "C": { "X": 100.0, "Y": 0.0, "Z": 118.3739, "ID": 2, "Active": true },
+  "D": { "X": 81.26903, "Y": 0.0, "Z": 99.97, "ID": 3, "Active": true },
+  "One": { "X": 118.43005, "Y": 0.0, "Z": 81.96211, "ID": 4, "Active": true },
+  "Two": { "X": 118.89499, "Y": 0.0, "Z": 118.12097, "ID": 5, "Active": true },
+  "Three": { "X": 81.50899, "Y": 0.0, "Z": 118.33084, "ID": 6, "Active": true },
+  "Four": { "X": 81.54111, "Y": 0.0, "Z": 82.193085, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "P2 Safespots",
+  "MapID": 1017,
+  "A": { "X": 91.323, "Y": 0.0, "Z": 86.624, "ID": 0, "Active": true },
+  "B": { "X": 95.802, "Y": 0.0, "Z": 94.147, "ID": 1, "Active": true },
+  "C": { "X": 91.679, "Y": 0.0, "Z": 97.593, "ID": 2, "Active": true },
+  "D": { "X": 88.141, "Y": 0.0, "Z": 101.856, "ID": 3, "Active": true },
+  "One": { "X": 108.662, "Y": 0.0, "Z": 86.565, "ID": 4, "Active": true },
+  "Two": { "X": 104.257, "Y": 0.0, "Z": 94.212, "ID": 5, "Active": true },
+  "Three": { "X": 108.364, "Y": 0.0, "Z": 97.565, "ID": 6, "Active": true },
+  "Four": { "X": 111.841, "Y": 0.0, "Z": 101.852, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}

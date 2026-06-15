@@ -1,0 +1,50 @@
+---
+date: 2026-06-12
+---
+
+import contentImg from "../../../../assets/images/recollection.png"
+import data from "../../../../../data/duty/extreme/recollection.json"
+
+# Recollection (Extreme)
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="recollection banner" />
+
+## Party Finder Description
+
+```markdown
+Hector | EF2 Braindead
+```
+
+- **Hector**: We are using Hector strategies from his video guide.
+- **EF2 Braindead**: A strategy separate from Hector's main guide. But one that he also made a guide for.
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "Standard",
+  "MapID": 1031,
+  "A": { "X": 99.782, "Y": 0.0, "Z": 84.862, "ID": 0, "Active": true },
+  "B": { "X": 115.37, "Y": 0.0, "Z": 100.182, "ID": 1, "Active": true },
+  "C": { "X": 100.063, "Y": 0.0, "Z": 115.048, "ID": 2, "Active": true },
+  "D": { "X": 85.151, "Y": 0.0, "Z": 99.89, "ID": 3, "Active": true },
+  "One": { "X": 94.706, "Y": 0.0, "Z": 95.558, "ID": 4, "Active": true },
+  "Two": { "X": 105.363, "Y": 0.0, "Z": 95.351, "ID": 5, "Active": true },
+  "Three": { "X": 105.374, "Y": 0.0, "Z": 104.712, "ID": 6, "Active": true },
+  "Four": { "X": 94.729, "Y": 0.0, "Z": 104.545, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}

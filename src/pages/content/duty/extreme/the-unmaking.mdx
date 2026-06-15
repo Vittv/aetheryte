@@ -1,0 +1,54 @@
+---
+date: 2026-06-15
+---
+
+import contentImg from "../../../../assets/images/the-unmaking.png"
+import data from "../../../../../data/duty/extreme/the-unmaking.json"
+
+# The Unmaking (Extreme)
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="the unmaking banner" />
+
+## Party Finder Description
+
+```markdown
+Hector | CC => CC
+```
+
+```markdown
+Hector | CC => CW
+```
+
+- **Hector**: Refers to Hector (creator of the video guide), since we typically use his strategies in party finder.
+- **CC → CC** or **CC → CW**: Directions that tethered players go during **Naught Hunts**. First tethered player always clockwise, second tethered players CW or CCW according to the chosen strategy.
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name":"Enuo EX",
+  "MapID":1116,
+  "A":{"X":100.0,"Y":0.0,"Z":87.0,"ID":0,"Active":true},
+  "B":{"X":113.0,"Y":0.0,"Z":100.0,"ID":1,"Active":true},
+  "C":{"X":100.0,"Y":0.0,"Z":113.0,"ID":2,"Active":true},
+  "D":{"X":87.0,"Y":0.0,"Z":100.0,"ID":3,"Active":true},
+  "One":{"X":90.808,"Y":0.0,"Z":90.808,"ID":4,"Active":true},
+  "Two":{"X":109.192,"Y":0.0,"Z":90.808,"ID":5,"Active":true},
+  "Three":{"X":109.192,"Y":0.0,"Z":109.192,"ID":6,"Active":true},
+  "Four":{"X":90.808,"Y":0.0,"Z":109.192,"ID":7,"Active":true}
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}

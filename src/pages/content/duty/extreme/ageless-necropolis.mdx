@@ -1,0 +1,75 @@
+---
+date: 2026-06-12
+---
+
+import contentImg from "../../../../assets/images/the-minstrels-ballad-necrons-embrace.png"
+import data from "../../../../../data/duty/extreme/ageless-necropolis.json"
+
+# The Minstrel's Ballad: Necron's Embrace
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="ageless necropolis banner" />
+
+## Party Finder Description
+
+```markdown
+Hector/Sauce | Uptime MM2
+```
+
+- **Uptime MM2**: We are using Hector strategies from his video guide.
+- **Hector/Sauce**: Refers to Hector (creator of the video guide), and Szechuan Sauce (creator of the strats).
+
+## Phase 1
+
+- <BulletLink href={data.planners[0].url}>Phase 1 Raidplan</BulletLink>
+
+## Phase 2
+
+- <BulletLink href={data.planners[1].url}>Phase 2 Raidplan</BulletLink>
+
+- <BulletLink href={data.planners[2].url}>Uptime MM2 Raidplan</BulletLink>
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "Inside Spots w/Cards",
+  "MapID": 1062,
+  "A": { "X": 100.223, "Y": 0.0, "Z": 91.205, "ID": 0, "Active": true },
+  "B": { "X": 109.339, "Y": 0.0, "Z": 100.354, "ID": 1, "Active": true },
+  "C": { "X": 100.361, "Y": 0.0, "Z": 108.846, "ID": 2, "Active": true },
+  "D": { "X": 90.658, "Y": 0.0, "Z": 100.427, "ID": 3, "Active": true },
+  "One": { "X": 95.25, "Y": 0.0, "Z": 85.873, "ID": 4, "Active": true },
+  "Two": { "X": 104.708, "Y": 0.0, "Z": 85.888, "ID": 5, "Active": true },
+  "Three": { "X": 98.017, "Y": 0.0, "Z": 91.251, "ID": 6, "Active": true },
+  "Four": { "X": 102.357, "Y": 0.0, "Z": 91.319, "ID": 7, "Active": true }
+}
+```
+
+```json
+{
+  "Name": "Pair/LPs",
+  "MapID": 1062,
+  "A": { "X": 87.708, "Y": 0.0, "Z": 96.159, "ID": 0, "Active": true },
+  "B": { "X": 112.328, "Y": 0.0, "Z": 95.946, "ID": 1, "Active": true },
+  "C": { "X": 92.646, "Y": 0.0, "Z": 98.082, "ID": 2, "Active": true },
+  "D": { "X": 107.323, "Y": 0.0, "Z": 98.002, "ID": 3, "Active": true },
+  "One": { "X": 95.25, "Y": 0.0, "Z": 85.873, "ID": 4, "Active": true },
+  "Two": { "X": 104.708, "Y": 0.0, "Z": 85.888, "ID": 5, "Active": true },
+  "Three": { "X": 98.017, "Y": 0.0, "Z": 91.251, "ID": 6, "Active": true },
+  "Four": { "X": 102.357, "Y": 0.0, "Z": 91.319, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Videos
+
+{data.videos.map((video) => (
+  <VideoEmbed key={video.url} src={video.url} title={video.label} />
+))}
