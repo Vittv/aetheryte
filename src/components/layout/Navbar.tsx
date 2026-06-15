@@ -12,6 +12,7 @@ import "./CommandPalette.css";
 import "./ThemeToggle.css";
 
 const TYPE_ORDER = ["ultimate", "savage", "extreme", "criterion"] as const;
+const TOOLS = [{ name: "Waymark Builder", slug: "waymarks" }];
 
 function Navbar() {
   const { open, setOpen } = useSearch();
@@ -74,9 +75,14 @@ function Navbar() {
       .sort((a, b) => a.order - b.order),
   }));
 
-  const handleSelect = (slug: string) => {
+  const handleSelectDuty = (slug: string) => {
     setOpen(false);
     navigate(`/duty/${slug}`);
+  };
+
+  const handleSelectTool = (slug: string) => {
+    setOpen(false);
+    navigate(`/tools/${slug}`);
   };
 
   const isMac = navigator.platform.toUpperCase().includes("MAC");
@@ -131,19 +137,32 @@ function Navbar() {
                 <Command.Input placeholder="Search..." autoFocus />
                 <Command.List>
                   <Command.Empty>No results found.</Command.Empty>
-                  {grouped.map(({ type, entries }) => (
-                    <Command.Group key={type} heading={type}>
-                      {entries.map((d) => (
+                  <>
+                    <Command.Group heading="tools">
+                      {TOOLS.map((t) => (
                         <Command.Item
-                          key={d.slug}
-                          value={`${d.name} ${d.slug} ${d.type} ${d.aliases?.join(" ") ?? ""}`}
-                          onSelect={() => handleSelect(d.slug)}
+                          key={t.slug}
+                          value={`${t.name} ${t.slug} tool`}
+                          onSelect={() => handleSelectTool(t.slug)}
                         >
-                          {d.name}
+                          {t.name}
                         </Command.Item>
                       ))}
                     </Command.Group>
-                  ))}
+                    {grouped.map(({ type, entries }) => (
+                      <Command.Group key={type} heading={type}>
+                        {entries.map((d) => (
+                          <Command.Item
+                            key={d.slug}
+                            value={`${d.name} ${d.slug} ${d.type} ${d.aliases?.join(" ") ?? ""}`}
+                            onSelect={() => handleSelectDuty(d.slug)}
+                          >
+                            {d.name}
+                          </Command.Item>
+                        ))}
+                      </Command.Group>
+                    ))}
+                  </>
                 </Command.List>
               </Command>
               <div className="cmd-footer">

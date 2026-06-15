@@ -62,7 +62,7 @@ function HomePage() {
         className="hero-search"
       >
         <FontAwesomeIcon className="hero-mag-glass" icon={faMagnifyingGlass} />
-        <span>Search guides, resources... </span>
+        <span>Search guides, tools, resources... </span>
         <kbd>{isMac ? "⌘ K" : "Ctrl K"}</kbd>
         <img
           src={vittKiSprite}
