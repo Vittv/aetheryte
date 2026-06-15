@@ -1,0 +1,120 @@
+{
+  "name": "Another Mount Rokkon",
+  "slug": "another-mount-rokkon",
+  "prepull": [["     T     ", "H         M", "     R     "], ["TM N | HR S"]],
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "ghosts",
+      "url": "https://imgur.com/FrxdWyq"
+    },
+    {
+      "phase": "p1",
+      "label": "2nd-adds",
+      "url": "https://www.youtube.com/watch?v=3HItOmXk0AA"
+    },
+    {
+      "phase": "p2",
+      "label": "exaflares",
+      "url": "https://raidplan.io/plan/sXAziueXklqC-twa"
+    },
+    {
+      "phase": "p2",
+      "label": "limit-cut",
+      "url": "https://raidplan.io/plan/SaCYk_n_5ZiJFOMK"
+    },
+    {
+      "phase": "p2",
+      "label": "rousing-reincarnation-2",
+      "url": "https://ff14.toolboxgaming.space/?id=938195953989861&preview=1#1"
+    },
+    {
+      "phase": "p2",
+      "label": "alt-rousing-reincarnation-2",
+      "url": "https://imgur.com/a/GjjNBzC"
+    },
+    {
+      "phase": "p3",
+      "label": "scarlet",
+      "url": "https://imgur.com/hvGBUDU"
+    },
+    {
+      "phase": "p3",
+      "label": "azure",
+      "url": "https://www.twitch.tv/lysorm/clip/ShinySourGaurTwitchRaid-KrOLY102K0k71pGu"
+    },
+    {
+      "phase": "p3",
+      "label": "shadow-twin",
+      "url": "https://raidplan.io/plan/yWjyvLysjEe6FpJU"
+    },
+    {
+      "phase": "p3",
+      "label": "shadow-twin-2",
+      "url": "https://imgur.com/a/K980Plo"
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Variant_and_Criterion_Dungeons#Unlock_2",
+  "markers": [
+    {
+      "Name": "AMR 1",
+      "MapID": 946,
+      "A": { "X": 0.0, "Y": 0.0, "Z": -113.0, "ID": 0, "Active": true },
+      "B": { "X": 12.0, "Y": 0.0, "Z": -100.0, "ID": 1, "Active": true },
+      "C": { "X": 0.0, "Y": 0.0, "Z": -88.0, "ID": 2, "Active": true },
+      "D": { "X": -12.0, "Y": 0.0, "Z": -100.0, "ID": 3, "Active": true },
+      "One": { "X": -7.0, "Y": 0.0, "Z": -107.0, "ID": 4, "Active": true },
+      "Two": { "X": 7.0, "Y": 0.0, "Z": -107.0, "ID": 5, "Active": true },
+      "Three": { "X": 7.0, "Y": 0.0, "Z": -93.0, "ID": 6, "Active": true },
+      "Four": { "X": -7.0, "Y": 0.0, "Z": -93.0, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "AMR 2",
+      "MapID": 946,
+      "A": { "X": 281.137, "Y": 6.999, "Z": -121.022, "ID": 0, "Active": true },
+      "B": { "X": 300.081, "Y": 7.0, "Z": -138.375, "ID": 1, "Active": true },
+      "C": { "X": 281.248, "Y": 7.0, "Z": -118.537, "ID": 2, "Active": true },
+      "D": { "X": 299.989, "Y": 7.0, "Z": -101.437, "ID": 3, "Active": true },
+      "One": { "X": 281.473, "Y": 6.999, "Z": -138.225, "ID": 4, "Active": true },
+      "Two": { "X": 318.844, "Y": 7.0, "Z": -138.759, "ID": 5, "Active": true },
+      "Three": { "X": 281.362, "Y": 7.0, "Z": -101.458, "ID": 6, "Active": true },
+      "Four": { "X": 318.686, "Y": 6.999, "Z": -101.311, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "AMR 3",
+      "MapID": 946,
+      "A": { "X": -200.0, "Y": -195.0, "Z": -13.0, "ID": 0, "Active": true },
+      "B": { "X": -187.0, "Y": -195.0, "Z": 0.0, "ID": 1, "Active": true },
+      "C": { "X": -200.0, "Y": -195.0, "Z": 13.0, "ID": 2, "Active": true },
+      "D": { "X": -213.0, "Y": -195.0, "Z": 0.0, "ID": 3, "Active": true },
+      "One": { "X": -200.0, "Y": -195.0, "Z": -18.5, "ID": 4, "Active": true },
+      "Two": { "X": -181.5, "Y": -195.0, "Z": -0.0, "ID": 5, "Active": true },
+      "Three": { "X": -200.0, "Y": -195.0, "Z": 18.5, "ID": 6, "Active": true },
+      "Four": { "X": -218.5, "Y": -195.0, "Z": 0.0, "ID": 7, "Active": true }
+    }
+  ],
+  "videos": [
+    {
+      "label": "Boss 1 - Big Kobe Guide",
+      "url": "https://www.youtube.com/embed/2jlH89oLsrs"
+    },
+    {
+      "label": "Boss 2 - Big Kobe Guide",
+      "url": "https://www.youtube.com/embed/TzoNEWbMpQ0"
+    },
+    {
+      "label": "Boss 3 - Big Kobe Guide",
+      "url": "https://www.youtube.com/embed/KghjI7xn6X0"
+    },
+    {
+      "label": "Mrhappy Walkthrough and Commentary",
+      "url": "https://www.youtube.com/embed/Fhv2saxo2_8"
+    }
+  ],
+  "additional-resources": [
+    {
+      "label": "Talgbin",
+      "url": "https://pastebin.com/wZups8t2"
+    }
+  ]
+}

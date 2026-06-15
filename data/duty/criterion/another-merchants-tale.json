@@ -1,6 +1,6 @@
 {
   "name": "Another Merchant's Tale",
-  "slug": "cr4",
+  "slug": "another-merchants-tale",
   "planners": [
     {
       "phase": "p1",
@@ -176,7 +176,7 @@
   "videos": [
     {
       "label": "Kyou K day 1 guide",
-      "url": "https://www.youtube.com/watch?v=OYSoRii1rnQ&pp=ygUjYW5vdGhlciBtZXJjaGFudCdzIHRhbGUgZ3VpZGUgZmZ4aXY%3D"
+      "url": "https://www.youtube.com/embed/OYSoRii1rnQ"
     }
   ]
 }

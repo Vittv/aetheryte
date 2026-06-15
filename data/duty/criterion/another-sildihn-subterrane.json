@@ -1,0 +1,70 @@
+{
+  "name": "Another Sil'dihn Subterrane",
+  "slug": "another-sildihn-subterrane",
+  "prepull": [["     T     ", "D         D", "     H     "], ["TM N | HR S"]],
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "tethers-1",
+      "url": "https://imgur.com/m3Zjccz"
+    },
+    {
+      "phase": "p1",
+      "label": "tethers-2",
+      "url": "https://www.youtube.com/watch?v=rx1Qe_0nvQc"
+    },
+    {
+      "phase": "p3",
+      "label": "jp-banishment",
+      "url": "https://www.youtube.com/watch?v=HnSkZZi_u9E&ab_channel=yukizuri"
+    },
+    {
+      "phase": "p3",
+      "label": "2nd-fire-mirrors-4-tiles",
+      "url": "https://raidplan.io/plan/kk85GhunNCm_thVk"
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Variant_and_Criterion_Dungeons#Unlock_2",
+  "markers": [
+    {
+      "Name": "Shadowcaster",
+      "MapID": 878,
+      "A": { "X": 289.168, "Y": 533.0, "Z": -122.490, "ID": 0, "Active": true },
+      "B": { "X": 282.396, "Y": 533.0, "Z": -112.132, "ID": 1, "Active": true },
+      "C": { "X": 295.594, "Y": 533.0, "Z":  -97.353, "ID": 2, "Active": true },
+      "D": { "X": 288.661, "Y": 533.0, "Z":  -87.319, "ID": 3, "Active": true },
+      "One": { "X": 271.883, "Y": 533.0, "Z": -120.380, "ID": 4, "Active": true },
+      "Two": { "X": 271.756, "Y": 533.0, "Z": -110.438, "ID": 5, "Active": true },
+      "Three": { "X": 271.847, "Y": 533.0, "Z":  -99.925, "ID": 6, "Active": true },
+      "Four": { "X": 271.296, "Y": 533.0, "Z":  -89.866, "ID": 7, "Active": true }
+    }
+  ],
+  "videos": [
+    {
+      "label": "Boss 1 - Hector Hectorson Guide",
+      "url": "https://www.youtube.com/embed/AtWaOqBRlzk"
+    },
+    {
+      "label": "Boss 2 - Hector Hectorson Guide",
+      "url": "https://www.youtube.com/embed/-fMnILFQMi0"
+    },
+    {
+      "label": "Boss 3 - Hector Hectorson Guide",
+      "url": "https://www.youtube.com/embed/QhmdV-AIYl0"
+    },
+    {
+      "label": "AqB Quick and Easy Guide",
+      "url": "https://www.youtube.com/embed/dWtwl7bCBE8"
+    },
+    {
+      "label": "Mrhappy Guide",
+      "url": "https://www.youtube.com/embed/Q3DMf0eAhzE"
+    }
+  ],
+  "additional-resources": [
+    {
+      "label": "Talgbin",
+      "url": "https://pastebin.com/htyvm36x"
+    }
+  ]
+}

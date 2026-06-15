@@ -1,0 +1,131 @@
+{
+  "name": "Another Aloalo Island",
+  "slug": "another-aloalo-island",
+  "prepull": [["TR N | HM S"]],
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "spring-crystals",
+      "url": "https://imgur.com/5ZfWlKk"
+    },
+    {
+      "phase": "p1",
+      "label": "blowing-bubbles",
+      "url": "https://raidplan.io/plan/Qd9wT5qbc3-l1QWc"
+    },
+    {
+      "phase": "p1",
+      "label": "blowing-bubbles2",
+      "url": "https://raidplan.io/plan/_7XudyTxVQWtT6wo"
+    },
+    {
+      "phase": "p1",
+      "label": "adds",
+      "url": "https://raidplan.io/plan/yRi1TnnhaV5Q9jsa"
+    },
+    {
+      "phase": "p2",
+      "label": "all-strats",
+      "url": "https://imgur.com/7PpcJvI"
+    },
+    {
+      "phase": "p2",
+      "label": "surge-uptime-melee-positioning",
+      "url": "https://imgur.com/a8EJ5if"
+    },
+    {
+      "phase": "p2",
+      "label": "individual-strat-pics1",
+      "url": "https://imgur.com/geDg6xe"
+    },
+    {
+      "phase": "p2",
+      "label": "individual-strat-pics2",
+      "url": "https://imgur.com/7kpIy8w"
+    },
+    {
+      "phase": "p2",
+      "label": "individual-strat-pics3",
+      "url": "https://imgur.com/GH3qmPN"
+    },
+    {
+      "phase": "p3",
+      "label": "dartboard-1",
+      "url": "https://imgur.com/hvGBUDU"
+    },
+
+    {
+      "phase": "p3",
+      "label": "present-box-1",
+      "url": "https://raidplan.io/plan/vXz0KvGFvnFGvYpT"
+    },
+    {
+      "phase": "p3",
+      "label": "dartboard-2",
+      "url": "https://raidplan.io/plan/gx09wvHZiBmCy616"
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Variant_and_Criterion_Dungeons#Unlock_2",
+  "markers": [
+    {
+      "Name": "boss 1",
+      "MapID": 979,
+      "A": { "X": -0.075, "Y": 0.0, "Z": -10.006, "ID": 0, "Active": true },
+      "B": { "X": 9.988, "Y": 0.0, "Z": -0.065, "ID": 1, "Active": true },
+      "C": { "X": 0.003, "Y": 0.0, "Z": 9.987, "ID": 2, "Active": true },
+      "D": { "X": -10.16, "Y": 0.0, "Z": -0.524, "ID": 3, "Active": true },
+      "One": { "X": -10.003, "Y": 0.0, "Z": -10.068, "ID": 4, "Active": true },
+      "Two": { "X": 9.998, "Y": 0.0, "Z": -9.849, "ID": 5, "Active": true },
+      "Three": { "X": 10.043, "Y": 0.0, "Z": 9.942, "ID": 6, "Active": true },
+      "Four": { "X": -9.999, "Y": 0.0, "Z": 9.958, "ID": 7, "Active": true }
+    },
+    {
+      "Name": "boss 2",
+      "MapID": 979,
+      "A": { "X": 200.0, "Y": -300.0, "Z": -8.0, "ID": 0, "Active": true },
+      "B": { "X": 208.0, "Y": -300.0, "Z": 0.0, "ID": 1, "Active": true },
+      "C": { "X": 200.0, "Y": -300.0, "Z": 8.0, "ID": 2, "Active": true },
+      "D": { "X": 192.0, "Y": -300.0, "Z": 0.0, "ID": 3, "Active": true },
+      "One": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 4, "Active": false },
+      "Two": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 5, "Active": false },
+      "Three": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 6, "Active": false },
+      "Four": { "X": 0.0, "Y": 0.0, "Z": 0.0, "ID": 7, "Active": false }
+    },
+    {
+      "Name": "boss 3",
+      "MapID": 979,
+      "A": { "X": -200.0, "Y": -200.0, "Z": -10.0, "ID": 0, "Active": true },
+      "B": { "X": -190.0, "Y": -200.0, "Z": 0.0, "ID": 1, "Active": true },
+      "C": { "X": -200.0, "Y": -200.0, "Z": 10.0, "ID": 2, "Active": true },
+      "D": { "X": -210.0, "Y": -200.0, "Z": 0.0, "ID": 3, "Active": true },
+      "One": { "X": -207.5, "Y": -200.0, "Z": -7.5, "ID": 4, "Active": true },
+      "Two": { "X": -192.5, "Y": -200.0, "Z": -7.5, "ID": 5, "Active": true },
+      "Three": { "X": -192.5, "Y": -200.0, "Z": 7.5, "ID": 6, "Active": true },
+      "Four": { "X": -207.5, "Y": -200.0, "Z": 7.5, "ID": 7, "Active": true }
+    }
+  ],
+  "videos": [
+    {
+      "label": "Boss 1 - Big Kobe Guide",
+      "url": "https://www.youtube.com/embed/D8MmjW1vyMU"
+    },
+    {
+      "label": "Boss 2 - Big Kobe Guide",
+      "url": "https://www.youtube.com/embed/sRD05tVof98"
+    },
+    {
+      "label": "Boss 3 - Big Kobe Guide",
+      "url": "https://www.youtube.com/embed/udfdLSYi7W8"
+    },
+    {
+      "label": "yukizuri Guide",
+      "url": "https://www.youtube.com/embed/sAWiRntar7s"
+    }
+  ],
+  "additional-resources": [
+    {
+      "label": "Talgbin",
+      "url": "https://pastebin.com/RRSG6YAK"
+    }
+  ]
+}
