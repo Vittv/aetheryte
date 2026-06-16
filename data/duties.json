@@ -182,5 +182,13 @@
     "shape": "circle",
     "radius": 20,
     "order": 2
+  },
+  {
+    "slug": "dmu",
+    "name": "Dancing Mad (Ultimate)",
+    "type": "ultimate",
+    "shape": "circle",
+    "radius": 20,
+    "order": 7
   }
 ]

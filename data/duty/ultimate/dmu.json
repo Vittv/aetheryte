@@ -1,0 +1,78 @@
+{
+  "name": "Dancing Mad (Ultimate)",
+  "slug": "dmu",
+  "planners": [
+    {
+      "phase": "p1",
+      "label": "kefka",
+      "url": "https://docs.google.com/presentation/d/1-E2rEKa586KKiVNvtt3EAMQY2YAEVBRGcMX0WzORIq8/edit?usp=sharing "
+    },
+    {
+      "phase": "p2",
+      "label": "forsaken",
+      "url": "https://raidplan.io/plan/UATE__aDcw1-bgVv"
+    },
+    {
+      "phase": "p2",
+      "label": "trines",
+      "url": "https://raidplan.io/plan/apkh6ytq72w8pt3v"
+    },
+    {
+      "phase": "p3",
+      "label": "not-lb-cheese",
+      "url": "https://raidplan.io/plan/9assfrb4fcvwat9e#16"
+    },
+    {
+      "phase": "p3",
+      "label": "lb3-cheese-elements",
+      "url": "https://docs.google.com/presentation/d/1aTnFt8TO4y1P7kd6i-dS2uJobg2auHyu4VWO6Hr6DtM/edit"
+    },
+    {
+      "phase": "p4",
+      "label": "phase-4",
+      "url": "https://raidplan.io/plan/V-r1InYZW7VMRYAU"
+    },
+    {
+      "phase": "p5",
+      "label": "slide-1-22",
+      "url": "https://raidplan.io/plan/3wqr483tjcsgd6xv"
+    },
+    {
+      "phase": "p5",
+      "label": "end-of-fight-mechanic",
+      "url": "https://raidplan.io/plan/PFAuAaUViJ3vUjqr"
+    }
+  ],
+  "mitigation": [
+    { "label": "Ikuya Mitty", "url": "https://tinyurl.com/ikuyamittydmu" }
+  ],
+  "markers": [
+    {
+      "Name": "12y Waymarks",
+      "MapID": 1094,
+      "A": { "X": 100.0, "Y": 0.0, "Z": 88.0, "ID": 0, "Active": true },
+      "B": { "X": 112.0, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+      "C": { "X": 100.0, "Y": 0.0, "Z": 112.0, "ID": 2, "Active": true },
+      "D": { "X": 88.0, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+      "One": { "X": 94.0, "Y": 0.0, "Z": 94.0, "ID": 4, "Active": true },
+      "Two": { "X": 106.0, "Y": 0.0, "Z": 94.0, "ID": 5, "Active": true },
+      "Three": { "X": 106.0, "Y": 0.0, "Z": 106.0, "ID": 6, "Active": true },
+      "Four": { "X": 94.0, "Y": 0.0, "Z": 106.0, "ID": 7, "Active": true }
+    }
+  ],
+  "unlock": "https://ffxiv.consolegameswiki.com/wiki/Dancing_Mad_(Ultimate)",
+  "videos": [],
+  "sims": [
+    {
+      "label": "P2 Forsaken Sim",
+      "url": "https://github.com/WCGH/Waju-Sims/releases/tag/dmu-0.2.x"
+    },
+    {
+      "label": "P4 Sim",
+      "url": "https://github.com/Tischel/KefkaSaysSimulator/releases/tag/0.0.2"
+    }
+  ],
+  "additional-resources": [
+    { "label": "Kefka bin", "url": "https://pastebin.com/7fs57PyQ" }
+  ]
+}

@@ -1,0 +1,92 @@
+---
+date: 2026-06-16
+---
+
+import contentImg from "../../../../assets/images/dmu.png"
+import data from "../../../../../data/duty/ultimate/dmu.json"
+
+# Dancing Mad (Ultimate)
+
+<p className="frontmatter">Last updated: <span className="content-date">{frontmatter.date}</span></p>
+
+<img src={contentImg} alt="DMU banner" />
+
+## P1: Kefka
+
+- <BulletLink href={data.planners[0].url}>Fae Doc</BulletLink>
+
+## P2: God Kefka
+
+- <BulletLink href={data.planners[1].url}>Forsaken</BulletLink>
+- <BulletLink href={data.planners[2].url}>Trines</BulletLink>
+
+## P3: Kefka, Exdeath, & Chaos
+
+- <BulletLink href={data.planners[3].url}>Non-LB Cheese (Sex Gods)</BulletLink>
+- <BulletLink href={data.planners[4].url}>Lb3 Cheese Elements</BulletLink>
+
+## P4: Kefka, Neo Exdeath & Chaos
+
+- <BulletLink href={data.planners[5].url}>P4 Raidplan</BulletLink>
+
+## P5: Ultimate Kefka
+
+- <BulletLink href={data.planners[6].url}>Consolidated Raidplan (Slide 1-22)</BulletLink>
+- <BulletLink href={data.planners[7].url}>End of Fight Mechanic</BulletLink>
+
+## Resources
+
+### Markers
+
+```json
+{
+  "Name": "12y Waymarks",
+  "MapID": 1094,
+  "A": { "X": 100.0, "Y": 0.0, "Z": 88.0, "ID": 0, "Active": true },
+  "B": { "X": 112.0, "Y": 0.0, "Z": 100.0, "ID": 1, "Active": true },
+  "C": { "X": 100.0, "Y": 0.0, "Z": 112.0, "ID": 2, "Active": true },
+  "D": { "X": 88.0, "Y": 0.0, "Z": 100.0, "ID": 3, "Active": true },
+  "One": { "X": 94.0, "Y": 0.0, "Z": 94.0, "ID": 4, "Active": true },
+  "Two": { "X": 106.0, "Y": 0.0, "Z": 94.0, "ID": 5, "Active": true },
+  "Three": { "X": 106.0, "Y": 0.0, "Z": 106.0, "ID": 6, "Active": true },
+  "Four": { "X": 94.0, "Y": 0.0, "Z": 106.0, "ID": 7, "Active": true }
+}
+```
+
+### Unlock
+
+- <BulletLink href={data.unlock}>Wiki</BulletLink>
+
+### Mitigation
+
+<ul>
+  {data.mitigation.map((mit) => (
+    <li key={mit.url}>
+      <BulletLink href={mit.url}>{mit.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Simulations
+
+<ul>
+  {data.sims.map((sim) => (
+    <li key={sim.url}>
+      <BulletLink href={sim.url}>{sim.label}</BulletLink>
+    </li>
+  ))}
+</ul>
+
+### Videos
+
+There are no full guides yet, and strats keep changing, which turns videos obsolete quite quickly.
+
+### Additional Resources
+
+<ul>
+  {data["additional-resources"].map((resource) => (
+    <li key={resource.url}>
+      <BulletLink href={resource.url}>{resource.label}</BulletLink>
+    </li>
+  ))}
+</ul>
