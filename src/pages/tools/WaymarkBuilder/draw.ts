@@ -13,7 +13,6 @@ export interface DrawOptions {
 
 interface ArenaTheme {
   floorInner: string;
-  floorOuter: string;
   grid: string;
   crosshair: string;
   boundary: string;
@@ -25,12 +24,11 @@ function resolveTheme(): ArenaTheme {
   const get = (v: string) => style.getPropertyValue(v).trim();
 
   return {
-    floorInner: get("--surface-bg"),
-    floorOuter: get("--bg"),
-    grid: hexWithAlpha(get("--text"), 0.55),
-    crosshair: hexWithAlpha(get("--text-h"), 0.9),
-    boundary: hexWithAlpha(get("--accent"), 0.7),
-    cardinals: hexWithAlpha(get("--callout-warning-border"), 0.9),
+    floorInner: get("--code-bg"),
+    grid: hexWithAlpha(get("--text"), 0.3),
+    crosshair: hexWithAlpha(get("--text-h"), 0.5),
+    boundary: hexWithAlpha(get("--callout-important-border"), 0.7),
+    cardinals: hexWithAlpha(get("--callout-caution-border"), 1),
   };
 }
 
@@ -114,10 +112,7 @@ export function drawArena(
     ctx.beginPath();
     if (square) ctx.rect(cx - r, cy - r, r * 2, r * 2);
     else ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    const floor = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-    floor.addColorStop(0, theme.floorInner);
-    floor.addColorStop(1, theme.floorOuter);
-    ctx.fillStyle = floor;
+    ctx.fillStyle = theme.floorInner;
     ctx.fill();
     ctx.restore();
 

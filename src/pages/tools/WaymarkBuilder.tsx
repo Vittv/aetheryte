@@ -37,7 +37,7 @@ async function loadDuty(slug: string) {
   const key = `../../../data/duty/${duty.type}/${duty.slug}.json`;
   const importer = dutyModules[key];
   if (!importer) throw new Error("not found");
-  const module = await importer() as { default: unknown };
+  const module = (await importer()) as { default: unknown };
   const data = module.default;
   const presetsList: Preset[] = Array.isArray((data as any).markers)
     ? (data as any).markers

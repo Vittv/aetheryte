@@ -43,7 +43,7 @@
 }
 
 .wb-field-label {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-d);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -52,12 +52,12 @@
 }
 
 .wb-input {
-  font-size: 12px;
+  font-size: 0.8rem;
   color: var(--text);
   background: var(--code-bg);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 5px 8px;
+  border-radius: 6px;
+  padding: 0.4rem;
   margin-bottom: 10px;
   width: 100%;
   outline: none;
@@ -67,10 +67,10 @@
 .wb-select {
   background: var(--code-bg);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--text);
-  padding: 5px 8px;
-  font-size: 12px;
+  padding: 0.4rem;
+  font-size: 0.8rem;
   width: 100%;
   margin-bottom: 10px;
   outline: none;
@@ -91,10 +91,10 @@
 .wb-map-id {
   background: var(--code-bg);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--text-d);
-  padding: 5px 8px;
-  font-size: 12px;
+  padding: 0.4rem;
+  font-size: 0.8rem;
   margin-bottom: 6px;
   letter-spacing: 0.04em;
 }
@@ -111,7 +111,7 @@
   border: 1px solid var(--border);
   border-radius: 4px;
   color: var(--text-d);
-  font-size: 11px;
+  font-size: 13px;
   padding: 4px 0;
   cursor: pointer;
   letter-spacing: 0.04em;
@@ -144,7 +144,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   flex-shrink: 0;
@@ -153,7 +153,7 @@
 
 .wb-coords {
   flex: 1;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text-d);
   letter-spacing: 0.02em;
   transition: opacity 0.15s;
@@ -163,7 +163,7 @@
 .wb-toggle-btn {
   border: 1px solid var(--border);
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   padding: 2px 5px;
   cursor: pointer;
@@ -175,14 +175,25 @@
   margin-top: 10px;
   background: transparent;
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--text-d);
   font-family: var(--mono);
-  font-size: 11px;
-  padding: 6px;
+  font-size: 12px;
+  padding: 0.4rem;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  transition: border-color 0.2s ease;
+}
+
+.wb-reset-btn:first-of-type:hover {
+  border-color: var(--callout-caution-border);
+  color: var(--callout-caution-border);
+}
+
+.wb-reset-btn:last-of-type:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .wb-main {
@@ -288,7 +299,7 @@
   padding: 0;
   border-radius: 0;
   display: block;
-  color: var(--shiki-color-text);
+  color: var(--accent);
   font-family: var(--mono);
   line-height: 1.6;
   white-space: pre;
