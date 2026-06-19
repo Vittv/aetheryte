@@ -64,7 +64,7 @@ export default function WaymarkBuilder() {
   const [availablePresets, setAvailablePresets] = useState<Preset[]>([]);
   const [activePresetIdx, setActivePresetIdx] = useState<number>(0);
   const [copied, setCopied] = useState(false);
-  const [loadingFight, setLoadingFight] = useState(false);
+  const [loadingDuty, setLoadingDuty] = useState(false);
 
   const ghostRef = useRef<{ gx: number; gz: number; key: WaymarkKey } | null>(
     null,
@@ -113,13 +113,13 @@ export default function WaymarkBuilder() {
 
   // load UCOB on mount
   useEffect(() => {
-    setLoadingFight(true);
+    setLoadingDuty(true);
     loadDuty(DEFAULT_SLUG)
       .then(({ duty, presetsList }) =>
         applyDutyLoad(DEFAULT_SLUG, duty, presetsList),
       )
       .catch(() => {})
-      .finally(() => setLoadingFight(false));
+      .finally(() => setLoadingDuty(false));
   }, [applyDutyLoad]);
 
   const redraw = useCallback(() => {
@@ -152,6 +152,8 @@ export default function WaymarkBuilder() {
           sizeRef.current = targetSize;
           canvas.width = targetSize;
           canvas.height = targetSize;
+          canvas.style.width = `${targetSize}px`;
+          canvas.style.height = `${targetSize}px`;
           redraw();
         }
       }
@@ -274,16 +276,16 @@ export default function WaymarkBuilder() {
       [key]: { ...p[key], Active: !p[key].Active },
     }));
 
-  const handleFightPick = async (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleDutyPick = async (e: React.ChangeEvent<HTMLSelectElement>) => {
     const slug = e.target.value;
     if (!slug) return;
-    setLoadingFight(true);
+    setLoadingDuty(true);
     try {
       const { duty, presetsList } = await loadDuty(slug);
       applyDutyLoad(slug, duty, presetsList);
     } catch {
     } finally {
-      setLoadingFight(false);
+      setLoadingDuty(false);
     }
   };
 
@@ -317,15 +319,15 @@ export default function WaymarkBuilder() {
   return (
     <div className="wb-root">
       <aside className="wb-sidebar">
-        <label htmlFor="wb-fight" className="wb-field-label">
+        <label htmlFor="wb-duty" className="wb-field-label">
           Duty
         </label>
         <select
-          id="wb-fight"
+          id="wb-duty"
           className="wb-select"
           value={selectedSlug}
-          onChange={handleFightPick}
-          disabled={loadingFight}
+          onChange={handleDutyPick}
+          disabled={loadingDuty}
         >
           {TYPE_ORDER.filter((t) => groupedDuties[t]).map((type) => (
             <optgroup key={type} label={TYPE_LABELS[type] ?? type}>
