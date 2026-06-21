@@ -9,7 +9,7 @@
 :root {
   --text: #615b50;
   --text-h: #4b453a;
-  --text-dim: #8c877e;
+  --text-dim: #726c61;
   --bg: #e5e1da;
   --border: #a6a095;
   --surface-bg: #eeeae6;
@@ -63,7 +63,7 @@
 [data-theme="dark"] {
   --text: #b8b2a8;
   --text-h: #e8e3dc;
-  --text-dim: #6e6860;
+  --text-dim: #8f8a78;
   --bg: #1e1c19;
   --border: #3a3730;
   --surface-bg: #28261f;

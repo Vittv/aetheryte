@@ -1,7 +1,7 @@
 /* reset timers */
 .reset-timers {
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .reset-table {
@@ -23,7 +23,7 @@
 .reset-table th {
   text-align: left;
   font-weight: 400;
-  color: #666;
+  color: var(--text-dim);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;

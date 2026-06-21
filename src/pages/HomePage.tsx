@@ -5,6 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import vittKiSprite from "../assets/sprites/vitt-ki-sprite.png";
 import type { NewsItem } from "../types";
+import { CommitList } from "./home/CommitList";
 import NewsSection from "./home/NewsSection";
 import ResetTimers from "./home/ResetTimers";
 
@@ -76,6 +77,7 @@ function HomePage() {
         maintenance={news.maintenance}
       />
       <ResetTimers />
+      <CommitList />
     </div>
   );
 }
