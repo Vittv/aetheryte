@@ -68,13 +68,8 @@ export default function ContentPage({ source }: Props) {
   if (!entry) return <div>Not found</div>;
 
   return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: "calc(100vh - var(--navbar-height) - 4rem)",
-      }}
-    >
-      {loaded}
+    <div style={{ width: "100%", minHeight: "calc(100vh - var(--navbar-height) - 4rem)" }}>
+      {loaded && <div key={slug} className="page-content">{loaded}</div>}
     </div>
   );
 }
