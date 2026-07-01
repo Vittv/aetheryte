@@ -54,21 +54,17 @@ export default function Sidebar({ source }: Props) {
 
         return (
           <div key={type}>
-            <h3
+            <button
+              type="button"
               className="sidebar-category"
               onClick={() => toggle(type)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") toggle(type);
-              }}
-              tabIndex={0}
-              role="button"
             >
               <FontAwesomeIcon
                 icon={faChevronRight}
                 className={`sidebar-chevron${isOpen ? " open" : ""}`}
               />
               {type}
-            </h3>
+            </button>
             {isOpen && (
               <nav>
                 {entries.map((d) => (

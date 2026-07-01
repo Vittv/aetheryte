@@ -29,6 +29,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   margin-bottom: 0.25rem;
+  margin-top: 0;
 }
 
 /* left sidebar */
@@ -61,6 +62,7 @@
   padding: 0.4rem 0.6rem;
   text-decoration: none;
   font-family: var(--toc);
+  font-weight: 500;
   /* margin-left: 1rem; */
   /* border-radius: 6px; */
   border-left: 1px solid var(--border);
@@ -118,6 +120,23 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: var(--heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.sidebar-left > div:first-child > .sidebar-category {
+  margin-top: 0;
 }
 
 .sidebar-chevron {
