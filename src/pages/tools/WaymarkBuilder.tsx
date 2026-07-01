@@ -382,7 +382,7 @@ export default function WaymarkBuilder() {
               }}
             >
               {availablePresets.map((p, index) => (
-                <option key={index} value={index}>
+                <option key={p.Name || `preset-${index}`} value={index}>
                   {p.Name || `Layout ${index + 1}`}
                 </option>
               ))}
@@ -512,7 +512,8 @@ export default function WaymarkBuilder() {
               spellCheck={false}
             />
           ) : (
-            <pre
+            <button
+              type="button"
               className="wb-json-pre"
               style={{
                 borderColor: jsonError
@@ -521,13 +522,10 @@ export default function WaymarkBuilder() {
               }}
               onClick={activateEditing}
               onKeyDown={handleEditKeyDown}
-              // biome-ignore lint/a11y/useSemanticElements: <pre> is intentional for monospace JSON display
-              role="button"
-              tabIndex={0}
               title="Click to edit"
             >
               <code className="wb-json-code">{jsonText}</code>
-            </pre>
+            </button>
           )}
         </div>
       </aside>
