@@ -57,47 +57,50 @@ figure {
   border-radius: 8px;
   overflow: hidden;
   margin: 0;
+  position: relative;
+  border: 1px solid var(--border);
 }
-.code-block-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 12px;
-  border-bottom: 1px solid var(--border);
-  background: var(--code-bg);
-}
-.code-block-header span {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--text);
-}
-.code-block-header button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text);
-  padding: 2px 4px;
-  border-radius: 4px;
-  line-height: 1;
-}
-.code-block-header button:hover {
-  color: var(--text-h);
-  background: var(--social-bg);
-}
+
 .code-block pre {
   margin: 0;
   padding: 16px;
   overflow-x: auto;
   background: var(--code-bg);
 }
+
 .code-block pre code {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   background: none;
   padding: 0;
   border-radius: 0;
   display: block;
 }
+
+.code-block pre button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text);
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  font-size: 12px;
+  transition: opacity 0.15s ease;
+}
+
+.code-block pre:hover button {
+  opacity: 1;
+}
+
+.code-block pre button:hover {
+  color: var(--text-h);
+  background: var(--bg);
+}
+
 .video-embed {
   border: 1px solid var(--border);
   border-radius: 8px;

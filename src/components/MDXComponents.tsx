@@ -58,19 +58,12 @@ function CopyButton({
   );
 }
 
-function CodeBlock({
-  children,
-  "data-language": language = "",
-  ...props
-}: React.ComponentProps<"pre"> & { "data-language"?: string }) {
+function CodeBlock({ children, ...props }: React.ComponentProps<"pre">) {
   const preRef = useRef<HTMLPreElement>(null);
   return (
     <div className="code-block">
-      <div className="code-block-header">
-        <span>{language}</span>
-        <CopyButton preRef={preRef} />
-      </div>
       <pre ref={preRef} {...props}>
+        <CopyButton preRef={preRef} />
         {children}
       </pre>
     </div>
