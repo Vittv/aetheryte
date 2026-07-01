@@ -1,7 +1,7 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Command } from "cmdk";
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import duties from "../../../data/duties.json";
@@ -16,18 +16,9 @@ const TOOLS = [{ name: "Waymark Builder", slug: "waymarks" }];
 
 function Navbar() {
   const { open, setOpen } = useSearch();
-  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
-  const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isHome = location.pathname === "/";
-
-  // scroll listener
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // cmd keybinds
   useEffect(() => {
@@ -89,17 +80,7 @@ function Navbar() {
 
   return (
     <div
-      className={`navbar${scrolled ? " navbar--scrolled" : ""}${isHome ? " navbar--home" : ""}${open ? " navbar--open" : ""}`}
-      style={
-        scrolled
-          ? {
-              background: `color-mix(in srgb, var(--bg) 70%, transparent)`,
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-            }
-          : undefined
-      }
-      ref={ref}
+      className={`navbar${isHome ? " navbar--home" : ""}${open ? " navbar--open" : ""}`}
     >
       <div className="navbar-inner">
         <div className="home">
@@ -137,32 +118,30 @@ function Navbar() {
                 <Command.Input placeholder="Search..." autoFocus />
                 <Command.List>
                   <Command.Empty>No results found.</Command.Empty>
-                  <>
-                    <Command.Group heading="tools">
-                      {TOOLS.map((t) => (
+                  <Command.Group heading="tools">
+                    {TOOLS.map((t) => (
+                      <Command.Item
+                        key={t.slug}
+                        value={`${t.name} ${t.slug} tool`}
+                        onSelect={() => handleSelectTool(t.slug)}
+                      >
+                        {t.name}
+                      </Command.Item>
+                    ))}
+                  </Command.Group>
+                  {grouped.map(({ type, entries }) => (
+                    <Command.Group key={type} heading={type}>
+                      {entries.map((d) => (
                         <Command.Item
-                          key={t.slug}
-                          value={`${t.name} ${t.slug} tool`}
-                          onSelect={() => handleSelectTool(t.slug)}
+                          key={d.slug}
+                          value={`${d.name} ${d.slug} ${d.type} ${d.aliases?.join(" ") ?? ""}`}
+                          onSelect={() => handleSelectDuty(d.slug)}
                         >
-                          {t.name}
+                          {d.name}
                         </Command.Item>
                       ))}
                     </Command.Group>
-                    {grouped.map(({ type, entries }) => (
-                      <Command.Group key={type} heading={type}>
-                        {entries.map((d) => (
-                          <Command.Item
-                            key={d.slug}
-                            value={`${d.name} ${d.slug} ${d.type} ${d.aliases?.join(" ") ?? ""}`}
-                            onSelect={() => handleSelectDuty(d.slug)}
-                          >
-                            {d.name}
-                          </Command.Item>
-                        ))}
-                      </Command.Group>
-                    ))}
-                  </>
+                  ))}
                 </Command.List>
               </Command>
               <div className="cmd-footer">

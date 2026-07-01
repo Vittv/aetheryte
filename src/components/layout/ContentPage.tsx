@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import "./ContentPage.css";
 import duties from "../../../data/duties.json";
@@ -20,78 +20,61 @@ export default function ContentPage({ source }: Props) {
   const entry =
     source === "duty" ? duties.find((d) => d.slug === slug) : undefined;
 
-  const MDXContent = useMemo(() => {
-    if (!entry) return null;
+  const [loaded, setLoaded] = useState<React.ReactNode | null>(null);
 
-    interface MDXProps {
-      fightData: typeof entry;
-      components: typeof mdxComponents;
+  useEffect(() => {
+    if (!entry || !slug) return;
+
+    let cancelled = false;
+    const path = `/src/pages/content/duty/${entry.type}/${slug}.mdx`;
+    const importer = mdxModules[path];
+
+    if (!importer) {
+      setLoaded(<div>Content unavailable</div>);
+      return;
     }
 
-    return lazy<React.ComponentType<MDXProps>>(() => {
-      const path = `/src/pages/content/duty/${entry.type}/${slug}.mdx`;
-      const importer = mdxModules[path];
-
-      if (!importer) {
-        return Promise.resolve({
-          default: (() => (
-            <div>Content unavailable</div>
-          )) as React.ComponentType<MDXProps>,
-        });
-      }
-
-      return importer() as Promise<{ default: React.ComponentType<MDXProps> }>;
+    importer().then((mod) => {
+      if (cancelled) return;
+      const Component = (mod as { default: React.ComponentType<any> }).default;
+      setLoaded(<Component dutyData={entry} components={mdxComponents} />);
     });
+
+    return () => {
+      cancelled = true;
+    };
   }, [entry, slug]);
 
   useEffect(() => {
-    let attempts = 0;
+    const main = document.querySelector(".content-main");
+    if (!main) return;
 
-    const scrapeHeadings = () => {
-      const headings = Array.from(
-        document.querySelectorAll(".content-main h2, .content-main h3"),
-      ).map((el) => ({
+    const observer = new MutationObserver(() => {
+      const headings = Array.from(main.querySelectorAll("h2")).map((el) => ({
         id: el.id,
         text: el.textContent ?? "",
-        level: el.tagName === "H2" ? 2 : 3,
+        level: 2,
       }));
 
-      const hasValidHeadings =
-        headings.length > 0 && headings.every((h) => h.id && h.text);
-
-      if (hasValidHeadings) {
+      if (headings.length > 0 && headings.every((h) => h.id && h.text)) {
         setToc(headings);
-        return true;
       }
-      return false;
-    };
+    });
 
-    const initialTimeout = setTimeout(() => {
-      if (scrapeHeadings()) return;
-
-      const interval = setInterval(() => {
-        attempts++;
-        if (scrapeHeadings() || attempts > 10) {
-          clearInterval(interval);
-        }
-      }, 100);
-
-      return () => clearInterval(interval);
-    }, 100);
-
-    return () => {
-      clearTimeout(initialTimeout);
-    };
+    observer.observe(main, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, [slug, setToc]);
 
   if (!entry) return <div>Not found</div>;
-  if (!MDXContent) return null;
 
   return (
-    <div key={slug} style={{ width: "100%", height: "100%" }}>
-      <Suspense fallback={null}>
-        <MDXContent fightData={entry} components={mdxComponents} />
-      </Suspense>
+    <div
+      style={{
+        width: "100%",
+        minHeight: "calc(100vh - var(--navbar-height) - 4rem)",
+      }}
+    >
+      {loaded}
     </div>
   );
 }

@@ -11,11 +11,11 @@
     backdrop-filter 0.2s;
 }
 
-.navbar--scrolled {
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+/* .navbar--scrolled { */
+/*   background: color-mix(in srgb, var(--bg) 70%, transparent); */
+/*   backdrop-filter: blur(12px); */
+/*   -webkit-backdrop-filter: blur(12px); */
+/* } */
 
 .navbar--open {
   z-index: 98;
