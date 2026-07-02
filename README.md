@@ -12,13 +12,10 @@ With the much simpler mdx, we can write guides easily.
 
 ## Features
 
--**Duty guides**: All the latest relevant duty guides and resources needed to beat the current expansion's or ageless content.
-
--**Waymark builder**: Drag-and-drop waymark editor with support for multiple arena sizes.
-
--**Lodestone news**: Live feed of topics, updates, and maintenance.
-
--**Reset timers**: Daily, weekly, and other FFXIV reset countdowns, always in your own timezone.
+- **Duty guides**: All the latest relevant duty guides and resources needed to beat the current expansion's or ageless content.
+- **Waymark builder**: Drag-and-drop waymark editor with support for multiple arena sizes.
+- **Lodestone news**: Live feed of topics, updates, and maintenance.
+- **Reset timers**: Daily, weekly, and other FFXIV reset countdowns, always in your own timezone.
 
 ## Contributing
 
